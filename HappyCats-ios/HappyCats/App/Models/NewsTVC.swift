@@ -19,11 +19,11 @@ class NewsTVC: UITableViewCell {
     
     func config(data: News) {
         newsTitle.text = data.title
-        newsImage.image = R.image.newsStub()
+        newsImage.image = R.image.stub()
     }
     
     func configEmpty() {
         newsTitle.text = R.string.localizable.emptyTitle()
-        newsImage.image = R.image.newsStub()
+        newsImage.image = R.image.stub()
     }
 }

@@ -57,6 +57,6 @@ class DashboardFlow: Flow {
         return .multiple(flowContributors: [.contribute(withNextPresentable: newsFlow,
                                                         withNextStepper: OneStepper(withSingleStep: AppStep.newsList)),
                                             .contribute(withNextPresentable: handbookFlow,
-                                                        withNextStepper: OneStepper(withSingleStep: AppStep.cats))])
+                                                        withNextStepper: OneStepper(withSingleStep: AppStep.handbook))])
     }
 }

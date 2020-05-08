@@ -31,7 +31,7 @@ class HandbookFlow: Flow {
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .cats:
+        case .handbook:
             return navigationToCatsScreen()
         default:
             return .none
@@ -39,8 +39,8 @@ class HandbookFlow: Flow {
     }
     
     private func navigationToCatsScreen() -> FlowContributors {
-        let model = CatsListVM()
-        let vc = CatsListVC()
+        let model = HandbookVM()
+        let vc = HandbookVC()
         vc.title = R.string.localizable.handbookTitle()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)

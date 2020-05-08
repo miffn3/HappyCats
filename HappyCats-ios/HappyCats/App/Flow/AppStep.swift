@@ -18,5 +18,5 @@ enum AppStep: Step {
     case newsDetail(withId: Int)
     
     // Handbook
-    case cats
+    case handbook
 }

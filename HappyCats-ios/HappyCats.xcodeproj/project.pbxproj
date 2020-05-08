@@ -37,6 +37,12 @@
 		8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB6C246569BA00745B49 /* NewsDetailVC.swift */; };
 		8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB6D246569BA00745B49 /* NewsDetailVC.xib */; };
 		8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB70246569D200745B49 /* NewsDetailVM.swift */; };
+		8780DB772465970100745B49 /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB752465970100745B49 /* HandbookVC.swift */; };
+		8780DB782465970100745B49 /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB762465970100745B49 /* HandbookVC.xib */; };
+		8780DB7B2465975900745B49 /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB7A2465975900745B49 /* HandbookVM.swift */; };
+		8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB842465B25F00745B49 /* HandbookTVC.swift */; };
+		8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB852465B25F00745B49 /* HandbookTVC.xib */; };
+		8780DB892465B35400745B49 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB882465B35400745B49 /* Disease.swift */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +104,12 @@
 		8780DB6C246569BA00745B49 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		8780DB6D246569BA00745B49 /* NewsDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailVC.xib; sourceTree = "<group>"; };
 		8780DB70246569D200745B49 /* NewsDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVM.swift; sourceTree = "<group>"; };
+		8780DB752465970100745B49 /* HandbookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HandbookVC.swift; path = ../../../../../../../../../../Documents/HandbookVC.swift; sourceTree = "<group>"; };
+		8780DB762465970100745B49 /* HandbookVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HandbookVC.xib; path = ../../../../../../../../../../Documents/HandbookVC.xib; sourceTree = "<group>"; };
+		8780DB7A2465975900745B49 /* HandbookVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HandbookVM.swift; path = ../../../../../../../../../../Documents/HandbookVM.swift; sourceTree = "<group>"; };
+		8780DB842465B25F00745B49 /* HandbookTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTVC.swift; sourceTree = "<group>"; };
+		8780DB852465B25F00745B49 /* HandbookTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandbookTVC.xib; sourceTree = "<group>"; };
+		8780DB882465B35400745B49 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -289,6 +301,7 @@
 			children = (
 				8780DB472464516B00745B49 /* News.swift */,
 				8780DB67246564F500745B49 /* Cat.swift */,
+				8780DB882465B35400745B49 /* Disease.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -323,6 +336,7 @@
 		8780DB5C2465642800745B49 /* Handbook */ = {
 			isa = PBXGroup;
 			children = (
+				8780DB72246596D600745B49 /* Main */,
 				8780DB5D2465644500745B49 /* Cats */,
 			);
 			path = Handbook;
@@ -386,6 +400,42 @@
 				8780DB70246569D200745B49 /* NewsDetailVM.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8780DB72246596D600745B49 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB74246596E500745B49 /* Model */,
+				8780DB73246596E100745B49 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8780DB73246596E100745B49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB7C2465986200745B49 /* Cell */,
+				8780DB752465970100745B49 /* HandbookVC.swift */,
+				8780DB762465970100745B49 /* HandbookVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8780DB74246596E500745B49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB7A2465975900745B49 /* HandbookVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8780DB7C2465986200745B49 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB842465B25F00745B49 /* HandbookTVC.swift */,
+				8780DB852465B25F00745B49 /* HandbookTVC.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		AE0D49EA3E9314EE5AC84F03 /* Frameworks */ = {
@@ -509,9 +559,11 @@
 				8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */,
 				8780DB3F2464497800745B49 /* Localizable.strings in Resources */,
 				8780DAF224642A5F00745B49 /* LaunchScreen.storyboard in Resources */,
+				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
 				8780DB592465598600745B49 /* NotoSans.ttf in Resources */,
 				8780DB642465647B00745B49 /* CatsListVC.xib in Resources */,
+				8780DB782465970100745B49 /* HandbookVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,16 +655,20 @@
 				8780DB4524644DD500745B49 /* R.generated.swift in Sources */,
 				8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */,
 				8780DB1E24642AF200745B49 /* NewsFlow.swift in Sources */,
+				8780DB892465B35400745B49 /* Disease.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
+				8780DB772465970100745B49 /* HandbookVC.swift in Sources */,
 				8780DB66246564A100745B49 /* CatsListVM.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
 				8780DB68246564F500745B49 /* Cat.swift in Sources */,
 				8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */,
+				8780DB7B2465975900745B49 /* HandbookVM.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
 				8780DB1F24642AF200745B49 /* AppFlow.swift in Sources */,
 				8780DB632465647B00745B49 /* CatsListVC.swift in Sources */,
+				8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */,
 				8780DB482464516B00745B49 /* News.swift in Sources */,
 				8780DB4C2464539D00745B49 /* NewsTVC.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,

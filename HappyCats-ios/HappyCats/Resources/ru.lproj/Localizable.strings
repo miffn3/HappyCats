@@ -1,3 +1,5 @@
 news.title = "Новости";
 empty.title = "No data";
 handbook.title = "Справочник";
+cats.title = "Породы";
+disease.title = "Заболевания";

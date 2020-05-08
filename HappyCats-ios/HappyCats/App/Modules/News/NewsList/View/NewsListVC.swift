@@ -30,8 +30,8 @@ extension NewsListVC: UITableViewDelegate, UITableViewDataSource {
         newsTable.delegate = self
         newsTable.dataSource = self
         
-        newsTable.register(UINib(nibName: Constants.Cells.News.name, bundle: nil),
-                           forCellReuseIdentifier: Constants.Cells.News.name)
+        newsTable.register(UINib(nibName: Constants.Cells.news, bundle: nil),
+                           forCellReuseIdentifier: Constants.Cells.news)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,7 +40,7 @@ extension NewsListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let defaultCell = UITableViewCell()
-        guard let newsCell = newsTable.dequeueReusableCell(withIdentifier: Constants.Cells.News.name, for: indexPath) as? NewsTVC else { return defaultCell }
+        guard let newsCell = newsTable.dequeueReusableCell(withIdentifier: Constants.Cells.news, for: indexPath) as? NewsTVC else { return defaultCell }
         if let cellData = model.news[safe: indexPath.row] {
             newsCell.config(data: cellData)
         } else {

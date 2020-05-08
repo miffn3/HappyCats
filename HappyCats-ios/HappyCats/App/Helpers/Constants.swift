@@ -11,18 +11,22 @@ import UIKit
 
 enum Constants {
     enum UI {
-        // Navigation controller
-        static let navigationBackgroundColor = UIColor(red: 0.50, green: 0.70, blue: 1.00, alpha: 1.00)
-        static let navigationTitleTextColor = UIColor.white
+        // Main
+        static let mainColor = UIColor(red: 0.50, green: 0.70, blue: 1.00, alpha: 1.00)
+        static let mainFont = R.font.notoSans(size: 17)
+        
+        // Navigation
         static let navigationTitleFont = R.font.notoSans(size: 20)
         static let systemNavigationTitleFont = UIFont.systemFont(ofSize: 20)
-        
-        static let mainFont = R.font.notoSans(size: 17)
     }
     
     enum Cells {
-        enum News {
-            static let name = "NewsTVC"
-        }
+        static let news = "NewsTVC"
+        static let handbook = "HandbookTVC"
+    }
+    
+    enum SelectedButton {
+        case cats
+        case disease
     }
 }
