@@ -6,7 +6,6 @@ target 'HappyCats' do
   pod 'RxFlow'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'R.swift', '5.1.0'
-  pod 'Reusable'
+  pod 'R.swift'
   
 end
