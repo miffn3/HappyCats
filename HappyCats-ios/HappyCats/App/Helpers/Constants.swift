@@ -11,13 +11,22 @@ import UIKit
 
 enum Constants {
     enum UI {
-        // Main
-        static let mainColor = UIColor(red: 0.50, green: 0.70, blue: 1.00, alpha: 1.00)
-        static let mainFont = R.font.notoSans(size: 17)
+        enum Main {
+            static let color = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
+            static let font = R.font.notoSans(size: 17)
+            static let fontColor = UIColor.black
+            static let alternativeFontColor = UIColor.white
+        }
         
-        // Navigation
-        static let navigationTitleFont = R.font.notoSans(size: 20)
-        static let systemNavigationTitleFont = UIFont.systemFont(ofSize: 20)
+        enum Navigation {
+            static let titleFont = R.font.notoSans(size: 20)
+            static let systemTitleFont = UIFont.systemFont(ofSize: 20)
+        }
+        
+        enum Button {
+            static let cornerRadius: CGFloat = 5
+            static let borderWidth: CGFloat = 1
+        }
     }
     
     enum Cells {

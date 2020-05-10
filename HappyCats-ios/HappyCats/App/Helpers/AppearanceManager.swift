@@ -18,18 +18,16 @@ final class AppearanceManager {
     
     private func setNavigation() {
         let navigationBar = UINavigationBar.appearance()
-        navigationBar.barTintColor = Constants.UI.mainColor
+        navigationBar.barTintColor = Constants.UI.Main.color
         navigationBar.titleTextAttributes = [
-            .foregroundColor: UIColor.white,
-            .font: Constants.UI.navigationTitleFont ?? Constants.UI.systemNavigationTitleFont
+            .foregroundColor: Constants.UI.Main.alternativeFontColor,
+            .font: Constants.UI.Navigation.titleFont ?? Constants.UI.Navigation.systemTitleFont
         ]
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = Constants.UI.Main.alternativeFontColor
     }
     
     private func setTabBar() {
         let tabBar = UITabBar.appearance()
-        tabBar.barTintColor = Constants.UI.mainColor
-        tabBar.tintColor = UIColor.white
-        tabBar.unselectedItemTintColor = UIColor.white
+        tabBar.tintColor = Constants.UI.Main.color
     }
 }
