@@ -64,6 +64,14 @@ public class User {
         this.note = note;
     }
 
+    public User(@NotNull @NotBlank String username, @NotNull String password,
+                @NotNull @NotBlank String name, @Email @NotNull @NotBlank String email) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.email = email;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

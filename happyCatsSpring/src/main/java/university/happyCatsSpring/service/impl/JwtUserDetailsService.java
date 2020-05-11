@@ -9,6 +9,7 @@ import university.happyCatsSpring.entity.User;
 import university.happyCatsSpring.repo.UserRepository;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Component
 public class JwtUserDetailsService implements UserDetailsService {
@@ -22,10 +23,12 @@ public class JwtUserDetailsService implements UserDetailsService {
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException
 	{
-		User user = userRepository.findByUsername(username);
-		if (user == null) {
+		Optional<User> userOptional = userRepository.findByUsername(username);
+		if (!userOptional.isPresent()) {
 			throw new UsernameNotFoundException("User not found with username: " + username);
 		}
+
+		User user = userOptional.get();
 		return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
 				new ArrayList<>());
 	}

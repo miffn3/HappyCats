@@ -4,6 +4,8 @@ import university.happyCatsSpring.entity.User;
 import university.happyCatsSpring.repo.UserRepository;
 import university.happyCatsSpring.service.iface.UserService;
 
+import java.util.Optional;
+
 public class UserServiceImpl implements UserService {
 	private UserRepository userRepository;
 
@@ -12,24 +14,24 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public void createUser(String username, String password, String phone, String address) {
-		User user = new User();
+	public void createUser(String username, String password, String name, String email) {
+		User user = new User(username, password, name, email);
 		userRepository.save(user);
 	}
 
 	@Override
 	public Long getUserIdByUsername(String username) {
-		User user = userRepository.findByUsername(username);
-		return user.getId();
+		Optional<User> user = userRepository.findByUsername(username);
+		return user.map(User::getId).orElse(null);
 	}
 
 	@Override
-	public User getUserByPhone(String phone) {
+	public Optional<User> getUserByPhone(String phone) {
 		return userRepository.findByPhone(phone);
 	}
 
 	@Override
-	public User getUserByUsername(String username) {
+	public Optional<User> getUserByUsername(String username) {
 		return userRepository.findByUsername(username);
 	}
 

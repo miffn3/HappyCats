@@ -9,8 +9,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-import university.happyCatsSpring.entity.JwtRequest;
-import university.happyCatsSpring.entity.User;
+import university.happyCatsSpring.dto.RegistrationDto;
+import university.happyCatsSpring.dto.JwtRequest;
 import university.happyCatsSpring.security.JwtToken;
 import university.happyCatsSpring.service.iface.UserService;
 import university.happyCatsSpring.service.impl.JwtUserDetailsService;
@@ -18,7 +18,9 @@ import university.happyCatsSpring.service.impl.JwtUserDetailsService;
 import javax.xml.bind.ValidationException;
 
 @RestController
+@RequestMapping("/auth")
 public class AuthenticationController {
+
     private UserService userService;
     private AuthenticationManager authenticationManager;
     private JwtUserDetailsService jwtUserDetailsService;
@@ -33,8 +35,8 @@ public class AuthenticationController {
         this.jwtToken = jwtToken;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequest authenticationRequest) throws Exception {
+    @PostMapping("/sigin")
+    public ResponseEntity<?> signin(@RequestBody JwtRequest authenticationRequest) throws Exception {
         authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
         UserDetails userDetails = jwtUserDetailsService
                 .loadUserByUsername(authenticationRequest.getUsername());
@@ -42,15 +44,22 @@ public class AuthenticationController {
         return ResponseEntity.ok("Bearer " + token);
     }
 
-    @PostMapping("/registration")
-    public Boolean create(@RequestBody User body) throws ValidationException
+    @PostMapping("/signup")
+    public ResponseEntity<?> signup(@RequestBody RegistrationDto body) throws ValidationException
     {
-        if (userService.existsUserByUsername(body.getUsername())) {
-            throw new ValidationException("username already existed");
+        String username = body.getUsername();
+        if (userService.existsUserByUsername(username)) {
+            throw new ValidationException("Username already existed");
         }
+
         String encodedPassword = new BCryptPasswordEncoder().encode(body.getPassword());
-        userService.createUser(body.getUsername(), encodedPassword, body.getPhone(), "TMP");
-        return true;
+        userService.createUser(username, encodedPassword, body.getName(), body.getEmail());
+
+        UserDetails userDetails = jwtUserDetailsService
+                .loadUserByUsername(username);
+        String token = jwtToken.generateToken(userDetails);
+
+        return ResponseEntity.ok("Bearer " + token);
     }
 
     private void authenticate(String username, String password) throws Exception {
