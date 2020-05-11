@@ -1,4 +1,4 @@
-package university.happyCatsSpring.entity;
+package university.happyCatsSpring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
