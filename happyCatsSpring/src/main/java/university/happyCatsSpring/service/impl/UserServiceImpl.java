@@ -1,5 +1,6 @@
 package university.happyCatsSpring.service.impl;
 
+import university.happyCatsSpring.dto.UpdateUserDto;
 import university.happyCatsSpring.entity.User;
 import university.happyCatsSpring.repo.UserRepository;
 import university.happyCatsSpring.service.iface.UserService;
@@ -17,6 +18,50 @@ public class UserServiceImpl implements UserService {
 	public void createUser(String username, String password, String name, String email) {
 		User user = new User(username, password, name, email);
 		userRepository.save(user);
+	}
+
+	@Override
+	public User updateUser(String username, UpdateUserDto updateUserDto) {
+		Optional<User> userOptional = getUserByUsername(username);
+		User user;
+		if (userOptional.isPresent()) {
+			user = userOptional.get();
+		} else return null;
+
+		String newUsername = updateUserDto.getUsername();
+		String newPassword = updateUserDto.getPassword();
+		String newBirthday = updateUserDto.getBirthday();
+		String newName = updateUserDto.getName();
+		String newPhoto = updateUserDto.getPhoto();
+		String newPhone = updateUserDto.getPhone();
+		String newEmail = updateUserDto.getEmail();
+		String newNote = updateUserDto.getNote();
+
+		if(newUsername!= null)
+			user.setUsername(newUsername);
+
+		if(newPassword!= null)
+			user.setPassword(newPassword);
+
+		if(newName!= null)
+			user.setName(newName);
+
+		if(newBirthday!= null)
+			user.setBirthday(newBirthday);
+
+		if(newPhoto!= null)
+			user.setPhoto(newPhoto);
+
+		if(newPhone!= null)
+			user.setPhone(newPhone);
+
+		if(newEmail!= null)
+			user.setEmail(newEmail);
+
+		if(newNote!= null)
+			user.setNote(newNote);
+
+		return userRepository.save(user);
 	}
 
 	@Override
