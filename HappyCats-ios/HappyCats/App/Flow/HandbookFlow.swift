@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class HandbookFlow: Flow {
+final class HandbookFlow: Flow {
     
     private let rootViewController = UINavigationController()
     private let services: ServicesContainer
@@ -27,7 +27,6 @@ class HandbookFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-
         guard let step = step as? AppStep else { return .none }
 
         switch step {

@@ -9,7 +9,7 @@
 import RxFlow
 import RxCocoa
 
-class HandbookVM: Stepper {
+final class HandbookVM: Stepper {
     let steps = PublishRelay<Step>()
     var cats = [Cat]()
     var disease = [Disease]()

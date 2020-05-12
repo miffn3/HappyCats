@@ -10,7 +10,7 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-class RegistrationVM: Stepper {
+final class RegistrationVM: Stepper {
     let steps = PublishRelay<Step>()
     
     private let disposeBag = DisposeBag()

@@ -9,7 +9,7 @@
 import RxFlow
 import RxCocoa
 
-class NewsListVM: Stepper {
+final class NewsListVM: Stepper {
     let steps = PublishRelay<Step>()
     var news = [News]()
     

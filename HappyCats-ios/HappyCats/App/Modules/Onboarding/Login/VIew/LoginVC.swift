@@ -9,19 +9,19 @@
 import UIKit
 import RxSwift
 
-class LoginVC: UIViewController {
+final class LoginVC: UIViewController {
     
     private var model: LoginVM!
     private var disposeBag = DisposeBag()
 
-    @IBOutlet weak var loginView: UIView!
-    @IBOutlet weak var viewTitle: UILabel!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var loginField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var registrationButton: UIButton!
+    @IBOutlet private weak var loginView: UIView!
+    @IBOutlet private weak var viewTitle: UILabel!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var loginField: UITextField!
+    @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var registrationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

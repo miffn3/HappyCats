@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class OnboardingFlow: Flow {
+final class OnboardingFlow: Flow {
     
     private var rootViewController = UINavigationController()
     private let services: ServicesContainer

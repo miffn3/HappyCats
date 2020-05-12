@@ -12,7 +12,7 @@ import RxFlow
 import RxSwift
 import RxCocoa
 
-class AppFlow: Flow {
+final class AppFlow: Flow {
     
     private let window: UIWindow
     private let services: ServicesContainer

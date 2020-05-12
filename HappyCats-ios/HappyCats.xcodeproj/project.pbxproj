@@ -30,9 +30,6 @@
 		8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB562465523E00745B49 /* AppearanceManager.swift */; };
 		8780DB592465598600745B49 /* NotoSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB322464436C00745B49 /* NotoSans.ttf */; };
 		8780DB5B246563C100745B49 /* HandbookFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB5A246563C100745B49 /* HandbookFlow.swift */; };
-		8780DB632465647B00745B49 /* CatsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB612465647B00745B49 /* CatsListVC.swift */; };
-		8780DB642465647B00745B49 /* CatsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB622465647B00745B49 /* CatsListVC.xib */; };
-		8780DB66246564A100745B49 /* CatsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB65246564A100745B49 /* CatsListVM.swift */; };
 		8780DB68246564F500745B49 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB67246564F500745B49 /* Cat.swift */; };
 		8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB6C246569BA00745B49 /* NewsDetailVC.swift */; };
 		8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB6D246569BA00745B49 /* NewsDetailVC.xib */; };
@@ -105,9 +102,6 @@
 		8780DB522464648500745B49 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		8780DB562465523E00745B49 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		8780DB5A246563C100745B49 /* HandbookFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookFlow.swift; sourceTree = "<group>"; };
-		8780DB612465647B00745B49 /* CatsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVC.swift; sourceTree = "<group>"; };
-		8780DB622465647B00745B49 /* CatsListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsListVC.xib; sourceTree = "<group>"; };
-		8780DB65246564A100745B49 /* CatsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVM.swift; sourceTree = "<group>"; };
 		8780DB67246564F500745B49 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		8780DB6C246569BA00745B49 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		8780DB6D246569BA00745B49 /* NewsDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailVC.xib; sourceTree = "<group>"; };
@@ -356,43 +350,8 @@
 			isa = PBXGroup;
 			children = (
 				8780DB72246596D600745B49 /* Main */,
-				8780DB5D2465644500745B49 /* Cats */,
 			);
 			path = Handbook;
-			sourceTree = "<group>";
-		};
-		8780DB5D2465644500745B49 /* Cats */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB5E2465645000745B49 /* CatsList */,
-			);
-			path = Cats;
-			sourceTree = "<group>";
-		};
-		8780DB5E2465645000745B49 /* CatsList */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB5F2465645800745B49 /* Model */,
-				8780DB602465645C00745B49 /* View */,
-			);
-			path = CatsList;
-			sourceTree = "<group>";
-		};
-		8780DB5F2465645800745B49 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB65246564A100745B49 /* CatsListVM.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8780DB602465645C00745B49 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB612465647B00745B49 /* CatsListVC.swift */,
-				8780DB622465647B00745B49 /* CatsListVC.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8780DB692465698F00745B49 /* NewsDetail */ = {
@@ -645,7 +604,6 @@
 				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
 				8780DB592465598600745B49 /* NotoSans.ttf in Resources */,
-				8780DB642465647B00745B49 /* CatsListVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -743,7 +701,6 @@
 				87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
-				8780DB66246564A100745B49 /* CatsListVM.swift in Sources */,
 				87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
@@ -753,7 +710,6 @@
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
 				8780DB1F24642AF200745B49 /* AppFlow.swift in Sources */,
 				87D838E4246980630052C52A /* HandbookVM.swift in Sources */,
-				8780DB632465647B00745B49 /* CatsListVC.swift in Sources */,
 				8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */,
 				8780DB482464516B00745B49 /* News.swift in Sources */,
 				8780DB4C2464539D00745B49 /* NewsTVC.swift in Sources */,

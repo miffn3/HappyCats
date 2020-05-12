@@ -13,7 +13,7 @@ struct UserPreferences {
     static let onBoarded = "onBoarded"
 }
 
-class PreferencesService {
+final class PreferencesService {
     private let defaults = UserDefaults.standard
 
     func setOnboarded () {

@@ -9,22 +9,22 @@
 import UIKit
 import RxSwift
 
-class RegistrationVC: UIViewController {
+final class RegistrationVC: UIViewController {
     
     private var model: RegistrationVM!
 
-    @IBOutlet weak var registrationView: UIView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var nameField: UITextField!
-    @IBOutlet weak var emailLabel: UILabel!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var loginLabel: UILabel!
-    @IBOutlet weak var loginField: UITextField!
-    @IBOutlet weak var passwordLabel: UILabel!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var registrationButton: UIButton!
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet private weak var registrationView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var nameLabel: UILabel!
+    @IBOutlet private weak var nameField: UITextField!
+    @IBOutlet private weak var emailLabel: UILabel!
+    @IBOutlet private weak var emailField: UITextField!
+    @IBOutlet private weak var loginLabel: UILabel!
+    @IBOutlet private weak var loginField: UITextField!
+    @IBOutlet private weak var passwordLabel: UILabel!
+    @IBOutlet private weak var passwordField: UITextField!
+    @IBOutlet private weak var registrationButton: UIButton!
+    @IBOutlet private weak var loginButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

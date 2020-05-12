@@ -9,9 +9,9 @@
 import RxFlow
 
 enum AppStep: Step {
-    
     // Main
     case dashboard
+    case onboarding
     
     // News
     case newsList
@@ -20,10 +20,11 @@ enum AppStep: Step {
     // Handbook
     case handbook
     
-    // Onboarding
-    case onboarding
+    // Sign In
     case login
     case loginIsComplete
+    
+    // Sign Up
     case registration
     case registrationIsComplete
 }

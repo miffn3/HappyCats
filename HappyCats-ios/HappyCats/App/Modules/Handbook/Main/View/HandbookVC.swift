@@ -8,28 +8,32 @@
 
 import UIKit
 
-class HandbookVC: UIViewController {
+final class HandbookVC: UIViewController {
 
     private var model: HandbookVM!
     private var buttonWidth: CGFloat = 100
     private var selectedButton = Constants.SelectedButton.cats
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var catsButton: UIButton!
-    @IBOutlet weak var diseaseButton: UIButton!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var catsButtonWidth: NSLayoutConstraint!
-    @IBOutlet weak var diseaseButtonWidth: NSLayoutConstraint!
+    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet private weak var catsButton: UIButton!
+    @IBOutlet private weak var diseaseButton: UIButton!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var catsButtonWidth: NSLayoutConstraint!
+    @IBOutlet private weak var diseaseButtonWidth: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonWidth = CGFloat(UIScreen.main.bounds.width / 2 - 15)
-        configButtons()
-        configTable()
+        buildUI()
     }
     
     func setModel(model: HandbookVM) {
         self.model = model
+    }
+    
+    private func buildUI() {
+        configButtons()
+        configTable()
     }
     
     private func configButtons() {

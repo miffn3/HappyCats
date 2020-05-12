@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsListVC: UIViewController {
+final class NewsListVC: UIViewController {
     
     private var model: NewsListVM!
 

@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class DashboardFlow: Flow {
+final class DashboardFlow: Flow {
     
     private let services: ServicesContainer
     

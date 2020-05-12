@@ -9,7 +9,7 @@
 import RxFlow
 import RxCocoa
 
-class NewsDetailVM: Stepper {
+final class NewsDetailVM: Stepper {
     
     private var id: Int
     
