@@ -6,7 +6,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
-import university.happyCatsSpring.dto.RegistrationDto;
 import university.happyCatsSpring.dto.UpdateUserDto;
 import university.happyCatsSpring.entity.User;
 import university.happyCatsSpring.service.iface.UserService;
