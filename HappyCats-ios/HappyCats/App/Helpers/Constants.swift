@@ -14,6 +14,8 @@ enum Constants {
         enum Main {
             static let color = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
             static let font = R.font.notoSans(size: 17)
+            static let smallFont = R.font.notoSans(size: 14)
+            static let titleFont = R.font.notoSans(size: 24)
             static let fontColor = UIColor.black
             static let alternativeFontColor = UIColor.white
         }
@@ -26,6 +28,10 @@ enum Constants {
         enum Button {
             static let cornerRadius: CGFloat = 5
             static let borderWidth: CGFloat = 1
+        }
+        
+        enum View {
+            static let cornerRadius: CGFloat = 10
         }
     }
     

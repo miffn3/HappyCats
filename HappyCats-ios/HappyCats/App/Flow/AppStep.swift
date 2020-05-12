@@ -19,4 +19,11 @@ enum AppStep: Step {
     
     // Handbook
     case handbook
+    
+    // Onboarding
+    case onboarding
+    case login
+    case loginIsComplete
+    case registration
+    case registrationIsComplete
 }

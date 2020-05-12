@@ -44,6 +44,6 @@ class HandbookFlow: Flow {
         vc.title = R.string.localizable.handbookTitle()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: vc, withNextStepper: model))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
 }

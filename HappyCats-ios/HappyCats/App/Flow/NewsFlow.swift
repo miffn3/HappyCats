@@ -54,6 +54,6 @@ class NewsFlow: Flow {
         let vc = NewsDetailVC()
         vc.setModel(model: model)
         self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: vc, withNextStepper: model))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
 }

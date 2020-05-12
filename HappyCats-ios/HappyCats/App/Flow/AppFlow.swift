@@ -36,6 +36,8 @@ class AppFlow: Flow {
         switch step {
         case .dashboard:
             return navigationToDashboardScreen()
+        case .onboarding:
+            return navigationToOnboarding()
         default:
             return .none
         }
@@ -50,6 +52,16 @@ class AppFlow: Flow {
         
         return .one(flowContributor: FlowContributor.contribute(withNextPresentable: dashboardFlow, withNextStepper: OneStepper(withSingleStep: AppStep.dashboard)))
     }
+    
+    private func navigationToOnboarding() -> FlowContributors {
+        let onboardingFlow = OnboardingFlow(withServices: services)
+        
+        Flows.whenReady(flow1: onboardingFlow) { [unowned self] (root) in
+            self.window.rootViewController = root
+        }
+        
+        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: onboardingFlow, withNextStepper: OneStepper(withSingleStep: AppStep.login)))
+    }
 }
 
 class AppStepper: Stepper {
@@ -63,7 +75,16 @@ class AppStepper: Stepper {
     }
 
     var initialStep: Step {
-        return AppStep.dashboard
+        return AppStep.onboarding
+    }
+    
+    func readyToEmitSteps() {
+        self.servicesContainer
+            .preferencesService.rx
+            .isOnboarded
+            .map { $0 ? AppStep.dashboard : AppStep.onboarding }
+            .bind(to: self.steps)
+            .disposed(by: self.disposeBag)
     }
 }
 
