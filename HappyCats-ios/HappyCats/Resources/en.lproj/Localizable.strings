@@ -4,14 +4,14 @@ handbook.title = "Handbook";
 cats.title = "Breeds";
 disease.title = "Diseason";
 
-onboarding.login.title = "Sign In";
-onboarding.login.readyButton = "Sign In";
-onboarding.login.registrationButton = "Don't have an accaunt? Sign Up";
-onboarding.registration.title = "Sign Up";
-onboarding.registration.readyButton = "Sign Up";
-onboarding.registration.loginButton = "Already have an accaunt? Sign In";
-onboarding.user.name = "Name";
-onboarding.user.email = "Email";
-onboarding.user.login = "Login";
-onboarding.user.password = "Password";
+auth.login.title = "Sign In";
+auth.login.readyButton = "Sign In";
+auth.login.registrationButton = "Don't have an accaunt? Sign Up";
+auth.registration.title = "Sign Up";
+auth.registration.readyButton = "Sign Up";
+auth.registration.loginButton = "Already have an accaunt? Sign In";
+auth.user.name = "Name";
+auth.user.email = "Email";
+auth.user.login = "Login";
+auth.user.password = "Password";
 

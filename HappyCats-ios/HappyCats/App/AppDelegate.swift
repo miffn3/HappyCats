@@ -10,6 +10,7 @@ import UIKit
 import RxFlow
 import RxSwift
 import IQKeyboardManagerSwift
+import AlamofireNetworkActivityLogger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,13 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.coordinator.coordinate(flow: appFlow, with: AppStepper(withServices: servicesContainer))
         
         IQKeyboardManager.shared.enable = true
+        NetworkActivityLogger.shared.startLogging()
+        NetworkActivityLogger.shared.level = .debug
 
         return true
     }
     
     func buildServicesContainer() -> ServicesContainer {
         let preferencesService = PreferencesService()
-        return ServicesContainer(preferencesService: preferencesService)
+        preferencesService.setNotOnboarded()
+        let userService = UserService()
+        return ServicesContainer(preferencesService: preferencesService,
+                                 userService: userService)
     }
 }
 

@@ -39,15 +39,15 @@ final class LoginVC: UIViewController {
         loginView.layer.cornerRadius = Constants.UI.View.cornerRadius
         
         buildTitleLabel()
-        buildLabel(label: loginLabel, withText: R.string.localizable.onboardingUserLogin())
-        buildLabel(label: passwordLabel, withText: R.string.localizable.onboardingUserPassword())
+        buildLabel(label: loginLabel, withText: R.string.localizable.authUserLogin())
+        buildLabel(label: passwordLabel, withText: R.string.localizable.authUserPassword())
 
         buildLoginButton()
         buildRegistrationButton()
     }
     
     private func buildTitleLabel() {
-        viewTitle.text = R.string.localizable.onboardingLoginTitle()
+        viewTitle.text = R.string.localizable.authLoginTitle()
         viewTitle.font = Constants.UI.Main.titleFont
     }
     
@@ -57,7 +57,7 @@ final class LoginVC: UIViewController {
     }
     
     private func buildLoginButton() {
-        loginButton.setTitle(R.string.localizable.onboardingLoginReadyButton(), for: .normal)
+        loginButton.setTitle(R.string.localizable.authLoginReadyButton(), for: .normal)
         loginButton.titleLabel?.font = Constants.UI.Main.font
         loginButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         loginButton.backgroundColor = Constants.UI.Main.color
@@ -65,7 +65,7 @@ final class LoginVC: UIViewController {
     }
     
     private func buildRegistrationButton() {
-        registrationButton.setTitle(R.string.localizable.onboardingLoginRegistrationButton(), for: .normal)
+        registrationButton.setTitle(R.string.localizable.authLoginRegistrationButton(), for: .normal)
         registrationButton.titleLabel?.font = Constants.UI.Main.smallFont
         registrationButton.tintColor = Constants.UI.Main.color
     }
@@ -73,7 +73,9 @@ final class LoginVC: UIViewController {
     private func bindUI() {
         let loginButtonClick = Observable<Void>.merge(loginButton.rx.tap.asObservable())
         let registrationButtonClick = Observable<Void>.merge(registrationButton.rx.tap.asObservable())
-        let input = LoginVM.Input(loginButtonClick: loginButtonClick,
+        let input = LoginVM.Input(loginField: loginField.rx.text.asObservable(),
+                                  passwordField: passwordField.rx.text.asObservable(),
+                                  loginButtonClick: loginButtonClick,
                                   registrationButtonClick: registrationButtonClick)
         let output = model.transform(input: input)
     }

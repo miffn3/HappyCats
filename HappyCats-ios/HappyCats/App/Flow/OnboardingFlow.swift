@@ -42,7 +42,8 @@ final class OnboardingFlow: Flow {
     }
     
     private func navigationToLoginScreen() -> FlowContributors {
-        let model = LoginVM()
+        let model = LoginVM(userService: services.userService,
+                            preferencesService: services.preferencesService)
         let vc = LoginVC()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: false)
@@ -50,7 +51,8 @@ final class OnboardingFlow: Flow {
     }
     
     private func navigationToRegistration() -> FlowContributors {
-        let model = RegistrationVM()
+        let model = RegistrationVM(userService: services.userService,
+                                   preferencesService: services.preferencesService)
         let vc = RegistrationVC()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: false)

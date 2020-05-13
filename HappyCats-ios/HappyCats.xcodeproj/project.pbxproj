@@ -48,6 +48,10 @@
 		87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838F8246ABA470052C52A /* RegistrationVM.swift */; };
 		87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838FA246ABAD80052C52A /* RegistrationVC.swift */; };
 		87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838FB246ABAD80052C52A /* RegistrationVC.xib */; };
+		87D838FF246ACB7F0052C52A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838FE246ACB7F0052C52A /* UserService.swift */; };
+		87D83901246ACDB30052C52A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83900246ACDB30052C52A /* User.swift */; };
+		87D83904246AE8380052C52A /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83903246AE8380052C52A /* AuthAPI.swift */; };
+		87D83906246AE94F0052C52A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83905246AE94F0052C52A /* AuthResponse.swift */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +124,10 @@
 		87D838F8246ABA470052C52A /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
 		87D838FA246ABAD80052C52A /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		87D838FB246ABAD80052C52A /* RegistrationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVC.xib; sourceTree = "<group>"; };
+		87D838FE246ACB7F0052C52A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		87D83900246ACDB30052C52A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87D83903246AE8380052C52A /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		87D83905246AE94F0052C52A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -225,6 +233,7 @@
 				8780DAF024642A5F00745B49 /* LaunchScreen.storyboard */,
 				8780DAF324642A5F00745B49 /* Info.plist */,
 				8780DB1724642A9000745B49 /* Flow */,
+				87D83902246AE7EA0052C52A /* API */,
 				8780DB2024642B0C00745B49 /* Services */,
 				8780DB462464514F00745B49 /* Models */,
 				8780DB4E24645F0E00745B49 /* Helpers */,
@@ -251,6 +260,7 @@
 			children = (
 				8780DB2224642B4600745B49 /* ServicesContainer.swift */,
 				87D838E52469816F0052C52A /* PreferecesService.swift */,
+				87D838FE246ACB7F0052C52A /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -315,6 +325,8 @@
 				8780DB472464516B00745B49 /* News.swift */,
 				8780DB67246564F500745B49 /* Cat.swift */,
 				8780DB882465B35400745B49 /* Disease.swift */,
+				87D83900246ACDB30052C52A /* User.swift */,
+				87D83905246AE94F0052C52A /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -475,6 +487,14 @@
 				87D838F8246ABA470052C52A /* RegistrationVM.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		87D83902246AE7EA0052C52A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				87D83903246AE8380052C52A /* AuthAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		AE0D49EA3E9314EE5AC84F03 /* Frameworks */ = {
@@ -694,17 +714,21 @@
 				8780DB5B246563C100745B49 /* HandbookFlow.swift in Sources */,
 				8780DB1C24642AF200745B49 /* AppStep.swift in Sources */,
 				87D838E62469816F0052C52A /* PreferecesService.swift in Sources */,
+				87D83906246AE94F0052C52A /* AuthResponse.swift in Sources */,
 				8780DB4524644DD500745B49 /* R.generated.swift in Sources */,
 				8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */,
 				8780DB1E24642AF200745B49 /* NewsFlow.swift in Sources */,
+				87D83901246ACDB30052C52A /* User.swift in Sources */,
 				8780DB892465B35400745B49 /* Disease.swift in Sources */,
 				87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */,
+				87D83904246AE8380052C52A /* AuthAPI.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
 				87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
 				8780DB68246564F500745B49 /* Cat.swift in Sources */,
+				87D838FF246ACB7F0052C52A /* UserService.swift in Sources */,
 				8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */,
 				87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,

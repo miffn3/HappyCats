@@ -9,5 +9,6 @@
 import Foundation
 
 struct ServicesContainer {
-     let preferencesService: PreferencesService
+    let preferencesService: PreferencesService
+    let userService: UserService
 }

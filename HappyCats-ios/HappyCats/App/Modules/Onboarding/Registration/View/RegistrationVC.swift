@@ -42,17 +42,17 @@ final class RegistrationVC: UIViewController {
         registrationView.layer.cornerRadius = Constants.UI.View.cornerRadius
         
         buildTitleLabel()
-        buildLabel(label: nameLabel, withText: R.string.localizable.onboardingUserName())
-        buildLabel(label: emailLabel, withText: R.string.localizable.onboardingUserEmail())
-        buildLabel(label: loginLabel, withText: R.string.localizable.onboardingUserLogin())
-        buildLabel(label: passwordLabel, withText: R.string.localizable.onboardingUserPassword())
+        buildLabel(label: nameLabel, withText: R.string.localizable.authUserName())
+        buildLabel(label: emailLabel, withText: R.string.localizable.authUserEmail())
+        buildLabel(label: loginLabel, withText: R.string.localizable.authUserLogin())
+        buildLabel(label: passwordLabel, withText: R.string.localizable.authUserPassword())
 
         buildLoginButton()
         buildRegistrationButton()
     }
     
     private func buildTitleLabel() {
-        titleLabel.text = R.string.localizable.onboardingRegistrationTitle()
+        titleLabel.text = R.string.localizable.authRegistrationTitle()
         titleLabel.font = Constants.UI.Main.titleFont
     }
     
@@ -62,7 +62,7 @@ final class RegistrationVC: UIViewController {
     }
     
     private func buildRegistrationButton() {
-        registrationButton.setTitle(R.string.localizable.onboardingRegistrationReadyButton(), for: .normal)
+        registrationButton.setTitle(R.string.localizable.authRegistrationReadyButton(), for: .normal)
         registrationButton.titleLabel?.font = Constants.UI.Main.font
         registrationButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         registrationButton.backgroundColor = Constants.UI.Main.color
@@ -70,7 +70,7 @@ final class RegistrationVC: UIViewController {
     }
     
     private func buildLoginButton() {
-        loginButton.setTitle(R.string.localizable.onboardingRegistrationLoginButton(), for: .normal)
+        loginButton.setTitle(R.string.localizable.authRegistrationLoginButton(), for: .normal)
         loginButton.titleLabel?.font = Constants.UI.Main.smallFont
         loginButton.tintColor = Constants.UI.Main.color
     }
@@ -78,7 +78,11 @@ final class RegistrationVC: UIViewController {
     private func bindUI() {
         let registrationButtonClick = Observable<Void>.merge(registrationButton.rx.tap.asObservable())
         let loginButtonClick = Observable<Void>.merge(loginButton.rx.tap.asObservable())
-        let input = RegistrationVM.Input(registrationButtonClick: registrationButtonClick,
+        let input = RegistrationVM.Input(nameField: nameField.rx.text.asObservable(),
+                                         emailField: emailField.rx.text.asObservable(),
+                                         loginField: loginField.rx.text.asObservable(),
+                                         passwordField: passwordField.rx.text.asObservable(),
+                                         registrationButtonClick: registrationButtonClick,
                                          loginButtonClick: loginButtonClick)
         let output = model.transform(input: input)
     }

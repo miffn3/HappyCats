@@ -10,6 +10,12 @@ import Foundation
 import UIKit
 
 enum Constants {
+    enum API {
+        static let mainURL = "http://localhost:8080"
+        static let loginURL = "/auth/sigin"
+        static let registrationURL = "/auth/signup"
+    }
+    
     enum UI {
         enum Main {
             static let color = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
