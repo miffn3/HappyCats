@@ -13,6 +13,7 @@ public interface UserService {
 	Long getUserIdByUsername(String username);
 	Optional<User> getUserByPhone(String phone);
 	Optional<User> getUserByUsername(String username);
+	Optional<User> getUserById(Long id);
 	boolean existsUserByUsername(String username);
 	boolean existsUserByPhone(String phone);
 }

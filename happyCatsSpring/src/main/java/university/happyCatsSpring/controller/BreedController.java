@@ -9,7 +9,7 @@ import university.happyCatsSpring.service.iface.BreedService;
 
 import java.util.List;
 
-@RestController
+@RestController("/breeds")
 public class BreedController {
 
     private BreedService breedService;

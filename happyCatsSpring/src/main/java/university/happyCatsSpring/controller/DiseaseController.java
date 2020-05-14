@@ -9,7 +9,7 @@ import university.happyCatsSpring.service.iface.DiseaseService;
 
 import java.util.List;
 
-@RestController
+@RestController("/diseases")
 public class DiseaseController {
 
     private DiseaseService diseaseService;

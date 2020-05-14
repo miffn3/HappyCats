@@ -81,6 +81,11 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	public Optional<User> getUserById(Long id) {
+		return userRepository.findById(id);
+	}
+
+	@Override
 	public boolean existsUserByPhone(String phone) {
 		return userRepository.existsUserByPhone(phone);
 	}
