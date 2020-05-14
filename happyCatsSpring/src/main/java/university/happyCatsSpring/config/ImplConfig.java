@@ -2,12 +2,10 @@ package university.happyCatsSpring.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import university.happyCatsSpring.repo.NewsRepository;
-import university.happyCatsSpring.repo.UserRepository;
-import university.happyCatsSpring.service.iface.NewsService;
-import university.happyCatsSpring.service.iface.UserService;
-import university.happyCatsSpring.service.impl.NewsServiceImpl;
-import university.happyCatsSpring.service.impl.UserServiceImpl;
+import university.happyCatsSpring.entity.Disease;
+import university.happyCatsSpring.repo.*;
+import university.happyCatsSpring.service.iface.*;
+import university.happyCatsSpring.service.impl.*;
 
 @Configuration
 public class ImplConfig {
@@ -19,5 +17,20 @@ public class ImplConfig {
 	@Bean
 	public NewsService newsService(NewsRepository newsRepository) {
 		return new NewsServiceImpl(newsRepository);
+	}
+
+	@Bean
+	public CatService catService(CatRepository catRepository) {
+		return new CatServiceImpl(catRepository);
+	}
+
+	@Bean
+	public BreedService breedService(BreedRepository breedRepository) {
+		return new BreedServiceImpl(breedRepository);
+	}
+
+	@Bean
+	public DiseaseService diseaseService(DiseaseRepository diseaseRepository) {
+		return new DiseaseServiceImpl(diseaseRepository);
 	}
 }
