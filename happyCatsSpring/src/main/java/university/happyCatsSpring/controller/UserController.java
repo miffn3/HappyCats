@@ -49,4 +49,22 @@ public class UserController {
 
         return ResponseEntity.ok(user);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<User> getUserById(@PathVariable(value = "id") Long id) {
+
+        Optional<User> userOptional = userService.getUserById(id);
+
+        User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("Username with id " + id + "not found"));
+        return ResponseEntity.ok(user);
+    }
+
+    @GetMapping("/username/{username}")
+    public ResponseEntity<User> getUserByUserName(@PathVariable(value = "username") String username) {
+
+        Optional<User> userOptional = userService.getUserByUsername(username);
+
+        User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("Username " + username + "not found"));
+        return ResponseEntity.ok(user);
+    }
 }
