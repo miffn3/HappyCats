@@ -18,7 +18,8 @@ public class DemoData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         String encodedPassword = new BCryptPasswordEncoder().encode("password");
-        User user1 = new User("user1", encodedPassword, "name", "user1@mail.com");
+        User user1 = new User("user1", encodedPassword, "name", "https://sun9-58.userapi.com/c857032/v857032865/14223b/-T7d9p_PZqw.jpg",
+                "19/04/1998", "+7-999-888-77-66", "user1@mail.com", "note");
         userRepository.save(user1);
 
         User user2 = new User("user2", encodedPassword, "name", "user2@mail.com");
