@@ -5,6 +5,7 @@ import university.happyCatsSpring.repo.DiseaseRepository;
 import university.happyCatsSpring.service.iface.DiseaseService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class DiseaseServiceImpl implements DiseaseService {
 
@@ -17,5 +18,10 @@ public class DiseaseServiceImpl implements DiseaseService {
     @Override
     public List<Disease> findAll() {
         return diseaseRepository.findAll();
+    }
+
+    @Override
+    public Optional<Disease> findById(Long id) {
+        return diseaseRepository.findById(id);
     }
 }

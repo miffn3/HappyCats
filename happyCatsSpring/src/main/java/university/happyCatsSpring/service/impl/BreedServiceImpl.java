@@ -5,6 +5,7 @@ import university.happyCatsSpring.repo.BreedRepository;
 import university.happyCatsSpring.service.iface.BreedService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class BreedServiceImpl implements BreedService {
 
@@ -17,5 +18,10 @@ public class BreedServiceImpl implements BreedService {
     @Override
     public List<Breed> findAll() {
         return breedRepository.findAll();
+    }
+
+    @Override
+    public Optional<Breed> findById(Long id) {
+        return breedRepository.findById(id);
     }
 }
