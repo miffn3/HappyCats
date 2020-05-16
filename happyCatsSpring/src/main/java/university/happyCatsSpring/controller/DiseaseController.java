@@ -20,7 +20,7 @@ public class DiseaseController {
 
     }
 
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/alldiseases")
     public ResponseEntity<List<Disease>> listDisease() {
         return ResponseEntity.ok(diseaseService.findAll());
     }

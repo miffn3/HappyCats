@@ -21,7 +21,7 @@ public class CatController {
 
     }
 
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/allcats")
     public ResponseEntity<List<Cat>> listCats() {
         return ResponseEntity.ok(catService.findAll());
     }
