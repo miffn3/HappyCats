@@ -14,7 +14,7 @@ struct AuthAPI {
     static func login(login: String, password: String) -> Observable<AuthResponse> {
         return Observable.create { observer -> Disposable in
             let param = ["username": login, "password": password]
-            Alamofire.request("\(Constants.API.mainURL)\(Constants.API.loginURL)",
+            Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.loginURL)",
                               method: .post,
                               parameters: param,
                               encoding: JSONEncoding.default)
@@ -36,7 +36,7 @@ struct AuthAPI {
     static func registration(email: String, name: String, password: String, userName: String) -> Observable<AuthResponse> {
         return Observable.create { observer -> Disposable in
             let param = ["email": email, "name": name, "password": password, "username": userName]
-            Alamofire.request("\(Constants.API.mainURL)\(Constants.API.registrationURL)",
+            Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.registrationURL)",
                               method: .post,
                               parameters: param,
                               encoding: JSONEncoding.default)

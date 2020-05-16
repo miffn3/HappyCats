@@ -24,6 +24,6 @@ final class NewsListVM: Stepper {
     }
     
     public func pick(newsId: Int) {
-        self.steps.accept(AppStep.newsDetail(withId: newsId))
+        steps.accept(AppStep.newsDetail(withId: newsId))
     }
 }

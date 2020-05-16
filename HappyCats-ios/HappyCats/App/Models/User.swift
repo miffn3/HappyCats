@@ -13,4 +13,21 @@ struct User: Codable {
     var login: String?
     var name: String?
     var email: String?
+    var phone: String?
+    var birthday: String?
+    var photo: String?
+    var note: String?
+    
+    enum CodingKeys : String, CodingKey {
+        case id
+        case login = "username"
+        case name
+        case email
+        case phone
+        case birthday
+        case photo
+        case note
+    }
 }
+
+

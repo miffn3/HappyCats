@@ -11,9 +11,16 @@ import UIKit
 
 enum Constants {
     enum API {
-        static let mainURL = "http://localhost:8080"
-        static let loginURL = "/auth/sigin"
-        static let registrationURL = "/auth/signup"
+        enum URL {
+            static let mainURL = "http://localhost:8080"
+            static let loginURL = "/auth/sigin"
+            static let registrationURL = "/auth/signup"
+            static let user = "/users/me"
+        }
+        
+        enum Headers {
+            static let auth = "Authorization"
+        }
     }
     
     enum UI {
@@ -44,6 +51,12 @@ enum Constants {
     enum Cells {
         static let news = "NewsTVC"
         static let handbook = "HandbookTVC"
+        static let mainProfile = "MainProfileTVC"
+        
+        enum MainProfileCellType {
+            case myProfile
+            case myCats
+        }
     }
     
     enum SelectedButton {

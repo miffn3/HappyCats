@@ -4,14 +4,28 @@ handbook.title = "Handbook";
 cats.title = "Breeds";
 disease.title = "Diseason";
 
+button.save = "Save";
+
 auth.login.title = "Sign In";
 auth.login.readyButton = "Sign In";
 auth.login.registrationButton = "Don't have an accaunt? Sign Up";
+
 auth.registration.title = "Sign Up";
 auth.registration.readyButton = "Sign Up";
 auth.registration.loginButton = "Already have an accaunt? Sign In";
+
 auth.user.name = "Name";
 auth.user.email = "Email";
 auth.user.login = "Login";
 auth.user.password = "Password";
 
+profile.mainProfile.title = "Profile";
+
+profile.myProfile.title = "My profile";
+profile.myProfile.name = "Name";
+profile.myProfile.login = "Login";
+profile.myProfile.email = "Email";
+profile.myProfile.phone = "Phone";
+profile.myProfile.birthday = "Birthday";
+
+profile.myCats.title = "My cats";

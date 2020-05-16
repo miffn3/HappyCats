@@ -46,7 +46,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func buildServicesContainer() -> ServicesContainer {
         let preferencesService = PreferencesService()
-        preferencesService.setNotOnboarded()
         let userService = UserService()
         return ServicesContainer(preferencesService: preferencesService,
                                  userService: userService)

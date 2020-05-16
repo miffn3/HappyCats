@@ -27,4 +27,9 @@ enum AppStep: Step {
     // Sign Up
     case registration
     case registrationIsComplete
+    
+    // Profile
+    case mainProfile
+    case myProfile
+    case myCats
 }

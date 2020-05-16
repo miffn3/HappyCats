@@ -10,5 +10,6 @@ target 'HappyCats' do
   pod 'IQKeyboardManagerSwift'
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger'
+  pod 'Kingfisher'
   
 end
