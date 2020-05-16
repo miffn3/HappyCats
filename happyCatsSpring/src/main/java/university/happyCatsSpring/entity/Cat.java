@@ -25,8 +25,8 @@ public class Cat {
 
     private String note;
 
-    @ManyToMany
-    private Set<Breed> breeds;
+    @ManyToOne
+    private Breed breed;
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
@@ -37,5 +37,10 @@ public class Cat {
         this.photo = photo;
         this.birthday = birthday;
         this.note = note;
+    }
+
+    public Cat(String name, Breed breed) {
+        this.name = name;
+        this.breed = breed;
     }
 }

@@ -20,8 +20,9 @@ public class ImplConfig {
 	}
 
 	@Bean
-	public CatService catService(CatRepository catRepository) {
-		return new CatServiceImpl(catRepository);
+	public CatService catService(CatRepository catRepository, UserRepository userRepository,
+								 BreedRepository breedRepository) {
+		return new CatServiceImpl(catRepository, userRepository, breedRepository);
 	}
 
 	@Bean
