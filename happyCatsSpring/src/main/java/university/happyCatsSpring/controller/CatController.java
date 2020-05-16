@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import university.happyCatsSpring.entity.Cat;
 import university.happyCatsSpring.service.iface.CatService;
@@ -11,7 +12,8 @@ import university.happyCatsSpring.service.iface.CatService;
 import java.util.List;
 import java.util.Optional;
 
-@RestController("/cats")
+@RestController
+@RequestMapping("/cats")
 public class CatController {
     private CatService catService;
 
@@ -21,14 +23,16 @@ public class CatController {
 
     }
 
-    @GetMapping(value = "/allcats")
+    @GetMapping(value = "/all")
     public ResponseEntity<List<Cat>> listCats() {
         return ResponseEntity.ok(catService.findAll());
     }
 
-    @GetMapping(value = "/{id}")
-    public ResponseEntity<Cat> getCatById(@PathVariable("id") Long id)
+    @GetMapping(value = "/id/{catid}")
+    public ResponseEntity<Cat> getCatById(@PathVariable("catid") String catId)
     {
+        Long id = Long.parseLong(catId);
+
         Optional<Cat> catOptional = catService.findById(id);
 
         if (catOptional.isPresent()) {
