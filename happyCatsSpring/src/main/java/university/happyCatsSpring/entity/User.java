@@ -72,6 +72,19 @@ public class User {
         this.email = email;
     }
 
+    public User(String username, String password, String name, String photo, String birthday,
+                String phone, String email, String note, Set<Cat> cats) {
+        this.username = username;
+        this.password = password;
+        this.name = name;
+        this.photo = photo;
+        this.birthday = birthday;
+        this.phone = phone;
+        this.email = email;
+        this.note = note;
+        this.cats = cats;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

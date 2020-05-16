@@ -21,6 +21,7 @@ public class Breed {
 
     private String photo;
 
+    @Column (length=16384)
     private String description;
 
     @ManyToMany
@@ -30,5 +31,12 @@ public class Breed {
         this.name = name;
         this.photo = photo;
         this.description = description;
+    }
+
+    public Breed(String name, String photo, String description, Set<Disease> diseases) {
+        this.name = name;
+        this.photo = photo;
+        this.description = description;
+        this.diseases = diseases;
     }
 }

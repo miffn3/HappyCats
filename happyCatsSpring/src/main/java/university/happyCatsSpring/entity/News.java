@@ -20,6 +20,7 @@ public class News {
 
     private String image;
 
+    @Column (length=16384)
     private String text;
 
     public News(String label, String image, String text) {
