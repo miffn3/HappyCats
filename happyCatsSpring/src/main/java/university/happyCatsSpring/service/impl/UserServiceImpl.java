@@ -37,28 +37,28 @@ public class UserServiceImpl implements UserService {
 		String newEmail = updateUserDto.getEmail();
 		String newNote = updateUserDto.getNote();
 
-		if(newUsername!= null)
+		if( newUsername != null && !newUsername.trim().isEmpty())
 			user.setUsername(newUsername);
 
-		if(newPassword!= null)
+		if(newPassword != null && !newPassword.trim().isEmpty())
 			user.setPassword(newPassword);
 
-		if(newName!= null)
+		if(newName != null && !newName.trim().isEmpty())
 			user.setName(newName);
 
-		if(newBirthday!= null)
+		if(newBirthday != null && !newBirthday.trim().isEmpty())
 			user.setBirthday(newBirthday);
 
-		if(newPhoto!= null)
+		if(newPhoto != null && !newPhoto.trim().isEmpty())
 			user.setPhoto(newPhoto);
 
-		if(newPhone!= null)
+		if(newPhone != null && !newPhone.trim().isEmpty())
 			user.setPhone(newPhone);
 
-		if(newEmail!= null)
+		if(newEmail != null && !newEmail.trim().isEmpty())
 			user.setEmail(newEmail);
 
-		if(newNote!= null)
+		if(newNote != null && !newNote.trim().isEmpty())
 			user.setNote(newNote);
 
 		return userRepository.save(user);
