@@ -20,7 +20,7 @@ public class BreedController {
 
     }
 
-    @GetMapping(value = "/all")
+    @GetMapping(value = "/allbreeds")
     public ResponseEntity<List<Breed>> listBreed() {
         return ResponseEntity.ok(breedService.findAll());
     }
