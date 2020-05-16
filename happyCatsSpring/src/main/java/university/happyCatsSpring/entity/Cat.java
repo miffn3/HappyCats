@@ -23,14 +23,11 @@ public class Cat {
 
     private String birthday;
 
+    @Column (length=16384)
     private String note;
 
     @ManyToOne
     private Breed breed;
-
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable=false)
-    private User user;
 
     public Cat(String name, String photo, String birthday, String note) {
         this.name = name;
@@ -41,6 +38,14 @@ public class Cat {
 
     public Cat(String name, Breed breed) {
         this.name = name;
+        this.breed = breed;
+    }
+
+    public Cat(String name, String photo, String birthday, String note, Breed breed) {
+        this.name = name;
+        this.photo = photo;
+        this.birthday = birthday;
+        this.note = note;
         this.breed = breed;
     }
 }

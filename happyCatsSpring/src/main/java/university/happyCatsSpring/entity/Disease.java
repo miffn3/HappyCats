@@ -21,10 +21,8 @@ public class Disease {
 
     private String photo;
 
+    @Column (length=16384)
     private String description;
-
-    @ManyToMany
-    private Set<Breed> breeds;
 
     public Disease(String name, String photo, String description) {
         this.name = name;
