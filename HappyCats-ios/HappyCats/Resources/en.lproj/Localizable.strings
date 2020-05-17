@@ -2,7 +2,7 @@ news.title = "News";
 empty.title = "No data";
 handbook.title = "Handbook";
 cats.title = "Breeds";
-disease.title = "Diseason";
+disease.title = "Disease";
 
 button.save = "Save";
 
