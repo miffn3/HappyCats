@@ -20,8 +20,17 @@ final class NewsListVC: UIViewController {
         configNewsTable()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        buildUI()
+    }
+    
     func setModel(model: NewsListVM) {
         self.model = model
+    }
+    
+    private func buildUI() {
+        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        navigationController?.navigationBar.shadowImage = nil
     }
 }
 

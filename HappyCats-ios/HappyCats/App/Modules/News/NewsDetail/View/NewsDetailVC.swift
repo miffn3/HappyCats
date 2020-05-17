@@ -12,11 +12,23 @@ final class NewsDetailVC: UIViewController {
     
     private var model: NewsDetailVM!
 
+    @IBOutlet weak var newsImage: UIImageView!
+    @IBOutlet weak var newsTitle: UILabel!
+    @IBOutlet weak var newsDescription: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        buildUI()
     }
     
     func setModel(model: NewsDetailVM) {
         self.model = model
+    }
+    
+    private func buildUI() {
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        
+        newsImage.image = R.image.stub()
     }
 }
