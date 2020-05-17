@@ -42,6 +42,7 @@ final class LoginVC: UIViewController {
         buildLabel(label: loginLabel, withText: R.string.localizable.authUserLogin())
         buildLabel(label: passwordLabel, withText: R.string.localizable.authUserPassword())
 
+        buildFields()
         buildLoginButton()
         buildRegistrationButton()
     }
@@ -52,22 +53,27 @@ final class LoginVC: UIViewController {
     }
     
     private func buildLabel(label: UILabel, withText text: String) {
-        label.font = Constants.UI.Main.font
+        label.font = Constants.UI.Main.mainFont
         label.text = text
+    }
+    
+    private func buildFields() {
+        loginField.font = Constants.UI.Main.mainFont
+        passwordField.font = Constants.UI.Main.mainFont
     }
     
     private func buildLoginButton() {
         loginButton.setTitle(R.string.localizable.authLoginReadyButton(), for: .normal)
-        loginButton.titleLabel?.font = Constants.UI.Main.font
+        loginButton.titleLabel?.font = Constants.UI.Main.mainFont
         loginButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
-        loginButton.backgroundColor = Constants.UI.Main.color
+        loginButton.backgroundColor = Constants.UI.Main.mainColor
         loginButton.tintColor = Constants.UI.Main.alternativeFontColor
     }
     
     private func buildRegistrationButton() {
         registrationButton.setTitle(R.string.localizable.authLoginRegistrationButton(), for: .normal)
         registrationButton.titleLabel?.font = Constants.UI.Main.smallFont
-        registrationButton.tintColor = Constants.UI.Main.color
+        registrationButton.tintColor = Constants.UI.Main.mainColor
     }
     
     private func bindUI() {

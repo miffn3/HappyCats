@@ -45,20 +45,29 @@ class MyProfileVC: UIViewController {
         buildLabel(label: phoneLabel, text: R.string.localizable.profileMyProfilePhone())
         buildLabel(label: birthdayLabel, text: R.string.localizable.profileMyProfileBirthday())
         
+        buildFields()
         buildButton()
         buildImage()
     }
     
     private func buildLabel(label: UILabel, text: String) {
         label.text = text + ":"
-        label.font = Constants.UI.Main.font
+        label.font = Constants.UI.Main.mainFont
+    }
+    
+    private func buildFields() {
+        nameField.font = Constants.UI.Main.mainFont
+        loginField.font = Constants.UI.Main.mainFont
+        emailField.font = Constants.UI.Main.mainFont
+        phoneField.font = Constants.UI.Main.mainFont
+        birthdayField.font = Constants.UI.Main.mainFont
     }
     
     private func buildButton() {
         saveButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
-        saveButton.backgroundColor = Constants.UI.Main.color
+        saveButton.backgroundColor = Constants.UI.Main.mainColor
         saveButton.tintColor = Constants.UI.Main.alternativeFontColor
-        saveButton.titleLabel?.font = Constants.UI.Main.font
+        saveButton.titleLabel?.font = Constants.UI.Main.mainFont
         saveButton.setTitle(R.string.localizable.buttonSave(), for: .normal)
     }
     

@@ -31,17 +31,18 @@ enum Constants {
     
     enum UI {
         enum Main {
-            static let color = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
-            static let font = R.font.notoSans(size: 17)
-            static let smallFont = R.font.notoSans(size: 14)
-            static let titleFont = R.font.notoSansBold(size: 24)
-            static let fontColor = UIColor.black
+            static let mainColor = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
+            static let mainFont = R.font.montserratRegular(size: 17)
+            static let smallFont = R.font.montserratRegular(size: 14)
+            static let titleFont = R.font.montserratMedium(size: 24)
+            static let mainFontColor = UIColor.black
             static let alternativeFontColor = UIColor.white
         }
         
         enum Navigation {
-            static let titleFont = R.font.notoSans(size: 20)
+            static let titleFont = R.font.montserratRegular(size: 20)
             static let systemTitleFont = UIFont.systemFont(ofSize: 20)
+            static let tabBarItemFont = R.font.montserratRegular(size: 10)
         }
         
         enum Button {

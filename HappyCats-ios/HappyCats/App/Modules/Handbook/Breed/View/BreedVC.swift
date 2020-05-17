@@ -50,12 +50,12 @@ class BreedVC: UIViewController {
     }
     
     private func buildLabels() {
-        breedDescription.font = Constants.UI.Main.font
+        breedDescription.font = Constants.UI.Main.mainFont
         breedTitle.font = Constants.UI.Main.titleFont
     }
     
     private func buildTitleView() {
-        titleLeftView.backgroundColor = Constants.UI.Main.color
+        titleLeftView.backgroundColor = Constants.UI.Main.mainColor
         titleLeftView.layer.cornerRadius = 7.5
     }
     

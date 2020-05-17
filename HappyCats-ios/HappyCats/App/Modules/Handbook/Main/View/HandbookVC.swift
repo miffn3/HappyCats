@@ -41,10 +41,10 @@ final class HandbookVC: UIViewController {
         sectionSelection.selectedSegmentIndex = 0
         sectionSelection.setTitle(R.string.localizable.catsTitle(), forSegmentAt: 0)
         sectionSelection.setTitle(R.string.localizable.diseaseTitle(), forSegmentAt: 1)
-        sectionSelection.setTitleTextAttributes([.font: Constants.UI.Main.font ?? UIFont.systemFont(ofSize: 17),
+        sectionSelection.setTitleTextAttributes([.font: Constants.UI.Main.mainFont ?? UIFont.systemFont(ofSize: 17),
                                                  .foregroundColor: Constants.UI.Main.alternativeFontColor], for: .normal)
-        sectionSelection.setTitleTextAttributes([.foregroundColor: Constants.UI.Main.fontColor], for: .selected)
-        sectionSelection.backgroundColor = Constants.UI.Main.color
+        sectionSelection.setTitleTextAttributes([.foregroundColor: Constants.UI.Main.mainFontColor], for: .selected)
+        sectionSelection.backgroundColor = Constants.UI.Main.mainColor
         if #available(iOS 13.0, *) {
             sectionSelection.selectedSegmentTintColor = .white
         } else {

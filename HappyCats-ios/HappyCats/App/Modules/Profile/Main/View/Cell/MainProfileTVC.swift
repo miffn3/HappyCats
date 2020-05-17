@@ -15,6 +15,7 @@ class MainProfileTVC: UITableViewCell {
     @IBOutlet private weak var nextIcon: UIImageView!
     
     func config(type: Constants.Cells.MainProfileCellType) {
+        cellLabel.font = Constants.UI.Main.mainFont
         switch type {
         case .myProfile:
             cellIcon.image = R.image.userIcon()

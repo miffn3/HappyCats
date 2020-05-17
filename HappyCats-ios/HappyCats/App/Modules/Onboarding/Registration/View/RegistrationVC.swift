@@ -47,6 +47,7 @@ final class RegistrationVC: UIViewController {
         buildLabel(label: loginLabel, withText: R.string.localizable.authUserLogin())
         buildLabel(label: passwordLabel, withText: R.string.localizable.authUserPassword())
 
+        buildFields()
         buildLoginButton()
         buildRegistrationButton()
     }
@@ -57,22 +58,29 @@ final class RegistrationVC: UIViewController {
     }
     
     private func buildLabel(label: UILabel, withText text: String) {
-        label.font = Constants.UI.Main.font
+        label.font = Constants.UI.Main.mainFont
         label.text = text
+    }
+    
+    private func buildFields() {
+        nameField.font = Constants.UI.Main.mainFont
+        emailField.font = Constants.UI.Main.mainFont
+        loginField.font = Constants.UI.Main.mainFont
+        passwordField.font = Constants.UI.Main.mainFont
     }
     
     private func buildRegistrationButton() {
         registrationButton.setTitle(R.string.localizable.authRegistrationReadyButton(), for: .normal)
-        registrationButton.titleLabel?.font = Constants.UI.Main.font
+        registrationButton.titleLabel?.font = Constants.UI.Main.mainFont
         registrationButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
-        registrationButton.backgroundColor = Constants.UI.Main.color
+        registrationButton.backgroundColor = Constants.UI.Main.mainColor
         registrationButton.tintColor = Constants.UI.Main.alternativeFontColor
     }
     
     private func buildLoginButton() {
         loginButton.setTitle(R.string.localizable.authRegistrationLoginButton(), for: .normal)
         loginButton.titleLabel?.font = Constants.UI.Main.smallFont
-        loginButton.tintColor = Constants.UI.Main.color
+        loginButton.tintColor = Constants.UI.Main.mainColor
     }
     
     private func bindUI() {

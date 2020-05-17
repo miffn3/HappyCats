@@ -49,12 +49,12 @@ final class NewsDetailVC: UIViewController {
     }
     
     private func buildLabels() {
-        newsDescription.font = Constants.UI.Main.font
+        newsDescription.font = Constants.UI.Main.mainFont
         newsTitle.font = Constants.UI.Main.titleFont
     }
     
     private func buildTitleView() {
-        titleLeftView.backgroundColor = Constants.UI.Main.color
+        titleLeftView.backgroundColor = Constants.UI.Main.mainColor
         titleLeftView.layer.cornerRadius = 7.5
     }
     
