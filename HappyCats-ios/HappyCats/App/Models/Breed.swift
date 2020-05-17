@@ -13,4 +13,5 @@ struct Breed: Codable {
     let name: String?
     let description: String?
     let photo: String?
+    let diseases: [Disease]
 }

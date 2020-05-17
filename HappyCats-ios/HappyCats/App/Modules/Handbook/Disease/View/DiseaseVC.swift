@@ -27,6 +27,10 @@ class DiseaseVC: UIViewController {
         bindUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        buildNavigation()
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil

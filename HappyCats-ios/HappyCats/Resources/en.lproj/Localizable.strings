@@ -29,3 +29,5 @@ profile.myProfile.phone = "Phone";
 profile.myProfile.birthday = "Birthday";
 
 profile.myCats.title = "My cats";
+
+handbook.breeds.disease = "Diseases to which this breed is exposed";

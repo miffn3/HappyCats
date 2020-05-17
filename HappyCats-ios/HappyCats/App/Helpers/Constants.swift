@@ -35,6 +35,7 @@ enum Constants {
             static let mainFont = R.font.montserratRegular(size: 17)
             static let smallFont = R.font.montserratRegular(size: 14)
             static let titleFont = R.font.montserratMedium(size: 24)
+            static let sectionFont = R.font.montserratMedium(size: 20)
             static let mainFontColor = UIColor.black
             static let alternativeFontColor = UIColor.white
         }
@@ -63,6 +64,10 @@ enum Constants {
         enum MainProfileCellType {
             case myProfile
             case myCats
+        }
+        
+        enum CellInHandbookDetail {
+            static let height: CGFloat = 60
         }
     }
     

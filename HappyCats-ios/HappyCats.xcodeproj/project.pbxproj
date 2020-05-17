@@ -41,6 +41,8 @@
 		878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9E32471BBD0003A8206 /* DiseaseVM.swift */; };
 		878AD9E72471C085003A8206 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */; };
 		878AD9E82471C088003A8206 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */; };
+		878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */; };
+		878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */; };
 		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
 		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
 		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
@@ -139,6 +141,8 @@
 		878AD9E32471BBD0003A8206 /* DiseaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseVM.swift; sourceTree = "<group>"; };
 		878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDiseaseTVC.swift; sourceTree = "<group>"; };
+		878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedDiseaseTVC.xib; sourceTree = "<group>"; };
 		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
 		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
 		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
@@ -505,6 +509,15 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		878AD9E92471C8D9003A8206 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */,
+				878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		87D838E72469AE170052C52A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -661,6 +674,7 @@
 		87E6AE7D2471B482005BCE75 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				878AD9E92471C8D9003A8206 /* Cell */,
 				87E6AE7F2471B49A005BCE75 /* BreedVC.swift */,
 				87E6AE802471B49A005BCE75 /* BreedVC.xib */,
 			);
@@ -806,6 +820,7 @@
 				8780DAF224642A5F00745B49 /* LaunchScreen.storyboard in Resources */,
 				87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */,
 				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
+				878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
 				878AD9E72471C085003A8206 /* Montserrat-Medium.ttf in Resources */,
 			);
@@ -934,6 +949,7 @@
 				87E6AE7724719C20005BCE75 /* Breed.swift in Sources */,
 				87D838EF2469AF2B0052C52A /* LoginVC.swift in Sources */,
 				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
+				878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */,
 				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
 				878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */,

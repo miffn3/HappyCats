@@ -18,12 +18,16 @@ final class BreedVM: Stepper {
     private let disposeBag = DisposeBag()
     private let userService: UserService
     
-    struct Input { }
+    struct Input {
+        let selectedDisease: Observable<Int>
+    }
     
     struct Output {
         let image: Driver<UIImage>
         let title: Driver<String>
         let description: Driver<String>
+        let disease: Driver<[Disease]>
+        let diseaseCount: Driver<Int>
     }
     
     init(withId id: Int, userService: UserService) {
@@ -35,6 +39,14 @@ final class BreedVM: Stepper {
         let title = BehaviorRelay<String>(value: "")
         let description = BehaviorRelay<String>(value: "")
         let breedImage = BehaviorRelay<UIImage>(value: R.image.emptyPhoto() ?? UIImage())
+        let disease = BehaviorRelay<[Disease]>(value: [])
+        let diseaseCount = BehaviorRelay<Int>(value: 0)
+        
+        input.selectedDisease
+            .subscribe(onNext: { index in
+                guard let id = disease.value[safe: index]?.id else { return }
+                self.steps.accept(AppStep.disease(withId: id))
+            }).disposed(by: disposeBag)
         
         BreedAPI.getBreed(withId: id, token: userService.getToken().orEmpty)
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
@@ -52,11 +64,15 @@ final class BreedVM: Stepper {
                             }
                     }
                 }
+                disease.accept(breed.diseases)
+                diseaseCount.accept(breed.diseases.count)
             })
             .disposed(by: disposeBag)
         
         return Output(image: breedImage.asDriver(onErrorDriveWith: .never()),
                       title: title.asDriver(onErrorDriveWith: .never()),
-                      description: description.asDriver(onErrorDriveWith: .never()))
+                      description: description.asDriver(onErrorDriveWith: .never()),
+                      disease: disease.asDriver(onErrorJustReturn: []),
+                      diseaseCount: diseaseCount.asDriver(onErrorDriveWith: .never()))
     }
 }
