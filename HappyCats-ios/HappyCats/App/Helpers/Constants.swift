@@ -16,6 +16,7 @@ enum Constants {
             static let loginURL = "/auth/sigin"
             static let registrationURL = "/auth/signup"
             static let user = "/users/me"
+            static let allNews = "/news/all"
         }
         
         enum Headers {

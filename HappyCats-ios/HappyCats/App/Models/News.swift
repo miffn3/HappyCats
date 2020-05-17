@@ -10,5 +10,7 @@ import Foundation
 
 struct News: Codable {
     var id: Int?
-    var title: String?
+    var image: String?
+    var label: String?
+    var text: String?
 }

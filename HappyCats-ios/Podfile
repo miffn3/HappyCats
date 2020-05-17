@@ -11,5 +11,7 @@ target 'HappyCats' do
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger'
   pod 'Kingfisher'
+  pod 'Then'
+  pod 'Reusable'
   
 end

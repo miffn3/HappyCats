@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import Reusable
 
 final class NewsListVC: UIViewController {
     
     private var model: NewsListVM!
+    private let disposeBag = DisposeBag()
+    private let selectedNews = PublishRelay<Int>()
 
     @IBOutlet private weak var newsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        model.updateNews()
-        configNewsTable()
+        buildUI()
+        bindUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,37 +34,33 @@ final class NewsListVC: UIViewController {
     }
     
     private func buildUI() {
+        buildNavigation()
+        buildTable()
+    }
+    
+    private func buildNavigation() {
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
     }
-}
-
-extension NewsListVC: UITableViewDelegate, UITableViewDataSource {
-    func configNewsTable() {
-        newsTable.delegate = self
-        newsTable.dataSource = self
-        
-        newsTable.register(UINib(nibName: Constants.Cells.news, bundle: nil),
-                           forCellReuseIdentifier: Constants.Cells.news)
-    }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.news.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let defaultCell = UITableViewCell()
-        guard let newsCell = newsTable.dequeueReusableCell(withIdentifier: Constants.Cells.news, for: indexPath) as? NewsTVC else { return defaultCell }
-        if let cellData = model.news[safe: indexPath.row] {
-            newsCell.config(data: cellData)
-        } else {
-            newsCell.configEmpty()
+    private func buildTable() {
+        newsTable.do {
+            $0.register(cellType: NewsTVC.self)
         }
-        return newsCell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let newsId = model.news[safe: indexPath.item]?.id else { return }
-        self.model.pick(newsId: newsId)
+    private func bindUI() {
+        newsTable.rx.itemSelected.subscribe(onNext: { indexPath in
+            self.selectedNews.accept(indexPath.row)
+        }).disposed(by: disposeBag)
+        
+        let input = NewsListVM.Input(selectedNews: selectedNews.asObservable())
+        
+        let output = model.transform(input: input)
+        output.news
+            .drive(newsTable.rx
+                .items(cellIdentifier: NewsTVC.reuseIdentifier, cellType: NewsTVC.self)) { _, news, cell in
+                    cell.config(data: news)
+        }.disposed(by: disposeBag)
     }
 }

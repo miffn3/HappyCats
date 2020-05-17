@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
+import Reusable
 
-final class NewsTVC: UITableViewCell {
+final class NewsTVC: UITableViewCell, NibReusable {
 
     @IBOutlet private weak var newsImage: UIImageView!
     @IBOutlet private weak var newsTitle: UILabel!
@@ -18,12 +20,15 @@ final class NewsTVC: UITableViewCell {
     }
     
     func config(data: News) {
-        newsTitle.text = data.title
-        newsImage.image = R.image.stub()
-    }
-    
-    func configEmpty() {
-        newsTitle.text = R.string.localizable.emptyTitle()
-        newsImage.image = R.image.stub()
+        if let img = data.image, let imgUrl = URL(string: img) {
+            newsImage.kf.setImage(with: imgUrl)
+        } else {
+            newsImage.image = R.image.emptyPhoto()
+        }
+        if let title = data.label {
+            newsTitle.text = title
+        } else {
+            newsTitle.text = R.string.localizable.emptyTitle()
+        }
     }
 }

@@ -40,7 +40,7 @@ final class NewsFlow: Flow {
     }
     
     private func navigationToNewsScreen() -> FlowContributors {
-        let model = NewsListVM()
+        let model = NewsListVM(userService: services.userService)
         let vc = NewsListVC()
         vc.title = R.string.localizable.newsTitle()
         vc.setModel(model: model)

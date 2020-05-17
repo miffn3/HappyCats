@@ -22,7 +22,7 @@ final class NewsDetailVM: Stepper {
     }
     
     func updateNews() {
-        news = News(id: 1, title: "News 1")
+        news = News(id: 1, image: "", label: "", text: "")
     }
 }
 
