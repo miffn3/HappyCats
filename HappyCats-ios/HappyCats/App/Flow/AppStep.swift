@@ -20,6 +20,7 @@ enum AppStep: Step {
     // Handbook
     case handbook
     case breed(withId: Int)
+    case disease(withId: Int)
     
     // Sign In
     case login

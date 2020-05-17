@@ -34,6 +34,8 @@ final class HandbookFlow: Flow {
             return navigationToHandbookScreen()
         case .breed(let id):
             return navigationToBreedScreen(withId: id)
+        case .disease(let id):
+            return navigationToDiseaseScreen(withId: id)
         default:
             return .none
         }
@@ -51,6 +53,14 @@ final class HandbookFlow: Flow {
     private func navigationToBreedScreen(withId id: Int) -> FlowContributors {
         let model = BreedVM(withId: id, userService: services.userService)
         let vc = BreedVC()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToDiseaseScreen(withId id: Int) -> FlowContributors {
+        let model = DiseaseVM(withId: id, userService: services.userService)
+        let vc = DiseaseVC()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))

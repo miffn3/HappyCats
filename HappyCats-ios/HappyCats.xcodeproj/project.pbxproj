@@ -37,6 +37,9 @@
 		8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB842465B25F00745B49 /* HandbookTVC.swift */; };
 		8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB852465B25F00745B49 /* HandbookTVC.xib */; };
 		8780DB892465B35400745B49 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB882465B35400745B49 /* Disease.swift */; };
+		878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */; };
+		878AD9E12471BBBD003A8206 /* DiseaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */; };
+		878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9E32471BBD0003A8206 /* DiseaseVM.swift */; };
 		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
 		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
 		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
@@ -132,6 +135,9 @@
 		8780DB842465B25F00745B49 /* HandbookTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTVC.swift; sourceTree = "<group>"; };
 		8780DB852465B25F00745B49 /* HandbookTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandbookTVC.xib; sourceTree = "<group>"; };
 		8780DB882465B35400745B49 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
+		878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseVC.swift; sourceTree = "<group>"; };
+		878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseVC.xib; sourceTree = "<group>"; };
+		878AD9E32471BBD0003A8206 /* DiseaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseVM.swift; sourceTree = "<group>"; };
 		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
 		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
 		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
@@ -406,6 +412,7 @@
 			children = (
 				8780DB72246596D600745B49 /* Main */,
 				87E6AE7C2471B470005BCE75 /* Breed */,
+				878AD9DB2471BB95003A8206 /* Disease */,
 			);
 			path = Handbook;
 			sourceTree = "<group>";
@@ -470,6 +477,32 @@
 				8780DB852465B25F00745B49 /* HandbookTVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		878AD9DB2471BB95003A8206 /* Disease */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9DD2471BBA9003A8206 /* Model */,
+				878AD9DC2471BBA5003A8206 /* View */,
+			);
+			path = Disease;
+			sourceTree = "<group>";
+		};
+		878AD9DC2471BBA5003A8206 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */,
+				878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		878AD9DD2471BBA9003A8206 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9E32471BBD0003A8206 /* DiseaseVM.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		87D838E72469AE170052C52A /* Onboarding */ = {
@@ -765,6 +798,7 @@
 				87D8391E246D71D20052C52A /* MainProfileTVC.xib in Resources */,
 				87D83929246DC8A20052C52A /* MyProfileVC.xib in Resources */,
 				8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */,
+				878AD9E12471BBBD003A8206 /* DiseaseVC.xib in Resources */,
 				87E6AE822471B49A005BCE75 /* BreedVC.xib in Resources */,
 				87D838E2246980560052C52A /* HandbookVC.xib in Resources */,
 				87D83917246D70760052C52A /* MainProfileVC.xib in Resources */,
@@ -887,6 +921,7 @@
 				87D8392B246DC8B90052C52A /* MyProfileVM.swift in Sources */,
 				8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */,
 				87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */,
+				878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
 				8780DB1F24642AF200745B49 /* AppFlow.swift in Sources */,
 				87D8391D246D71D20052C52A /* MainProfileTVC.swift in Sources */,
@@ -901,6 +936,7 @@
 				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
 				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
+				878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */,
 				87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */,
 				87D838E1246980560052C52A /* HandbookVC.swift in Sources */,
 				8780DB5024645F2F00745B49 /* Constants.swift in Sources */,

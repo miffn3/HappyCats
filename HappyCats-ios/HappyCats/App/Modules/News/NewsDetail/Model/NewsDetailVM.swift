@@ -18,8 +18,6 @@ final class NewsDetailVM: Stepper {
     private let disposeBag = DisposeBag()
     private let userService: UserService
 
-    var news = News()
-    
     struct Input { }
     
     struct Output {

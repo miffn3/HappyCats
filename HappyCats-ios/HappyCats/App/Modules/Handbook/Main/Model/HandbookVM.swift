@@ -18,6 +18,7 @@ final class HandbookVM: Stepper {
     
     struct Input {
         let selectedBreed: Observable<Int>
+        let selectedDisease: Observable<Int>
     }
     
     struct Output {
@@ -37,6 +38,12 @@ final class HandbookVM: Stepper {
             .subscribe(onNext: { index in
                 guard let id = breeds.value[safe: index]?.id else { return }
                 self.steps.accept(AppStep.breed(withId: id))
+            }).disposed(by: disposeBag)
+        
+        input.selectedDisease
+            .subscribe(onNext: { index in
+                guard let id = disease.value[safe: index]?.id else { return }
+                self.steps.accept(AppStep.disease(withId: id))
             }).disposed(by: disposeBag)
         
         BreedAPI.getAllBreeds(token: self.userService.getToken().orEmpty)

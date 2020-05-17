@@ -1,5 +1,5 @@
 //
-//  BreedVM.swift
+//  DiseaseVM.swift
 //  HappyCats
 //
 //  Created by Яна Преображенская on 17.05.2020.
@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import Kingfisher
 
-final class BreedVM: Stepper {
+final class DiseaseVM: Stepper {
     let steps = PublishRelay<Step>()
     
     private let id: Int
@@ -34,19 +34,19 @@ final class BreedVM: Stepper {
     func transform(input: Input) -> Output {
         let title = BehaviorRelay<String>(value: "")
         let description = BehaviorRelay<String>(value: "")
-        let breedImage = BehaviorRelay<UIImage>(value: R.image.emptyPhoto() ?? UIImage())
+        let diseaseImage = BehaviorRelay<UIImage>(value: R.image.emptyPhoto() ?? UIImage())
         
-        BreedAPI.getBreed(withId: id, token: userService.getToken().orEmpty)
+        DiseaseAPI.getDisease(withId: id, token: userService.getToken().orEmpty)
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
-            .subscribe(onNext: { breed in
-                title.accept(breed.name.orEmpty)
-                description.accept(breed.description.orEmpty)
-                if let img = breed.photo, let imgUrl = URL(string: img) {
+            .subscribe(onNext: { disease in
+                title.accept(disease.name.orEmpty)
+                description.accept(disease.description.orEmpty)
+                if let img = disease.photo, let imgUrl = URL(string: img) {
                     KingfisherManager.shared
                         .retrieveImage(with: ImageResource(downloadURL: imgUrl, cacheKey: nil)) { result in
                             switch result {
                             case .success(let image):
-                                breedImage.accept(image.image)
+                                diseaseImage.accept(image.image)
                             case .failure(let error):
                                 print(error.localizedDescription)
                             }
@@ -55,7 +55,7 @@ final class BreedVM: Stepper {
             })
             .disposed(by: disposeBag)
         
-        return Output(image: breedImage.asDriver(onErrorDriveWith: .never()),
+        return Output(image: diseaseImage.asDriver(onErrorDriveWith: .never()),
                       title: title.asDriver(onErrorDriveWith: .never()),
                       description: description.asDriver(onErrorDriveWith: .never()))
     }

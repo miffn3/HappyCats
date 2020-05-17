@@ -21,6 +21,7 @@ enum Constants {
             static let allBreeds = "/breeds/allbreeds"
             static let breedById = "/breeds/id"
             static let allDisease = "/diseases/all"
+            static let diseaseById = "/diseases/id"
         }
         
         enum Headers {
