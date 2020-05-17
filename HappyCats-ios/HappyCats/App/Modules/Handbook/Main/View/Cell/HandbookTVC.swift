@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Reusable
 
-class HandbookTVC: UITableViewCell {
+class HandbookTVC: UITableViewCell, NibReusable {
 
     @IBOutlet weak var cellImage: UIImageView!
     @IBOutlet weak var cellLabel: UILabel!
@@ -17,18 +18,29 @@ class HandbookTVC: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configCatCell(cat: Cat) {
-        cellLabel.text = cat.name
-        cellImage.image = R.image.stub()
+    func configCatCell(cat: Breed) {
+        if let img = cat.photo, let imgUrl = URL(string: img) {
+            cellImage.kf.setImage(with: imgUrl)
+        } else {
+            cellImage.image = R.image.emptyPhoto()
+        }
+        if let title = cat.name {
+            cellLabel.text = title
+        } else {
+            cellLabel.text = R.string.localizable.emptyTitle()
+        }
     }
     
     func configDiseaseCell(disease: Disease) {
-        cellLabel.text = disease.title
-        cellImage.image = R.image.stub()
-    }
-    
-    func configEmpty() {
-        cellLabel.text = R.string.localizable.emptyTitle()
-        cellImage.image = R.image.stub()
+        if let img = disease.photo, let imgUrl = URL(string: img) {
+            cellImage.kf.setImage(with: imgUrl)
+        } else {
+            cellImage.image = R.image.emptyPhoto()
+        }
+        if let title = disease.name {
+            cellLabel.text = title
+        } else {
+            cellLabel.text = R.string.localizable.emptyTitle()
+        }
     }
 }

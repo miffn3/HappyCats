@@ -18,6 +18,8 @@ enum Constants {
             static let user = "/users/me"
             static let allNews = "/news/all"
             static let newsById = "/news/id"
+            static let allBreeds = "/breeds/allbreeds"
+            static let allDisease = "/diseases/all"
         }
         
         enum Headers {

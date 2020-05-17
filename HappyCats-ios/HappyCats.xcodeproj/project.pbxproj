@@ -65,6 +65,9 @@
 		87D8392D246DE0860052C52A /* String+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8392C246DE0860052C52A /* String+Optional.swift */; };
 		87E6AE7324711987005BCE75 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7224711987005BCE75 /* NewsAPI.swift */; };
 		87E6AE7524714442005BCE75 /* NotoSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87E6AE7424714404005BCE75 /* NotoSansBold.ttf */; };
+		87E6AE7724719C20005BCE75 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7624719C20005BCE75 /* Breed.swift */; };
+		87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7824719D4A005BCE75 /* BreedAPI.swift */; };
+		87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +157,9 @@
 		87D8392C246DE0860052C52A /* String+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Optional.swift"; sourceTree = "<group>"; };
 		87E6AE7224711987005BCE75 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
 		87E6AE7424714404005BCE75 /* NotoSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansBold.ttf; sourceTree = "<group>"; };
+		87E6AE7624719C20005BCE75 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		87E6AE7824719D4A005BCE75 /* BreedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedAPI.swift; sourceTree = "<group>"; };
+		87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseAPI.swift; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,9 +358,10 @@
 			isa = PBXGroup;
 			children = (
 				8780DB472464516B00745B49 /* News.swift */,
-				8780DB67246564F500745B49 /* Cat.swift */,
+				87E6AE7624719C20005BCE75 /* Breed.swift */,
 				8780DB882465B35400745B49 /* Disease.swift */,
 				87D83900246ACDB30052C52A /* User.swift */,
+				8780DB67246564F500745B49 /* Cat.swift */,
 				87D83905246AE94F0052C52A /* AuthResponse.swift */,
 			);
 			path = Models;
@@ -525,6 +532,8 @@
 				87D83903246AE8380052C52A /* AuthAPI.swift */,
 				87D83921246D8E1C0052C52A /* UserAPI.swift */,
 				87E6AE7224711987005BCE75 /* NewsAPI.swift */,
+				87E6AE7824719D4A005BCE75 /* BreedAPI.swift */,
+				87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -852,11 +861,14 @@
 				8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */,
 				8780DB482464516B00745B49 /* News.swift in Sources */,
 				8780DB4C2464539D00745B49 /* NewsTVC.swift in Sources */,
+				87E6AE7724719C20005BCE75 /* Breed.swift in Sources */,
 				87D838EF2469AF2B0052C52A /* LoginVC.swift in Sources */,
 				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
+				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
 				87D838E1246980560052C52A /* HandbookVC.swift in Sources */,
 				8780DB5024645F2F00745B49 /* Constants.swift in Sources */,
+				87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

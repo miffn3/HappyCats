@@ -12,7 +12,6 @@ import RxCocoa
 
 final class NewsListVM: Stepper {
     let steps = PublishRelay<Step>()
-    var news = [News]()
     
     private let disposeBag = DisposeBag()
     private let userService: UserService

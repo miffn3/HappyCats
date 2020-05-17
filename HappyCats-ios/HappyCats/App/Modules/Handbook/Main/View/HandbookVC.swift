@@ -7,24 +7,23 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class HandbookVC: UIViewController {
 
     private var model: HandbookVM!
-    private var buttonWidth: CGFloat = 100
-    private var selectedButton = Constants.SelectedButton.cats
+    private let disposeBag = DisposeBag()
 
     @IBOutlet private weak var searchBar: UISearchBar!
-    @IBOutlet private weak var catsButton: UIButton!
-    @IBOutlet private weak var diseaseButton: UIButton!
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var catsButtonWidth: NSLayoutConstraint!
-    @IBOutlet private weak var diseaseButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var breedsTable: UITableView!
+    @IBOutlet weak var diseaseTable: UITableView!
+    @IBOutlet weak var sectionSelection: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        buttonWidth = CGFloat(UIScreen.main.bounds.width / 2 - 15)
         buildUI()
+        bindUI()
     }
     
     func setModel(model: HandbookVM) {
@@ -32,92 +31,73 @@ final class HandbookVC: UIViewController {
     }
     
     private func buildUI() {
-        configButtons()
-        configTable()
+        buildSectionSelection()
+        buildTable()
     }
     
-    private func configButtons() {
-        configCatButton()
-        configDiseaseButton()
-        selectButton(button: catsButton)
-        unselectButton(button: diseaseButton)
+    private func buildSectionSelection() {
+        sectionSelection.selectedSegmentIndex = 0
+        sectionSelection.setTitle(R.string.localizable.catsTitle(), forSegmentAt: 0)
+        sectionSelection.setTitle(R.string.localizable.diseaseTitle(), forSegmentAt: 1)
+        sectionSelection.setTitleTextAttributes([.font: Constants.UI.Main.font ?? UIFont.systemFont(ofSize: 17),
+                                                 .foregroundColor: Constants.UI.Main.alternativeFontColor], for: .normal)
+        sectionSelection.setTitleTextAttributes([.foregroundColor: Constants.UI.Main.fontColor], for: .selected)
+        sectionSelection.backgroundColor = Constants.UI.Main.color
+        if #available(iOS 13.0, *) {
+            sectionSelection.selectedSegmentTintColor = .white
+        } else {
+            sectionSelection.tintColor = .white
+        }
     }
     
-    private func configCatButton() {
-        catsButtonWidth.constant = buttonWidth
-        configButton(button: catsButton, label: R.string.localizable.catsTitle())
+    private func buildTable() {
+        breedsTable.do {
+            $0.register(cellType: HandbookTVC.self)
+        }
+        diseaseTable.do {
+            $0.register(cellType: HandbookTVC.self)
+        }
+        showBreeds()
     }
     
-    private func configDiseaseButton() {
-        diseaseButtonWidth.constant = buttonWidth
-        configButton(button: diseaseButton, label: R.string.localizable.diseaseTitle())
+    private func showBreeds() {
+        self.breedsTable.isHidden = false
+        self.diseaseTable.isHidden = true
     }
     
-    private func configButton(button: UIButton, label: String) {
-        button.setTitle(label, for: .normal)
-        button.titleLabel?.font = Constants.UI.Main.font
-        button.layer.borderWidth = Constants.UI.Button.borderWidth
-        button.layer.cornerRadius = Constants.UI.Button.cornerRadius
+    private func showDisease() {
+        self.breedsTable.isHidden = true
+        self.diseaseTable.isHidden = false
     }
     
-    private func selectButton(button: UIButton) {
-        button.layer.borderColor = Constants.UI.Main.color.cgColor
-    }
-    
-    private func unselectButton(button: UIButton) {
-        button.layer.borderColor = UIColor.clear.cgColor
-    }
-    
-    @IBAction func clickCatsButton(_ sender: Any) {
-        unselectButton(button: diseaseButton)
-        selectButton(button: catsButton)
-        selectedButton = .cats
-        tableView.reloadData()
-    }
-    
-    @IBAction func clickDiseaseButton(_ sender: Any) {
-        unselectButton(button: catsButton)
-        selectButton(button: diseaseButton)
-        selectedButton = .disease
-        tableView.reloadData()
-    }
-}
-
-extension HandbookVC: UITableViewDelegate, UITableViewDataSource {
-    func configTable() {
-        tableView.delegate = self
-        tableView.dataSource = self
+    private func bindUI() {
+        let input = HandbookVM.Input()
         
-        tableView.register(UINib(nibName: Constants.Cells.handbook, bundle: nil),
-                           forCellReuseIdentifier: Constants.Cells.handbook)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch selectedButton {
-        case .cats:
-            return model.cats.count
-        case .disease:
-            return model.disease.count
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let defaultCell = UITableViewCell()
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Cells.handbook, for: indexPath) as? HandbookTVC else { return defaultCell }
-        switch selectedButton {
-        case .cats:
-            if let data = model.cats[safe: indexPath.row] {
-                cell.configCatCell(cat: data)
-            } else {
-                cell.configEmpty()
+        let output = model.transform(input: input)
+        
+        output.breeds
+            .drive(self.breedsTable.rx
+                .items(cellIdentifier: HandbookTVC.reuseIdentifier,
+                       cellType: HandbookTVC.self)) { _, breed, cell in
+                        cell.configCatCell(cat: breed)
+        }.disposed(by: self.disposeBag)
+        
+        output.disease
+            .drive(self.diseaseTable.rx
+                .items(cellIdentifier: HandbookTVC.reuseIdentifier,
+                       cellType: HandbookTVC.self)) { _, disease, cell in
+                        cell.configDiseaseCell(disease: disease)
+        }.disposed(by: self.disposeBag)
+        
+        sectionSelection.rx.selectedSegmentIndex.subscribe(onNext: { index in
+            switch index {
+            case 0:
+                self.showBreeds()
+            case 1:
+                self.showDisease()
+            default:
+                break
             }
-        case .disease:
-            if let data = model.disease[safe: indexPath.row] {
-                cell.configDiseaseCell(disease: data)
-            } else {
-                cell.configEmpty()
-            }
-        }
-        return cell
+            }).disposed(by: disposeBag)
     }
 }

@@ -7,27 +7,46 @@
 //
 
 import RxFlow
+import RxSwift
 import RxCocoa
 
 final class HandbookVM: Stepper {
     let steps = PublishRelay<Step>()
-    var cats = [Cat]()
-    var disease = [Disease]()
     
-    init() {
-        updateCats()
-        updateDisease()
+    private let disposeBag = DisposeBag()
+    private let userService: UserService
+    
+    struct Input { }
+    
+    struct Output {
+        let breeds: Driver<[Breed]>
+        let disease: Driver<[Disease]>
     }
     
-    func updateCats() {
-        cats.removeAll()
-        cats.append(Cat(name: "Cat 1"))
-        cats.append(Cat(name: "Cat 2"))
+    init(userService: UserService) {
+        self.userService = userService
     }
     
-    func updateDisease() {
-        disease.removeAll()
-        disease.append(Disease(title: "Disease 1"))
-        disease.append(Disease(title: "Disease 2"))
+    func transform(input: Input) -> Output {
+        let breeds = BehaviorRelay<[Breed]>(value: [])
+        let disease = BehaviorRelay<[Disease]>(value: [])
+        
+        BreedAPI.getAllBreeds(token: self.userService.getToken().orEmpty)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { data in
+                breeds.accept(data)
+            })
+            .disposed(by: self.disposeBag)
+        
+        DiseaseAPI.getAllDisease(token: self.userService.getToken().orEmpty)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { data in
+                disease.accept(data)
+            })
+            .disposed(by: self.disposeBag)
+        
+        let output = Output(breeds: breeds.asDriver(onErrorJustReturn: []),
+                            disease: disease.asDriver(onErrorJustReturn: []))
+        return output
     }
 }

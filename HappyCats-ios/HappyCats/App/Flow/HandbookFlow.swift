@@ -38,7 +38,7 @@ final class HandbookFlow: Flow {
     }
     
     private func navigationToCatsScreen() -> FlowContributors {
-        let model = HandbookVM()
+        let model = HandbookVM(userService: services.userService)
         let vc = HandbookVC()
         vc.title = R.string.localizable.handbookTitle()
         vc.setModel(model: model)
