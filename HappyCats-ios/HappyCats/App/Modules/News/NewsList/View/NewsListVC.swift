@@ -34,13 +34,7 @@ final class NewsListVC: UIViewController {
     }
     
     private func buildUI() {
-        buildNavigation()
         buildTable()
-    }
-    
-    private func buildNavigation() {
-        navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.shadowImage = nil
     }
     
     private func buildTable() {

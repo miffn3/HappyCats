@@ -16,7 +16,9 @@ final class HandbookVM: Stepper {
     private let disposeBag = DisposeBag()
     private let userService: UserService
     
-    struct Input { }
+    struct Input {
+        let selectedBreed: Observable<Int>
+    }
     
     struct Output {
         let breeds: Driver<[Breed]>
@@ -30,6 +32,12 @@ final class HandbookVM: Stepper {
     func transform(input: Input) -> Output {
         let breeds = BehaviorRelay<[Breed]>(value: [])
         let disease = BehaviorRelay<[Disease]>(value: [])
+        
+        input.selectedBreed
+            .subscribe(onNext: { index in
+                guard let id = breeds.value[safe: index]?.id else { return }
+                self.steps.accept(AppStep.breed(withId: id))
+            }).disposed(by: disposeBag)
         
         BreedAPI.getAllBreeds(token: self.userService.getToken().orEmpty)
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))

@@ -31,16 +31,26 @@ final class HandbookFlow: Flow {
 
         switch step {
         case .handbook:
-            return navigationToCatsScreen()
+            return navigationToHandbookScreen()
+        case .breed(let id):
+            return navigationToBreedScreen(withId: id)
         default:
             return .none
         }
     }
     
-    private func navigationToCatsScreen() -> FlowContributors {
+    private func navigationToHandbookScreen() -> FlowContributors {
         let model = HandbookVM(userService: services.userService)
         let vc = HandbookVC()
         vc.title = R.string.localizable.handbookTitle()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToBreedScreen(withId id: Int) -> FlowContributors {
+        let model = BreedVM(withId: id, userService: services.userService)
+        let vc = BreedVC()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))

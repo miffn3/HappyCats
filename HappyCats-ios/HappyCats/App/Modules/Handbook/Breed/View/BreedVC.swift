@@ -1,22 +1,23 @@
 //
-//  NewsDetailVC.swift
+//  BreedVC.swift
 //  HappyCats
 //
-//  Created by Яна Преображенская on 08.05.2020.
+//  Created by Яна Преображенская on 17.05.2020.
 //  Copyright © 2020 Яна Преображенская. All rights reserved.
 //
 
 import UIKit
 import RxSwift
+import RxCocoa
 
-final class NewsDetailVC: UIViewController {
+class BreedVC: UIViewController {
     
-    private var model: NewsDetailVM!
+    private var model: BreedVM!
     private let disposeBag = DisposeBag()
 
-    @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsTitle: UILabel!
-    @IBOutlet weak var newsDescription: UILabel!
+    @IBOutlet weak var breedImage: UIImageView!
+    @IBOutlet weak var breedTitle: UILabel!
+    @IBOutlet weak var breedDescription: UILabel!
     @IBOutlet weak var titleLeftView: UIView!
     @IBOutlet weak var viewTopHeight: NSLayoutConstraint!
     
@@ -31,7 +32,7 @@ final class NewsDetailVC: UIViewController {
         navigationController?.navigationBar.shadowImage = nil
     }
     
-    func setModel(model: NewsDetailVM) {
+    func setModel(model: BreedVM) {
         self.model = model
     }
     
@@ -49,8 +50,8 @@ final class NewsDetailVC: UIViewController {
     }
     
     private func buildLabels() {
-        newsDescription.font = Constants.UI.Main.font
-        newsTitle.font = Constants.UI.Main.titleFont
+        breedDescription.font = Constants.UI.Main.font
+        breedTitle.font = Constants.UI.Main.titleFont
     }
     
     private func buildTitleView() {
@@ -59,11 +60,11 @@ final class NewsDetailVC: UIViewController {
     }
     
     private func bindUI() {
-        let input = NewsDetailVM.Input()
+        let input = BreedVM.Input()
         
         let output = model.transform(input: input)
-        output.title.drive(newsTitle.rx.text).disposed(by: disposeBag)
-        output.description.drive(newsDescription.rx.text).disposed(by: disposeBag)
-        output.image.drive(newsImage.rx.image).disposed(by: disposeBag)
+        output.title.drive(breedTitle.rx.text).disposed(by: disposeBag)
+        output.description.drive(breedDescription.rx.text).disposed(by: disposeBag)
+        output.image.drive(breedImage.rx.image).disposed(by: disposeBag)
     }
 }

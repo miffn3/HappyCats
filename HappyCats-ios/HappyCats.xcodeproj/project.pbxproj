@@ -68,6 +68,9 @@
 		87E6AE7724719C20005BCE75 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7624719C20005BCE75 /* Breed.swift */; };
 		87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7824719D4A005BCE75 /* BreedAPI.swift */; };
 		87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */; };
+		87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7F2471B49A005BCE75 /* BreedVC.swift */; };
+		87E6AE822471B49A005BCE75 /* BreedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E6AE802471B49A005BCE75 /* BreedVC.xib */; };
+		87E6AE842471B4A5005BCE75 /* BreedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE832471B4A5005BCE75 /* BreedVM.swift */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -160,6 +163,9 @@
 		87E6AE7624719C20005BCE75 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
 		87E6AE7824719D4A005BCE75 /* BreedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedAPI.swift; sourceTree = "<group>"; };
 		87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseAPI.swift; sourceTree = "<group>"; };
+		87E6AE7F2471B49A005BCE75 /* BreedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedVC.swift; sourceTree = "<group>"; };
+		87E6AE802471B49A005BCE75 /* BreedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedVC.xib; sourceTree = "<group>"; };
+		87E6AE832471B4A5005BCE75 /* BreedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedVM.swift; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -399,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				8780DB72246596D600745B49 /* Main */,
+				87E6AE7C2471B470005BCE75 /* Breed */,
 			);
 			path = Handbook;
 			sourceTree = "<group>";
@@ -609,6 +616,32 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		87E6AE7C2471B470005BCE75 /* Breed */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AE7E2471B487005BCE75 /* Model */,
+				87E6AE7D2471B482005BCE75 /* View */,
+			);
+			path = Breed;
+			sourceTree = "<group>";
+		};
+		87E6AE7D2471B482005BCE75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AE7F2471B49A005BCE75 /* BreedVC.swift */,
+				87E6AE802471B49A005BCE75 /* BreedVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87E6AE7E2471B487005BCE75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AE832471B4A5005BCE75 /* BreedVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		AE0D49EA3E9314EE5AC84F03 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -732,6 +765,7 @@
 				87D8391E246D71D20052C52A /* MainProfileTVC.xib in Resources */,
 				87D83929246DC8A20052C52A /* MyProfileVC.xib in Resources */,
 				8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */,
+				87E6AE822471B49A005BCE75 /* BreedVC.xib in Resources */,
 				87D838E2246980560052C52A /* HandbookVC.xib in Resources */,
 				87D83917246D70760052C52A /* MainProfileVC.xib in Resources */,
 				8780DB3F2464497800745B49 /* Localizable.strings in Resources */,
@@ -828,6 +862,7 @@
 				87D838F42469C84A0052C52A /* LoginVM.swift in Sources */,
 				8780DAE624642A5E00745B49 /* AppDelegate.swift in Sources */,
 				8780DB5B246563C100745B49 /* HandbookFlow.swift in Sources */,
+				87E6AE842471B4A5005BCE75 /* BreedVM.swift in Sources */,
 				8780DB1C24642AF200745B49 /* AppStep.swift in Sources */,
 				87D838E62469816F0052C52A /* PreferecesService.swift in Sources */,
 				87D83906246AE94F0052C52A /* AuthResponse.swift in Sources */,
@@ -866,6 +901,7 @@
 				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
 				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
+				87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */,
 				87D838E1246980560052C52A /* HandbookVC.swift in Sources */,
 				8780DB5024645F2F00745B49 /* Constants.swift in Sources */,
 				87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */,

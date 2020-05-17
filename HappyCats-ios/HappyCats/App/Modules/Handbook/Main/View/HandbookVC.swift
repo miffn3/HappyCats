@@ -14,6 +14,7 @@ final class HandbookVC: UIViewController {
 
     private var model: HandbookVM!
     private let disposeBag = DisposeBag()
+    private let selectedBreed = PublishRelay<Int>()
 
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet weak var breedsTable: UITableView!
@@ -71,7 +72,7 @@ final class HandbookVC: UIViewController {
     }
     
     private func bindUI() {
-        let input = HandbookVM.Input()
+        let input = HandbookVM.Input(selectedBreed: selectedBreed.asObservable())
         
         let output = model.transform(input: input)
         
@@ -89,15 +90,21 @@ final class HandbookVC: UIViewController {
                         cell.configDiseaseCell(disease: disease)
         }.disposed(by: self.disposeBag)
         
-        sectionSelection.rx.selectedSegmentIndex.subscribe(onNext: { index in
-            switch index {
-            case 0:
-                self.showBreeds()
-            case 1:
-                self.showDisease()
-            default:
-                break
-            }
+        sectionSelection.rx.selectedSegmentIndex
+            .subscribe(onNext: { index in
+                switch index {
+                case 0:
+                    self.showBreeds()
+                case 1:
+                    self.showDisease()
+                default:
+                    break
+                }
+            }).disposed(by: disposeBag)
+        
+        breedsTable.rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                self.selectedBreed.accept(indexPath.row)
             }).disposed(by: disposeBag)
     }
 }
