@@ -49,7 +49,7 @@ final class NewsFlow: Flow {
     }
     
     private func navigationToNewsDetailScreen(withId id: Int) -> FlowContributors {
-        let model = NewsDetailVM(withId: id)
+        let model = NewsDetailVM(withId: id, userService: services.userService)
         let vc = NewsDetailVC()
         vc.setModel(model: model)
         self.rootViewController.pushViewController(vc, animated: true)

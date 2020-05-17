@@ -33,7 +33,8 @@ final class NewsListVM: Stepper {
         let news = BehaviorRelay<[News]>(value: [])
         
         input.selectedNews
-            .subscribe(onNext: { id in
+            .subscribe(onNext: { index in
+                guard let id = news.value[safe: index]?.id else { return }
                 self.steps.accept(AppStep.newsDetail(withId: id))
             }).disposed(by: disposeBag)
         

@@ -64,6 +64,7 @@
 		87D8392B246DC8B90052C52A /* MyProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8392A246DC8B90052C52A /* MyProfileVM.swift */; };
 		87D8392D246DE0860052C52A /* String+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8392C246DE0860052C52A /* String+Optional.swift */; };
 		87E6AE7324711987005BCE75 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7224711987005BCE75 /* NewsAPI.swift */; };
+		87E6AE7524714442005BCE75 /* NotoSansBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87E6AE7424714404005BCE75 /* NotoSansBold.ttf */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -152,6 +153,7 @@
 		87D8392A246DC8B90052C52A /* MyProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVM.swift; sourceTree = "<group>"; };
 		87D8392C246DE0860052C52A /* String+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Optional.swift"; sourceTree = "<group>"; };
 		87E6AE7224711987005BCE75 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		87E6AE7424714404005BCE75 /* NotoSansBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSansBold.ttf; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				8780DB322464436C00745B49 /* NotoSans.ttf */,
+				87E6AE7424714404005BCE75 /* NotoSansBold.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87E6AE7524714442005BCE75 /* NotoSansBold.ttf in Resources */,
 				8780DB4D2464539D00745B49 /* NewsTVC.xib in Resources */,
 				87D838F02469AF2B0052C52A /* LoginVC.xib in Resources */,
 				8780DB2E24642B9F00745B49 /* NewsListVC.xib in Resources */,

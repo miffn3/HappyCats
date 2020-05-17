@@ -17,6 +17,7 @@ enum Constants {
             static let registrationURL = "/auth/signup"
             static let user = "/users/me"
             static let allNews = "/news/all"
+            static let newsById = "/news/id"
         }
         
         enum Headers {
@@ -29,7 +30,7 @@ enum Constants {
             static let color = UIColor(red: 0.13, green: 0.59, blue: 0.95, alpha: 1.00)
             static let font = R.font.notoSans(size: 17)
             static let smallFont = R.font.notoSans(size: 14)
-            static let titleFont = R.font.notoSans(size: 24)
+            static let titleFont = R.font.notoSansBold(size: 24)
             static let fontColor = UIColor.black
             static let alternativeFontColor = UIColor.white
         }
