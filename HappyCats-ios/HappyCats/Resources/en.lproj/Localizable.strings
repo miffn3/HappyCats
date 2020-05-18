@@ -36,4 +36,6 @@ profile.myCats.breed = "Breed";
 profile.myCats.birthday = "Birthday";
 profile.myCats.note = "About pet";
 
+profile.addCat.title = "New pet";
+
 handbook.breeds.disease = "Diseases to which this breed is exposed";

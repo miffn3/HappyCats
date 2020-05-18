@@ -49,7 +49,9 @@ class CatsListVC: UIViewController {
     }
     
     private func bindUI() {
-        let input = CatsListVM.Input(selectedCat: selectedCat.asObservable())
+        let addCatButtonTap = Observable<Void>.merge(addCatButton.rx.tap.asObservable())
+        let input = CatsListVM.Input(selectedCat: selectedCat.asObservable(),
+                                     addCatButton: addCatButtonTap)
             
         let output = model.transform(input: input)
         

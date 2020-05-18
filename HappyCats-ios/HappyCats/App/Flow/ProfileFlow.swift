@@ -38,6 +38,8 @@ final class ProfileFlow: Flow {
             return navigationToMyCatsScreen()
         case .cat(let id):
             return navigationToCatScreen(withId: id)
+        case .addCat:
+            return navigationToAddCatScreen()
         default:
             return .none
         }
@@ -73,6 +75,15 @@ final class ProfileFlow: Flow {
     private func navigationToCatScreen(withId id: Int) -> FlowContributors {
         let model = CatProfileVM(withId: id, userService: services.userService)
         let vc = CatProfileVC()
+        vc.setModel(model: model)
+        self.rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToAddCatScreen() -> FlowContributors {
+        let model = AddCatVM(userService: services.userService)
+        let vc = AddCatVC()
+        vc.title = R.string.localizable.profileAddCatTitle()
         vc.setModel(model: model)
         self.rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))

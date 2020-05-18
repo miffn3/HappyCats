@@ -35,4 +35,5 @@ enum AppStep: Step {
     case myProfile
     case myCats
     case cat(withId: Int)
+    case addCat
 }

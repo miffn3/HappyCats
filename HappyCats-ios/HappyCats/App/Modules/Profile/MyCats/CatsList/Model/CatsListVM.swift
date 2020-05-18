@@ -19,6 +19,7 @@ final class CatsListVM: Stepper {
     
     struct Input {
         let selectedCat: Observable<Int>
+        let addCatButton: Observable<Void>
     }
     
     struct Output {
@@ -36,6 +37,11 @@ final class CatsListVM: Stepper {
             .subscribe(onNext: { index in
                 guard let id = cats.value[safe: index]?.id else { return }
                 self.steps.accept(AppStep.cat(withId: id))
+            }).disposed(by: disposeBag)
+        
+        input.addCatButton
+            .subscribe(onNext: { _ in
+                self.steps.accept(AppStep.addCat)
             }).disposed(by: disposeBag)
         
         CatAPI.getAllCats(token: userService.getToken().orEmpty)

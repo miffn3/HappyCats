@@ -36,4 +36,6 @@ profile.myCats.breed = "Порода";
 profile.myCats.birthday = "День рождения";
 profile.myCats.note = "О питомце";
 
+profile.addCat.title = "Новый питомец";
+
 handbook.breeds.disease = "Заболевания, которым подвержена данная порода";

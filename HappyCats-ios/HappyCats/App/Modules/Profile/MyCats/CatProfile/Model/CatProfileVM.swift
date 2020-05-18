@@ -83,15 +83,10 @@ final class CatProfileVM: Stepper {
             .withLatestFrom(data)
             .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
             .flatMap { (name, breed, birthday, note) -> Observable<Void> in
-                let breedModel = allBreeds.value.first(where: {$0.name == breed})
                 return CatAPI.updateCat(token: self.userService.getToken().orEmpty,
                                         id: self.id,
                                         name: name.orEmpty,
-                                        breed: breedModel ?? Breed(id: nil,
-                                                                   name: nil,
-                                                                   description: nil,
-                                                                   photo: nil,
-                                                                   diseases: nil),
+                                        breed: breed.orEmpty,
                                         birthday: birthday.orEmpty,
                                         note: note.orEmpty)
             }

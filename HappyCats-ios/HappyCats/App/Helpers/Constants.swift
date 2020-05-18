@@ -25,6 +25,7 @@ enum Constants {
             static let myCats = "/cats/all"
             static let catById = "/cats/id"
             static let updateCat = "/cats/catid"
+            static let addCat = "/cats/"
         }
         
         enum Headers {
