@@ -2,7 +2,6 @@ package university.happyCatsSpring.service.impl;
 
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import university.happyCatsSpring.dto.CreateCatDto;
-import university.happyCatsSpring.dto.UpdateCatDto;
 import university.happyCatsSpring.entity.Breed;
 import university.happyCatsSpring.entity.Cat;
 import university.happyCatsSpring.entity.User;
@@ -49,7 +48,27 @@ public class CatServiceImpl implements CatService {
         User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("User " + username +" not found"));
         Optional<Breed> breedOptional = breedRepository.findByName(catDto.getBreed());
         Breed breed = breedOptional.orElseThrow(() -> new Exception("Breed not found"));
-        Cat cat = new Cat(catDto.getName(), breed);
+
+        String birthday = catDto.getBirthday();
+        String name = catDto.getName();
+        String photo = catDto.getPhoto();
+        String note = catDto.getNote();
+
+        Cat cat = new Cat();
+        cat.setBreed(breed);
+
+        if(name != null && !name.trim().isEmpty())
+            cat.setName(name);
+
+        if(birthday != null && !birthday.trim().isEmpty())
+            cat.setBirthday(birthday);
+
+        if(photo != null && !photo.trim().isEmpty())
+            cat.setPhoto(photo);
+
+        if(note != null && !note.trim().isEmpty())
+            cat.setNote(note);
+
         Set<Cat> catSet = user.getCats();
         catSet.add(cat);
         user.setCats(catSet);
@@ -58,7 +77,7 @@ public class CatServiceImpl implements CatService {
     }
 
     @Override
-    public Cat updateCat(Cat cat, UpdateCatDto catDto) throws Exception {
+    public Cat updateCat(Cat cat, CreateCatDto catDto) throws Exception {
         String newBirthday = catDto.getBirthday();
         String newName = catDto.getName();
         String newPhoto = catDto.getPhoto();

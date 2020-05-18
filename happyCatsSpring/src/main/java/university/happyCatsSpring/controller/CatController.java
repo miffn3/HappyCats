@@ -10,7 +10,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import university.happyCatsSpring.dto.CreateCatDto;
-import university.happyCatsSpring.dto.UpdateCatDto;
 import university.happyCatsSpring.entity.Cat;
 import university.happyCatsSpring.service.iface.CatService;
 
@@ -79,7 +78,7 @@ public class CatController {
 
     @PutMapping(value = "/catid/{id}")
     public ResponseEntity updateCat(@PathVariable("catid") String catId,
-                                         @RequestBody UpdateCatDto body)
+                                         @RequestBody CreateCatDto body)
     {
         Long id = Long.parseLong(catId);
         Optional<Cat> catOptional = catService.findById(id);
