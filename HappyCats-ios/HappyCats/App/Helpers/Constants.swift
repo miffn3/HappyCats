@@ -22,6 +22,7 @@ enum Constants {
             static let breedById = "/breeds/id"
             static let allDisease = "/diseases/all"
             static let diseaseById = "/diseases/id"
+            static let myCats = "/cats/all"
         }
         
         enum Headers {
@@ -49,6 +50,10 @@ enum Constants {
         enum Button {
             static let cornerRadius: CGFloat = 5
             static let borderWidth: CGFloat = 1
+            
+            enum AddCat {
+                static let cornerRadius: CGFloat = 25
+            }
         }
         
         enum View {

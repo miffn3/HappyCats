@@ -9,5 +9,10 @@
 import Foundation
 
 struct Cat: Codable {
-    var name: String?
+    let id: Int?
+    let name: String?
+    let photo: String?
+    let Breed: Breed?
+    let birthday: String?
+    let note: String?
 }

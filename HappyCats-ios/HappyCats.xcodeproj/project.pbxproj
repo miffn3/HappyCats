@@ -43,6 +43,12 @@
 		878AD9E82471C088003A8206 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */; };
 		878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */; };
 		878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */; };
+		87A45C1C2472ACDB009B7A51 /* CatsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */; };
+		87A45C1F2472ACEF009B7A51 /* CatsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */; };
+		87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */; };
+		87A45C242472AD99009B7A51 /* MyCatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C222472AD99009B7A51 /* MyCatTVC.swift */; };
+		87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C232472AD99009B7A51 /* MyCatTVC.xib */; };
+		87A45C272472AF31009B7A51 /* CatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C262472AF31009B7A51 /* CatAPI.swift */; };
 		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
 		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
 		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
@@ -143,6 +149,12 @@
 		878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDiseaseTVC.swift; sourceTree = "<group>"; };
 		878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedDiseaseTVC.xib; sourceTree = "<group>"; };
+		87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVM.swift; sourceTree = "<group>"; };
+		87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVC.swift; sourceTree = "<group>"; };
+		87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsListVC.xib; sourceTree = "<group>"; };
+		87A45C222472AD99009B7A51 /* MyCatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCatTVC.swift; sourceTree = "<group>"; };
+		87A45C232472AD99009B7A51 /* MyCatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCatTVC.xib; sourceTree = "<group>"; };
+		87A45C262472AF31009B7A51 /* CatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPI.swift; sourceTree = "<group>"; };
 		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
 		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
 		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
@@ -518,6 +530,58 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		87A45C162472AC8C009B7A51 /* MyCats */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C192472ACA9009B7A51 /* CatsList */,
+				87A45C1A2472ACB1009B7A51 /* CatProfile */,
+			);
+			path = MyCats;
+			sourceTree = "<group>";
+		};
+		87A45C172472AC96009B7A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C212472AD80009B7A51 /* Cell */,
+				87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */,
+				87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87A45C182472AC9D009B7A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87A45C192472ACA9009B7A51 /* CatsList */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C182472AC9D009B7A51 /* Model */,
+				87A45C172472AC96009B7A51 /* View */,
+			);
+			path = CatsList;
+			sourceTree = "<group>";
+		};
+		87A45C1A2472ACB1009B7A51 /* CatProfile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CatProfile;
+			sourceTree = "<group>";
+		};
+		87A45C212472AD80009B7A51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C222472AD99009B7A51 /* MyCatTVC.swift */,
+				87A45C232472AD99009B7A51 /* MyCatTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		87D838E72469AE170052C52A /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +651,7 @@
 				87E6AE7224711987005BCE75 /* NewsAPI.swift */,
 				87E6AE7824719D4A005BCE75 /* BreedAPI.swift */,
 				87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */,
+				87A45C262472AF31009B7A51 /* CatAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -596,6 +661,7 @@
 			children = (
 				87D83911246D70430052C52A /* Main */,
 				87D83923246DC86D0052C52A /* MyProfile */,
+				87A45C162472AC8C009B7A51 /* MyCats */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -821,6 +887,8 @@
 				87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */,
 				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
 				878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */,
+				87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */,
+				87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
 				878AD9E72471C085003A8206 /* Montserrat-Medium.ttf in Resources */,
 			);
@@ -921,7 +989,9 @@
 				87D83928246DC8A20052C52A /* MyProfileVC.swift in Sources */,
 				8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */,
 				8780DB1E24642AF200745B49 /* NewsFlow.swift in Sources */,
+				87A45C272472AF31009B7A51 /* CatAPI.swift in Sources */,
 				87D83901246ACDB30052C52A /* User.swift in Sources */,
+				87A45C1F2472ACEF009B7A51 /* CatsListVC.swift in Sources */,
 				8780DB892465B35400745B49 /* Disease.swift in Sources */,
 				87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */,
 				87D83904246AE8380052C52A /* AuthAPI.swift in Sources */,
@@ -935,6 +1005,7 @@
 				87D838FF246ACB7F0052C52A /* UserService.swift in Sources */,
 				87D8392B246DC8B90052C52A /* MyProfileVM.swift in Sources */,
 				8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */,
+				87A45C242472AD99009B7A51 /* MyCatTVC.swift in Sources */,
 				87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */,
 				878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
@@ -947,6 +1018,7 @@
 				8780DB482464516B00745B49 /* News.swift in Sources */,
 				8780DB4C2464539D00745B49 /* NewsTVC.swift in Sources */,
 				87E6AE7724719C20005BCE75 /* Breed.swift in Sources */,
+				87A45C1C2472ACDB009B7A51 /* CatsListVM.swift in Sources */,
 				87D838EF2469AF2B0052C52A /* LoginVC.swift in Sources */,
 				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
 				878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */,

@@ -53,4 +53,8 @@ final class MainProfileVM: Stepper {
     func goToMyProfile() {
         steps.accept(AppStep.myProfile)
     }
+    
+    func goToMyCats() {
+        steps.accept(AppStep.myCats)
+    }
 }

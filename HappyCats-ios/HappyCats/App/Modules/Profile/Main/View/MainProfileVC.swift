@@ -71,6 +71,8 @@ extension MainProfileVC: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             model.goToMyProfile()
+        case 1:
+            model.goToMyCats()
         default:
             return
         }

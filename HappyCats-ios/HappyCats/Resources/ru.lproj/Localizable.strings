@@ -29,5 +29,6 @@ profile.myProfile.phone = "Номер телефона";
 profile.myProfile.birthday = "День рождения";
 
 profile.myCats.title = "Мои кошки";
+profile.myCats.addButton = "+";
 
 handbook.breeds.disease = "Заболевания, которым подвержена данная порода";
