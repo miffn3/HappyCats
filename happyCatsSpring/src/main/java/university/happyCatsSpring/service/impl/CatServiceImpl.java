@@ -72,6 +72,7 @@ public class CatServiceImpl implements CatService {
         Set<Cat> catSet = user.getCats();
         catSet.add(cat);
         user.setCats(catSet);
+        catRepository.save(cat);
         userRepository.save(user);
         return cat;
     }
