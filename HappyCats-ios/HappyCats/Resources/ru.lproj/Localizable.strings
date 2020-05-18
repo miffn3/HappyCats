@@ -30,5 +30,9 @@ profile.myProfile.birthday = "День рождения";
 
 profile.myCats.title = "Мои кошки";
 profile.myCats.addButton = "+";
+profile.myCats.name = "Имя";
+profile.myCats.breed = "Порода";
+profile.myCats.birthday = "День рождения";
+profile.myCats.note = "О питомце";
 
 handbook.breeds.disease = "Заболевания, которым подвержена данная порода";

@@ -49,6 +49,9 @@
 		87A45C242472AD99009B7A51 /* MyCatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C222472AD99009B7A51 /* MyCatTVC.swift */; };
 		87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C232472AD99009B7A51 /* MyCatTVC.xib */; };
 		87A45C272472AF31009B7A51 /* CatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C262472AF31009B7A51 /* CatAPI.swift */; };
+		87A45C2B2472C4C3009B7A51 /* CatProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */; };
+		87A45C2E2472CF39009B7A51 /* CatProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */; };
+		87A45C2F2472CF39009B7A51 /* CatProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */; };
 		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
 		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
 		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
@@ -155,6 +158,9 @@
 		87A45C222472AD99009B7A51 /* MyCatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCatTVC.swift; sourceTree = "<group>"; };
 		87A45C232472AD99009B7A51 /* MyCatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCatTVC.xib; sourceTree = "<group>"; };
 		87A45C262472AF31009B7A51 /* CatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPI.swift; sourceTree = "<group>"; };
+		87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileVM.swift; sourceTree = "<group>"; };
+		87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileVC.swift; sourceTree = "<group>"; };
+		87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatProfileVC.xib; sourceTree = "<group>"; };
 		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
 		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
 		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
@@ -569,6 +575,8 @@
 		87A45C1A2472ACB1009B7A51 /* CatProfile */ = {
 			isa = PBXGroup;
 			children = (
+				87A45C292472C4AA009B7A51 /* Model */,
+				87A45C282472C4A0009B7A51 /* View */,
 			);
 			path = CatProfile;
 			sourceTree = "<group>";
@@ -580,6 +588,23 @@
 				87A45C232472AD99009B7A51 /* MyCatTVC.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		87A45C282472C4A0009B7A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */,
+				87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87A45C292472C4AA009B7A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		87D838E72469AE170052C52A /* Onboarding */ = {
@@ -887,6 +912,7 @@
 				87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */,
 				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
 				878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */,
+				87A45C2F2472CF39009B7A51 /* CatProfileVC.xib in Resources */,
 				87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */,
 				87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
@@ -998,6 +1024,7 @@
 				87D83920246D77F90052C52A /* ProfileFlow.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
+				87A45C2E2472CF39009B7A51 /* CatProfileVC.swift in Sources */,
 				87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
@@ -1025,6 +1052,7 @@
 				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
 				878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */,
+				87A45C2B2472C4C3009B7A51 /* CatProfileVM.swift in Sources */,
 				87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */,
 				87D838E1246980560052C52A /* HandbookVC.swift in Sources */,
 				8780DB5024645F2F00745B49 /* Constants.swift in Sources */,

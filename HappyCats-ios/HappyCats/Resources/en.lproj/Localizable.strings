@@ -30,5 +30,9 @@ profile.myProfile.birthday = "Birthday";
 
 profile.myCats.title = "My cats";
 profile.myCats.addButton = "+";
+profile.myCats.name = "Name";
+profile.myCats.breed = "Breed";
+profile.myCats.birthday = "Birthday";
+profile.myCats.note = "About pet";
 
 handbook.breeds.disease = "Diseases to which this breed is exposed";

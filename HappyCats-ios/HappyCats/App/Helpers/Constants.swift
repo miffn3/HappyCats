@@ -23,6 +23,8 @@ enum Constants {
             static let allDisease = "/diseases/all"
             static let diseaseById = "/diseases/id"
             static let myCats = "/cats/all"
+            static let catById = "/cats/id"
+            static let updateCat = "/cats/catid"
         }
         
         enum Headers {

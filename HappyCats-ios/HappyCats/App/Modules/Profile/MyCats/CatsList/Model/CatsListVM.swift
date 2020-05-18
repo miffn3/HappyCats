@@ -35,7 +35,7 @@ final class CatsListVM: Stepper {
         input.selectedCat
             .subscribe(onNext: { index in
                 guard let id = cats.value[safe: index]?.id else { return }
-//                self.steps.accept(AppStep.cat(withId: id))
+                self.steps.accept(AppStep.cat(withId: id))
             }).disposed(by: disposeBag)
         
         CatAPI.getAllCats(token: userService.getToken().orEmpty)

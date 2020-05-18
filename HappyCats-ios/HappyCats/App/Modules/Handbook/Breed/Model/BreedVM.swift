@@ -64,8 +64,8 @@ final class BreedVM: Stepper {
                             }
                     }
                 }
-                disease.accept(breed.diseases)
-                diseaseCount.accept(breed.diseases.count)
+                disease.accept(breed.diseases ?? [])
+                diseaseCount.accept(breed.diseases?.count ?? 0)
             })
             .disposed(by: disposeBag)
         

@@ -12,7 +12,7 @@ struct Cat: Codable {
     let id: Int?
     let name: String?
     let photo: String?
-    let Breed: Breed?
+    let breed: Breed?
     let birthday: String?
     let note: String?
 }
