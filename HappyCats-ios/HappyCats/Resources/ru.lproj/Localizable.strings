@@ -27,6 +27,7 @@ profile.myProfile.login = "Логин";
 profile.myProfile.email = "Email";
 profile.myProfile.phone = "Номер телефона";
 profile.myProfile.birthday = "День рождения";
+profile.myProfile.note = "О себе";
 
 profile.myCats.title = "Мои кошки";
 profile.myCats.addButton = "+";

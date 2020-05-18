@@ -27,6 +27,7 @@ profile.myProfile.login = "Login";
 profile.myProfile.email = "Email";
 profile.myProfile.phone = "Phone";
 profile.myProfile.birthday = "Birthday";
+profile.myProfile.note = "About me";
 
 profile.myCats.title = "My cats";
 profile.myCats.addButton = "+";

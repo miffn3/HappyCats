@@ -18,15 +18,19 @@ class MyProfileVC: UIViewController {
     @IBOutlet private weak var emailLabel: UILabel!
     @IBOutlet private weak var phoneLabel: UILabel!
     @IBOutlet private weak var birthdayLabel: UILabel!
+    @IBOutlet private weak var noteLabel: UILabel!
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var loginField: UITextField!
     @IBOutlet private weak var emailField: UITextField!
     @IBOutlet private weak var phoneField: UITextField!
     @IBOutlet private weak var birthdayField: UITextField!
+    @IBOutlet private weak var noteField: UITextView!
     @IBOutlet private weak var saveButton: UIButton!
     
     private var model: MyProfileVM!
     private var disposeBag = DisposeBag()
+    private let datePicker = UIDatePicker()
+    private let dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,8 +48,10 @@ class MyProfileVC: UIViewController {
         buildLabel(label: emailLabel, text: R.string.localizable.profileMyProfileEmail())
         buildLabel(label: phoneLabel, text: R.string.localizable.profileMyProfilePhone())
         buildLabel(label: birthdayLabel, text: R.string.localizable.profileMyProfileBirthday())
+        buildLabel(label: noteLabel, text: R.string.localizable.profileMyProfileNote())
         
         buildFields()
+        buildDatePicker()
         buildButton()
         buildImage()
     }
@@ -61,6 +67,13 @@ class MyProfileVC: UIViewController {
         emailField.font = Constants.UI.Main.mainFont
         phoneField.font = Constants.UI.Main.mainFont
         birthdayField.font = Constants.UI.Main.mainFont
+        noteField.font = Constants.UI.Main.mainFont
+    }
+    
+    private func buildDatePicker() {
+        datePicker.datePickerMode = .date
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        birthdayField.inputView = datePicker
     }
     
     private func buildButton() {
@@ -83,6 +96,7 @@ class MyProfileVC: UIViewController {
                                       email: emailField.rx.text.asObservable(),
                                       phone: phoneField.rx.text.asObservable(),
                                       birthday: birthdayField.rx.text.asObservable(),
+                                      note: noteField.rx.text.asObservable(),
                                       saveButton: saveButtonTap)
         let output = model.transform(input: input)
         output.name.drive(nameField.rx.text).disposed(by: disposeBag)
@@ -90,6 +104,19 @@ class MyProfileVC: UIViewController {
         output.email.drive(emailField.rx.text).disposed(by: disposeBag)
         output.phone.drive(phoneField.rx.text).disposed(by: disposeBag)
         output.birthday.drive(birthdayField.rx.text).disposed(by: disposeBag)
+        output.note.drive(noteField.rx.text).disposed(by: disposeBag)
         output.userImage.drive(userImage.rx.image).disposed(by: disposeBag)
+        
+        output.birthday
+            .drive(onNext: { text in
+                self.datePicker.date = self.dateFormatter.date(from: text) ?? Date()
+            }).disposed(by: disposeBag)
+        
+        datePicker.rx
+            .date
+            .changed
+            .subscribe(onNext: { date in
+                self.birthdayField.text = self.dateFormatter.string(from: date)
+            }).disposed(by: disposeBag)
     }
 }

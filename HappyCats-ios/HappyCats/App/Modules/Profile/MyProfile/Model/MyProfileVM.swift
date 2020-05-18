@@ -23,6 +23,7 @@ final class MyProfileVM: Stepper {
         let email: Observable<String?>
         let phone: Observable<String?>
         let birthday: Observable<String?>
+        let note: Observable<String?>
         let saveButton: Observable<Void>
     }
     
@@ -32,6 +33,7 @@ final class MyProfileVM: Stepper {
         let email: Driver<String>
         let phone: Driver<String>
         let birthday: Driver<String>
+        let note: Driver<String>
         let userImage: Driver<UIImage>
     }
     
@@ -40,13 +42,12 @@ final class MyProfileVM: Stepper {
     }
     
     func transform(input: Input) -> Output {
-        input.name.debug("input.name").subscribe{}.disposed(by: disposeBag)
-        
         let name = BehaviorRelay<String>(value: "")
         let login = BehaviorRelay<String>(value: "")
         let email = BehaviorRelay<String>(value: "")
         let phone = BehaviorRelay<String>(value: "")
         let birthday = BehaviorRelay<String>(value: "")
+        let note = BehaviorRelay<String>(value: "")
         let userImage = BehaviorRelay<UIImage>(value: R.image.emptyPhoto() ?? UIImage())
         
         UserAPI.getUser(token: userService.getToken() ?? "")
@@ -57,6 +58,7 @@ final class MyProfileVM: Stepper {
                 email.accept(user.email.orEmpty)
                 phone.accept(user.phone.orEmpty)
                 birthday.accept(user.birthday.orEmpty)
+                note.accept(user.note.orEmpty)
                 if let img = user.photo, let imgUrl = URL(string: img) {
                     KingfisherManager.shared
                         .retrieveImage(with: ImageResource(downloadURL: imgUrl, cacheKey: nil)) { result in
@@ -71,21 +73,20 @@ final class MyProfileVM: Stepper {
             })
             .disposed(by: disposeBag)
         
-        let data = Observable.combineLatest(input.name, input.login, input.phone, input.email, input.birthday)
-        
-        data.debug("data").subscribe{}.disposed(by: disposeBag)
+        let data = Observable.combineLatest(input.name, input.login, input.phone, input.email, input.birthday, input.note)
 
         input.saveButton
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(data)
             .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
-            .flatMap { (name, login, phone, email, birthday) -> Observable<Void> in
+            .flatMap { (name, login, phone, email, birthday, note) -> Observable<Void> in
                 return UserAPI.updateUser(token: self.userService.getToken().orEmpty,
                                           name: name.orEmpty,
                                           login: login.orEmpty,
                                           email: email.orEmpty,
                                           phone: phone.orEmpty,
-                                          birthday: birthday.orEmpty)
+                                          birthday: birthday.orEmpty,
+                                          note: note.orEmpty)
             }
             .subscribe(onNext: { }).disposed(by: disposeBag)
         
@@ -94,6 +95,7 @@ final class MyProfileVM: Stepper {
                       email: email.asDriver(onErrorDriveWith: .never()),
                       phone: phone.asDriver(onErrorDriveWith: .never()),
                       birthday: birthday.asDriver(onErrorDriveWith: .never()),
+                      note: note.asDriver(onErrorDriveWith: .never()),
                       userImage: userImage.asDriver(onErrorDriveWith: .never()))
     }
 }
