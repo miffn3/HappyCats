@@ -77,7 +77,7 @@ public class CatController {
     }
 
     @PutMapping(value = "/catid/{id}")
-    public ResponseEntity updateCat(@PathVariable("catid") String catId,
+    public ResponseEntity updateCat(@PathVariable("id") String catId,
                                          @RequestBody CreateCatDto body)
     {
         Long id = Long.parseLong(catId);
