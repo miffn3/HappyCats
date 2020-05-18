@@ -9,5 +9,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateCatDto {
     private String name;
+    private String photo;
+    private String birthday;
+    private String note;
     private String breed;
 }
