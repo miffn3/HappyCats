@@ -5,6 +5,7 @@ cats.title = "Породы";
 disease.title = "Заболевания";
 
 button.save = "Сохранить";
+button.changePhoto = "Изменить фотографию";
 
 auth.login.title = "Вход";
 auth.login.readyButton = "Войти";
@@ -20,6 +21,7 @@ auth.user.login = "Логин";
 auth.user.password = "Пароль";
 
 profile.mainProfile.title = "Профиль";
+profile.mainProfile.exitButton = "Выйти";
 
 profile.myProfile.title = "Мой профиль";
 profile.myProfile.name = "Имя";

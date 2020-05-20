@@ -39,10 +39,10 @@ struct UserAPI {
         }
     }
     
-    static func updateUser(token: String, name: String, login: String, email: String, phone: String, birthday: String, note: String) -> Observable<Void> {
+    static func updateUser(token: String, name: String, login: String, email: String, phone: String, birthday: String, note: String, photo: String) -> Observable<Void> {
         return Observable.create { observer -> Disposable in
             let headers = [Constants.API.Headers.auth: token]
-            let param = ["name": name, "login": login, "email": email, "phone": phone, "birthday": birthday, "note": note]
+            let param = ["name": name, "login": login, "email": email, "phone": phone, "birthday": birthday, "note": note, "photo": photo]
             Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.user)",
                               method: .put,
                               parameters: param,

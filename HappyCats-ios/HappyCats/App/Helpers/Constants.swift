@@ -31,6 +31,12 @@ enum Constants {
         enum Headers {
             static let auth = "Authorization"
         }
+        
+        enum Cloudinary {
+            static let cloudName = "dj7n6iicp"
+            static let folder = "happycats_test/"
+            static let preset = "HappyCatsPreset"
+        }
     }
     
     enum UI {

@@ -23,6 +23,7 @@ final class CatProfileVM: Stepper {
         let breed: Observable<String?>
         let birthday: Observable<String?>
         let note: Observable<String?>
+        let catPhoto: Observable<UIImage?>
         let saveButton: Observable<Void>
     }
     
@@ -76,19 +77,23 @@ final class CatProfileVM: Stepper {
             })
             .disposed(by: self.disposeBag)
         
-        let data = Observable.combineLatest(input.name, input.breed, input.birthday, input.note)
+        let data = Observable.combineLatest(input.name, input.breed, input.birthday, input.note, input.catPhoto)
 
         input.saveButton
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(data)
             .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
-            .flatMap { (name, breed, birthday, note) -> Observable<Void> in
-                return CatAPI.updateCat(token: self.userService.getToken().orEmpty,
-                                        id: self.id,
-                                        name: name.orEmpty,
-                                        breed: breed.orEmpty,
-                                        birthday: birthday.orEmpty,
-                                        note: note.orEmpty)
+            .flatMap { (name, breed, birthday, note, photo) -> Observable<Void> in
+                return PhotoAPI.uploadPhoto(photo: photo)
+                    .flatMap { photo in
+                        return CatAPI.updateCat(token: self.userService.getToken().orEmpty,
+                                                id: self.id,
+                                                name: name.orEmpty,
+                                                breed: breed.orEmpty,
+                                                birthday: birthday.orEmpty,
+                                                note: note.orEmpty,
+                                                photo: photo)
+                }
             }
             .subscribe(onNext: { })
             .disposed(by: disposeBag)

@@ -13,5 +13,6 @@ target 'HappyCats' do
   pod 'Kingfisher'
   pod 'Then'
   pod 'Reusable'
+  pod 'Cloudinary', '~> 2.0'
   
 end

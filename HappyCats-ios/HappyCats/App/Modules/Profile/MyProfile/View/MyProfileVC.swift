@@ -13,6 +13,7 @@ import RxCocoa
 class MyProfileVC: UIViewController {
     
     @IBOutlet private weak var userImage: UIImageView!
+    @IBOutlet private weak var changePhotoButton: UIButton!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var loginLabel: UILabel!
     @IBOutlet private weak var emailLabel: UILabel!
@@ -52,7 +53,7 @@ class MyProfileVC: UIViewController {
         
         buildFields()
         buildDatePicker()
-        buildButton()
+        buildButtons()
         buildImage()
     }
     
@@ -76,12 +77,23 @@ class MyProfileVC: UIViewController {
         birthdayField.inputView = datePicker
     }
     
-    private func buildButton() {
+    private func buildButtons() {
+        buildSaveButton()
+        buildPhotoButton()
+    }
+    
+    private func buildSaveButton() {
         saveButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         saveButton.backgroundColor = Constants.UI.Main.mainColor
         saveButton.tintColor = Constants.UI.Main.alternativeFontColor
         saveButton.titleLabel?.font = Constants.UI.Main.mainFont
         saveButton.setTitle(R.string.localizable.buttonSave(), for: .normal)
+    }
+    
+    private func buildPhotoButton() {
+        changePhotoButton.titleLabel?.font = Constants.UI.Main.smallFont
+        changePhotoButton.tintColor = Constants.UI.Main.mainColor
+        changePhotoButton.setTitle(R.string.localizable.buttonChangePhoto(), for: .normal)
     }
     
     private func buildImage() {
@@ -97,6 +109,7 @@ class MyProfileVC: UIViewController {
                                       phone: phoneField.rx.text.asObservable(),
                                       birthday: birthdayField.rx.text.asObservable(),
                                       note: noteField.rx.text.asObservable(),
+                                      userPhoto: userImage.rx.observe(UIImage.self, "image"),
                                       saveButton: saveButtonTap)
         let output = model.transform(input: input)
         output.name.drive(nameField.rx.text).disposed(by: disposeBag)
@@ -118,5 +131,27 @@ class MyProfileVC: UIViewController {
             .subscribe(onNext: { date in
                 self.birthdayField.text = self.dateFormatter.string(from: date)
             }).disposed(by: disposeBag)
+        
+        changePhotoButton.rx
+            .tap
+            .subscribe(onNext: { _ in
+                self.buildImagePicker()
+            }).disposed(by: disposeBag)
+    }
+}
+
+extension MyProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func buildImagePicker() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        userImage.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
 }

@@ -67,10 +67,10 @@ struct CatAPI {
         }
     }
     
-    static func updateCat(token: String, id: Int, name: String, breed: String, birthday: String, note: String) -> Observable<Void> {
+    static func updateCat(token: String, id: Int, name: String, breed: String, birthday: String, note: String, photo: String) -> Observable<Void> {
         return Observable.create { observer -> Disposable in
             let headers = [Constants.API.Headers.auth: token]
-            let param = ["name": name, "breed": breed, "birthday": birthday, "note": note]
+            let param = ["name": name, "breed": breed, "birthday": birthday, "note": note, "photo": photo]
             Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.updateCat)/\(id)",
                               method: .put,
                               parameters: param,
@@ -90,10 +90,10 @@ struct CatAPI {
         }
     }
     
-    static func addCat(token: String, name: String, breed: String, birthday: String, note: String) -> Observable<Void> {
+    static func addCat(token: String, name: String, breed: String, birthday: String, note: String, photo: String) -> Observable<Void> {
         return Observable.create { observer -> Disposable in
             let headers = [Constants.API.Headers.auth: token]
-            let param = ["name": name, "breed": breed, "birthday": birthday, "note": note]
+            let param = ["name": name, "breed": breed, "birthday": birthday, "note": note, "photo": photo]
             Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.addCat)",
                               method: .post,
                               parameters: param,

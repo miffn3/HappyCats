@@ -24,6 +24,7 @@ final class MyProfileVM: Stepper {
         let phone: Observable<String?>
         let birthday: Observable<String?>
         let note: Observable<String?>
+        let userPhoto: Observable<UIImage?>
         let saveButton: Observable<Void>
     }
     
@@ -73,20 +74,24 @@ final class MyProfileVM: Stepper {
             })
             .disposed(by: disposeBag)
         
-        let data = Observable.combineLatest(input.name, input.login, input.phone, input.email, input.birthday, input.note)
+        let data = Observable.combineLatest(input.name, input.login, input.phone, input.email, input.birthday, input.note, input.userPhoto)
 
         input.saveButton
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .withLatestFrom(data)
             .observeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
-            .flatMap { (name, login, phone, email, birthday, note) -> Observable<Void> in
-                return UserAPI.updateUser(token: self.userService.getToken().orEmpty,
-                                          name: name.orEmpty,
-                                          login: login.orEmpty,
-                                          email: email.orEmpty,
-                                          phone: phone.orEmpty,
-                                          birthday: birthday.orEmpty,
-                                          note: note.orEmpty)
+            .flatMap { (name, login, phone, email, birthday, note, photo) -> Observable<Void> in
+                return PhotoAPI.uploadPhoto(photo: photo)
+                    .flatMap { photo in
+                        return UserAPI.updateUser(token: self.userService.getToken().orEmpty,
+                                                  name: name.orEmpty,
+                                                  login: login.orEmpty,
+                                                  email: email.orEmpty,
+                                                  phone: phone.orEmpty,
+                                                  birthday: birthday.orEmpty,
+                                                  note: note.orEmpty,
+                                                  photo: photo)
+                    }
             }
             .subscribe(onNext: { }).disposed(by: disposeBag)
         

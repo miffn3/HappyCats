@@ -20,6 +20,7 @@ class CatProfileVC: UIViewController {
     private let dateFormatter = DateFormatter()
     
     @IBOutlet weak var catPhoto: UIImageView!
+    @IBOutlet weak var changePhotoButton: UIButton!
     @IBOutlet weak var catName: UILabel!
     @IBOutlet weak var catBreed: UILabel!
     @IBOutlet weak var catBirthday: UILabel!
@@ -48,7 +49,7 @@ class CatProfileVC: UIViewController {
         
         buildFields()
         buildPickers()
-        buildButton()
+        buildButtons()
         buildImage()
     }
     
@@ -79,12 +80,23 @@ class CatProfileVC: UIViewController {
         birthdayField.inputView = datePicker
     }
     
-    private func buildButton() {
+    private func buildButtons() {
+        buildSaveButton()
+        buildPhotoButton()
+    }
+    
+    private func buildSaveButton() {
         saveButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         saveButton.backgroundColor = Constants.UI.Main.mainColor
         saveButton.tintColor = Constants.UI.Main.alternativeFontColor
         saveButton.titleLabel?.font = Constants.UI.Main.mainFont
         saveButton.setTitle(R.string.localizable.buttonSave(), for: .normal)
+    }
+    
+    private func buildPhotoButton() {
+        changePhotoButton.titleLabel?.font = Constants.UI.Main.smallFont
+        changePhotoButton.tintColor = Constants.UI.Main.mainColor
+        changePhotoButton.setTitle(R.string.localizable.buttonChangePhoto(), for: .normal)
     }
     
     private func buildImage() {
@@ -98,6 +110,7 @@ class CatProfileVC: UIViewController {
                                        breed: breedField.rx.text.asObservable(),
                                        birthday: birthdayField.rx.text.asObservable(),
                                        note: noteField.rx.text.asObservable(),
+                                       catPhoto: catPhoto.rx.observe(UIImage.self, "image"),
                                        saveButton: saveButtonTap)
         let output = model.transform(input: input)
         output.name.drive(nameField.rx.text).disposed(by: disposeBag)
@@ -138,5 +151,27 @@ class CatProfileVC: UIViewController {
             .subscribe(onNext: { date in
                 self.birthdayField.text = self.dateFormatter.string(from: date)
             }).disposed(by: disposeBag)
+        
+        changePhotoButton.rx
+            .tap
+            .subscribe(onNext: { _ in
+                self.buildImagePicker()
+            }).disposed(by: disposeBag)
+    }
+}
+
+extension CatProfileVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func buildImagePicker() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        catPhoto.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
 }

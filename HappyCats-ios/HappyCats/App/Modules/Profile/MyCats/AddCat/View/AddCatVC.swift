@@ -29,6 +29,7 @@ class AddCatVC: UIViewController {
     @IBOutlet weak var birthdayField: UITextField!
     @IBOutlet weak var noteField: UITextView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var addPhotoButton: UIButton!
     
     override func viewDidLoad() {
         buildUI()
@@ -47,7 +48,7 @@ class AddCatVC: UIViewController {
         
         buildFields()
         buildPickers()
-        buildButton()
+        buildButtons()
         buildImage()
     }
     
@@ -78,12 +79,23 @@ class AddCatVC: UIViewController {
         birthdayField.inputView = datePicker
     }
     
-    private func buildButton() {
+    private func buildButtons() {
+        buildSaveButton()
+        buildPhotoButton()
+    }
+    
+    private func buildSaveButton() {
         saveButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         saveButton.backgroundColor = Constants.UI.Main.mainColor
         saveButton.tintColor = Constants.UI.Main.alternativeFontColor
         saveButton.titleLabel?.font = Constants.UI.Main.mainFont
         saveButton.setTitle(R.string.localizable.buttonSave(), for: .normal)
+    }
+    
+    private func buildPhotoButton() {
+        addPhotoButton.titleLabel?.font = Constants.UI.Main.smallFont
+        addPhotoButton.tintColor = Constants.UI.Main.mainColor
+        addPhotoButton.setTitle(R.string.localizable.buttonChangePhoto(), for: .normal)
     }
     
     private func buildImage() {
@@ -97,6 +109,7 @@ class AddCatVC: UIViewController {
                                    breed: breedField.rx.text.asObservable(),
                                    birthday: birthdayField.rx.text.asObservable(),
                                    note: noteField.rx.text.asObservable(),
+                                   catPhoto: catPhoto.rx.observe(UIImage.self, "image"),
                                    saveButton: saveButtonTap)
         let output = model.transform(input: input)
         
@@ -122,5 +135,27 @@ class AddCatVC: UIViewController {
             .subscribe(onNext: { date in
                 self.birthdayField.text = self.dateFormatter.string(from: date)
             }).disposed(by: disposeBag)
+        
+        addPhotoButton.rx
+            .tap
+            .subscribe(onNext: { _ in
+                self.buildImagePicker()
+            }).disposed(by: disposeBag)
+    }
+}
+
+extension AddCatVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    private func buildImagePicker() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else { return }
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        catPhoto.image = info[.originalImage] as? UIImage
+        dismiss(animated: true, completion: nil)
     }
 }

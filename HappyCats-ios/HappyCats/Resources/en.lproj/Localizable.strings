@@ -5,6 +5,7 @@ cats.title = "Breeds";
 disease.title = "Disease";
 
 button.save = "Save";
+button.changePhoto = "Change photo";
 
 auth.login.title = "Sign In";
 auth.login.readyButton = "Sign In";
@@ -20,6 +21,7 @@ auth.user.login = "Login";
 auth.user.password = "Password";
 
 profile.mainProfile.title = "Profile";
+profile.mainProfile.exitButton = "Log out";
 
 profile.myProfile.title = "My profile";
 profile.myProfile.name = "Name";

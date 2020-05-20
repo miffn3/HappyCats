@@ -55,6 +55,7 @@
 		87A45C34247338B5009B7A51 /* AddCatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C33247338B5009B7A51 /* AddCatVM.swift */; };
 		87A45C37247338F8009B7A51 /* AddCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C35247338F8009B7A51 /* AddCatVC.swift */; };
 		87A45C38247338F8009B7A51 /* AddCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C36247338F8009B7A51 /* AddCatVC.xib */; };
+		87A45C3C24740B96009B7A51 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C3B24740B96009B7A51 /* PhotoAPI.swift */; };
 		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
 		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
 		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
@@ -167,6 +168,7 @@
 		87A45C33247338B5009B7A51 /* AddCatVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatVM.swift; sourceTree = "<group>"; };
 		87A45C35247338F8009B7A51 /* AddCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatVC.swift; sourceTree = "<group>"; };
 		87A45C36247338F8009B7A51 /* AddCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCatVC.xib; sourceTree = "<group>"; };
+		87A45C3B24740B96009B7A51 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
 		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
 		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
 		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 				87E6AE7824719D4A005BCE75 /* BreedAPI.swift */,
 				87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */,
 				87A45C262472AF31009B7A51 /* CatAPI.swift */,
+				87A45C3B24740B96009B7A51 /* PhotoAPI.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -1055,6 +1058,7 @@
 				8780DB892465B35400745B49 /* Disease.swift in Sources */,
 				87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */,
 				87D83904246AE8380052C52A /* AuthAPI.swift in Sources */,
+				87A45C3C24740B96009B7A51 /* PhotoAPI.swift in Sources */,
 				87D83920246D77F90052C52A /* ProfileFlow.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
