@@ -17,7 +17,9 @@ final class MainProfileVM: Stepper {
     private let disposeBag = DisposeBag()
     private let userService: UserService
     
-    struct Input { }
+    struct Input {
+        let exitButton: Observable<Void>
+    }
     
     struct Output {
         let userImage: Driver<UIImage>
@@ -46,6 +48,12 @@ final class MainProfileVM: Stepper {
                 }
             })
             .disposed(by: disposeBag)
+        
+        input.exitButton
+            .throttle(.seconds(1), scheduler: MainScheduler.instance)
+            .subscribe(onNext: { _ in
+                self.steps.accept(AppStep.loggedOut)
+            }).disposed(by: disposeBag)
         
         return Output(userImage: userImage.asDriver(onErrorDriveWith: .never()))
     }

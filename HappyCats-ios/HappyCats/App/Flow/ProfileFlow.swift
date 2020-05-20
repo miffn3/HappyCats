@@ -40,6 +40,8 @@ final class ProfileFlow: Flow {
             return navigationToCatScreen(withId: id)
         case .addCat:
             return navigationToAddCatScreen()
+        case .loggedOut:
+            return .end(forwardToParentFlowWithStep: AppStep.loggedOut)
         default:
             return .none
         }

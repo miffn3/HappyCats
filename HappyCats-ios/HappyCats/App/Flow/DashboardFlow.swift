@@ -33,6 +33,8 @@ final class DashboardFlow: Flow {
         switch step {
         case .dashboard:
             return navigateToDashboard()
+        case .loggedOut:
+            return popToSignInScreen()
         default:
             return .none
         }
@@ -64,5 +66,11 @@ final class DashboardFlow: Flow {
                                                         withNextStepper: OneStepper(withSingleStep: AppStep.handbook)),
                                             .contribute(withNextPresentable: profileFlow,
                                                         withNextStepper: OneStepper(withSingleStep: AppStep.mainProfile))])
+    }
+    
+    private func popToSignInScreen() -> FlowContributors {
+        services.preferencesService.setNotOnboarded()
+        services.userService.deleteToken()
+        return .end(forwardToParentFlowWithStep: AppStep.onboarding)
     }
 }

@@ -36,4 +36,5 @@ enum AppStep: Step {
     case myCats
     case cat(withId: Int)
     case addCat
+    case loggedOut
 }

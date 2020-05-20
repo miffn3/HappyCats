@@ -16,6 +16,8 @@ final class MainProfileVC: UIViewController {
     
     @IBOutlet private weak var userImage: UIImageView!
     @IBOutlet private weak var profileTable: UITableView!
+    @IBOutlet private weak var profileTableHeight: NSLayoutConstraint!
+    @IBOutlet private weak var exitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,12 +31,27 @@ final class MainProfileVC: UIViewController {
     }
     
     private func buildUI() {
+        profileTableHeight.constant = Constants.Cells.CellOfProfileTable.height * CGFloat(profileTable.numberOfRows(inSection: 0))
+        buildImage()
+        buildButton()
+    }
+    
+    private func buildImage() {
         userImage.image = R.image.emptyPhoto()
         userImage.layer.cornerRadius = userImage.frame.width / 2
     }
     
+    private func buildButton() {
+        exitButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
+        exitButton.backgroundColor = Constants.UI.Main.mainColor
+        exitButton.tintColor = Constants.UI.Main.alternativeFontColor
+        exitButton.titleLabel?.font = Constants.UI.Main.mainFont
+        exitButton.setTitle(R.string.localizable.profileMainProfileExitButton(), for: .normal)
+    }
+    
     private func bindUI() {
-        let input = MainProfileVM.Input()
+        let exitButtonTap = Observable<Void>.merge(exitButton.rx.tap.asObservable())
+        let input = MainProfileVM.Input(exitButton: exitButtonTap.asObservable())
         let output = model.transform(input: input)
         output.userImage.drive(userImage.rx.image).disposed(by: disposeBag)
     }

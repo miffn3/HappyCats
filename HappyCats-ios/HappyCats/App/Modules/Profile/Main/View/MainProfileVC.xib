@@ -10,7 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainProfileVC" customModule="HappyCats" customModuleProvider="target">
             <connections>
+                <outlet property="exitButton" destination="XXb-1c-MaA" id="Um8-3t-mRJ"/>
                 <outlet property="profileTable" destination="CEX-YD-wRk" id="qFH-h3-MIO"/>
+                <outlet property="profileTableHeight" destination="yUJ-he-fj4" id="GBb-Zh-Qsc"/>
                 <outlet property="userImage" destination="yXi-QD-sBe" id="6b0-7c-J2a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,21 +30,33 @@
                     </constraints>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CEX-YD-wRk">
-                    <rect key="frame" x="20" y="244" width="374" height="618"/>
+                    <rect key="frame" x="20" y="244" width="374" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="yUJ-he-fj4"/>
+                    </constraints>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXb-1c-MaA">
+                    <rect key="frame" x="107" y="469" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="Or6-pf-nCu"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="CEX-YD-wRk" secondAttribute="trailing" constant="20" id="5gP-mn-3dc"/>
                 <constraint firstItem="yXi-QD-sBe" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="6fu-g0-ihA"/>
+                <constraint firstItem="XXb-1c-MaA" firstAttribute="top" secondItem="CEX-YD-wRk" secondAttribute="bottom" constant="25" id="AOA-Np-E9z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="XXb-1c-MaA" secondAttribute="bottom" constant="25" id="HMl-a7-gTu"/>
                 <constraint firstItem="CEX-YD-wRk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Mjm-Gb-FJu"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="CEX-YD-wRk" secondAttribute="bottom" id="hrq-Tl-wAO"/>
                 <constraint firstItem="CEX-YD-wRk" firstAttribute="top" secondItem="yXi-QD-sBe" secondAttribute="bottom" constant="25" id="p0c-un-fpf"/>
+                <constraint firstItem="XXb-1c-MaA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rSn-YP-e5f"/>
                 <constraint firstItem="yXi-QD-sBe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="25" id="rwT-Lv-gBg"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="105"/>
+            <point key="canvasLocation" x="137.68115942028987" y="104.46428571428571"/>
         </view>
     </objects>
 </document>

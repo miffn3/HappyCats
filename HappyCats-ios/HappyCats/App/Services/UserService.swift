@@ -24,4 +24,8 @@ struct UserService {
         let token = defaults.string(forKey: UserDefaultsKeys.token.rawValue)
         return token
     }
+    
+    func deleteToken() {
+        defaults.removeObject(forKey: UserDefaultsKeys.token.rawValue)
+    }
 }

@@ -83,6 +83,10 @@ enum Constants {
         enum CellInHandbookDetail {
             static let height: CGFloat = 60
         }
+        
+        enum CellOfProfileTable {
+            static let height: CGFloat = 46
+        }
     }
     
     enum SelectedButton {
