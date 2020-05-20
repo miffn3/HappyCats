@@ -17,7 +17,6 @@ final class HandbookVC: UIViewController {
     private let selectedBreed = PublishRelay<Int>()
     private let selectedDisease = PublishRelay<Int>()
 
-    @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet weak var breedsTable: UITableView!
     @IBOutlet weak var diseaseTable: UITableView!
     @IBOutlet weak var sectionSelection: UISegmentedControl!
