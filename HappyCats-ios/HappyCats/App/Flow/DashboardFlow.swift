@@ -53,13 +53,9 @@ final class DashboardFlow: Flow {
             let tabBarItem4 = UITabBarItem(title: R.string.localizable.profileMainProfileTitle(), image: R.image.userIcon(), selectedImage: nil)
             
             root1.tabBarItem = tabBarItem1
-            root1.title = R.string.localizable.newsTitle()
             root2.tabBarItem = tabBarItem2
-            root2.title = R.string.localizable.handbookTitle()
             root3.tabBarItem = tabBarItem3
-            root3.title = R.string.localizable.expertsystemTitle()
             root4.tabBarItem = tabBarItem4
-            root4.title = R.string.localizable.profileMainProfileTitle()
             
             self.rootViewController.setViewControllers([root1, root2, root3, root4], animated: false)
         }
