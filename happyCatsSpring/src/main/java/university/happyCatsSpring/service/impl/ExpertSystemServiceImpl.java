@@ -1,6 +1,6 @@
 package university.happyCatsSpring.service.impl;
 
-import javafx.util.Pair;
+import org.springframework.data.util.Pair;
 import university.happyCatsSpring.entity.Answer;
 import university.happyCatsSpring.entity.Question;
 import university.happyCatsSpring.repo.AnswerRepository;
@@ -25,9 +25,9 @@ public class ExpertSystemServiceImpl implements ExpertSystemService {
         Optional<Question> questionOptional = questionRepository.findById(useranswer);
 
         if (!answerOptional.isPresent() && !questionOptional.isPresent()) {
-            return new Pair<Answer, Question>(new Answer("", "Неверный вопрос, начните заново."), new Question());
+            return Pair.of(new Answer("", "Неверный вопрос, начните заново."), new Question());
         }
-        return new Pair<Answer, Question>(answerOptional.orElse(new Answer()), questionOptional.orElse(new Question()));
+        return Pair.of(answerOptional.orElse(new Answer()), questionOptional.orElse(new Question()));
     }
 
     @Override

@@ -1,6 +1,6 @@
 package university.happyCatsSpring.service.iface;
 
-import javafx.util.Pair;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 import university.happyCatsSpring.entity.Answer;
 import university.happyCatsSpring.entity.Question;
