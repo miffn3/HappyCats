@@ -28,15 +28,67 @@
 		8780DB5024645F2F00745B49 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB4F24645F2F00745B49 /* Constants.swift */; };
 		8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB522464648500745B49 /* Collection+Extensions.swift */; };
 		8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB562465523E00745B49 /* AppearanceManager.swift */; };
-		8780DB592465598600745B49 /* NotoSans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB322464436C00745B49 /* NotoSans.ttf */; };
 		8780DB5B246563C100745B49 /* HandbookFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB5A246563C100745B49 /* HandbookFlow.swift */; };
-		8780DB632465647B00745B49 /* CatsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB612465647B00745B49 /* CatsListVC.swift */; };
-		8780DB642465647B00745B49 /* CatsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB622465647B00745B49 /* CatsListVC.xib */; };
-		8780DB66246564A100745B49 /* CatsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB65246564A100745B49 /* CatsListVM.swift */; };
 		8780DB68246564F500745B49 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB67246564F500745B49 /* Cat.swift */; };
 		8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB6C246569BA00745B49 /* NewsDetailVC.swift */; };
 		8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB6D246569BA00745B49 /* NewsDetailVC.xib */; };
 		8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB70246569D200745B49 /* NewsDetailVM.swift */; };
+		8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB842465B25F00745B49 /* HandbookTVC.swift */; };
+		8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8780DB852465B25F00745B49 /* HandbookTVC.xib */; };
+		8780DB892465B35400745B49 /* Disease.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DB882465B35400745B49 /* Disease.swift */; };
+		878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */; };
+		878AD9E12471BBBD003A8206 /* DiseaseVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */; };
+		878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9E32471BBD0003A8206 /* DiseaseVM.swift */; };
+		878AD9E72471C085003A8206 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */; };
+		878AD9E82471C088003A8206 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */; };
+		878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */; };
+		878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */; };
+		87A45C1C2472ACDB009B7A51 /* CatsListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */; };
+		87A45C1F2472ACEF009B7A51 /* CatsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */; };
+		87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */; };
+		87A45C242472AD99009B7A51 /* MyCatTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C222472AD99009B7A51 /* MyCatTVC.swift */; };
+		87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C232472AD99009B7A51 /* MyCatTVC.xib */; };
+		87A45C272472AF31009B7A51 /* CatAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C262472AF31009B7A51 /* CatAPI.swift */; };
+		87A45C2B2472C4C3009B7A51 /* CatProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */; };
+		87A45C2E2472CF39009B7A51 /* CatProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */; };
+		87A45C2F2472CF39009B7A51 /* CatProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */; };
+		87A45C34247338B5009B7A51 /* AddCatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C33247338B5009B7A51 /* AddCatVM.swift */; };
+		87A45C37247338F8009B7A51 /* AddCatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C35247338F8009B7A51 /* AddCatVC.swift */; };
+		87A45C38247338F8009B7A51 /* AddCatVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A45C36247338F8009B7A51 /* AddCatVC.xib */; };
+		87A45C3C24740B96009B7A51 /* PhotoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A45C3B24740B96009B7A51 /* PhotoAPI.swift */; };
+		87D838E1246980560052C52A /* HandbookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838DF246980560052C52A /* HandbookVC.swift */; };
+		87D838E2246980560052C52A /* HandbookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838E0246980560052C52A /* HandbookVC.xib */; };
+		87D838E4246980630052C52A /* HandbookVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E3246980630052C52A /* HandbookVM.swift */; };
+		87D838E62469816F0052C52A /* PreferecesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838E52469816F0052C52A /* PreferecesService.swift */; };
+		87D838EF2469AF2B0052C52A /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838ED2469AF2B0052C52A /* LoginVC.swift */; };
+		87D838F02469AF2B0052C52A /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838EE2469AF2B0052C52A /* LoginVC.xib */; };
+		87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838F12469C6F50052C52A /* OnboardingFlow.swift */; };
+		87D838F42469C84A0052C52A /* LoginVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838F32469C84A0052C52A /* LoginVM.swift */; };
+		87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838F8246ABA470052C52A /* RegistrationVM.swift */; };
+		87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838FA246ABAD80052C52A /* RegistrationVC.swift */; };
+		87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D838FB246ABAD80052C52A /* RegistrationVC.xib */; };
+		87D838FF246ACB7F0052C52A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D838FE246ACB7F0052C52A /* UserService.swift */; };
+		87D83901246ACDB30052C52A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83900246ACDB30052C52A /* User.swift */; };
+		87D83904246AE8380052C52A /* AuthAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83903246AE8380052C52A /* AuthAPI.swift */; };
+		87D83906246AE94F0052C52A /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83905246AE94F0052C52A /* AuthResponse.swift */; };
+		87D83916246D70760052C52A /* MainProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83914246D70760052C52A /* MainProfileVC.swift */; };
+		87D83917246D70760052C52A /* MainProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D83915246D70760052C52A /* MainProfileVC.xib */; };
+		87D83919246D70850052C52A /* MainProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83918246D70850052C52A /* MainProfileVM.swift */; };
+		87D8391D246D71D20052C52A /* MainProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8391B246D71D20052C52A /* MainProfileTVC.swift */; };
+		87D8391E246D71D20052C52A /* MainProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D8391C246D71D20052C52A /* MainProfileTVC.xib */; };
+		87D83920246D77F90052C52A /* ProfileFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8391F246D77F90052C52A /* ProfileFlow.swift */; };
+		87D83922246D8E1D0052C52A /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83921246D8E1C0052C52A /* UserAPI.swift */; };
+		87D83928246DC8A20052C52A /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D83926246DC8A20052C52A /* MyProfileVC.swift */; };
+		87D83929246DC8A20052C52A /* MyProfileVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87D83927246DC8A20052C52A /* MyProfileVC.xib */; };
+		87D8392B246DC8B90052C52A /* MyProfileVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8392A246DC8B90052C52A /* MyProfileVM.swift */; };
+		87D8392D246DE0860052C52A /* String+Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87D8392C246DE0860052C52A /* String+Optional.swift */; };
+		87E6AE7324711987005BCE75 /* NewsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7224711987005BCE75 /* NewsAPI.swift */; };
+		87E6AE7724719C20005BCE75 /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7624719C20005BCE75 /* Breed.swift */; };
+		87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7824719D4A005BCE75 /* BreedAPI.swift */; };
+		87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */; };
+		87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE7F2471B49A005BCE75 /* BreedVC.swift */; };
+		87E6AE822471B49A005BCE75 /* BreedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E6AE802471B49A005BCE75 /* BreedVC.xib */; };
+		87E6AE842471B4A5005BCE75 /* BreedVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E6AE832471B4A5005BCE75 /* BreedVM.swift */; };
 		B43A93F4B7248EE55498D035 /* Pods_HappyCats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0719768E414C90D21240E199 /* Pods_HappyCats.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,7 +132,6 @@
 		8780DB2B24642B9F00745B49 /* NewsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListVC.swift; sourceTree = "<group>"; };
 		8780DB2C24642B9F00745B49 /* NewsListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsListVC.xib; sourceTree = "<group>"; };
 		8780DB2F24642BF300745B49 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		8780DB322464436C00745B49 /* NotoSans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NotoSans.ttf; sourceTree = "<group>"; };
 		8780DB402464497800745B49 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8780DB42246449D700745B49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8780DB4424644DD400745B49 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
@@ -91,13 +142,66 @@
 		8780DB522464648500745B49 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		8780DB562465523E00745B49 /* AppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceManager.swift; sourceTree = "<group>"; };
 		8780DB5A246563C100745B49 /* HandbookFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookFlow.swift; sourceTree = "<group>"; };
-		8780DB612465647B00745B49 /* CatsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVC.swift; sourceTree = "<group>"; };
-		8780DB622465647B00745B49 /* CatsListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsListVC.xib; sourceTree = "<group>"; };
-		8780DB65246564A100745B49 /* CatsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVM.swift; sourceTree = "<group>"; };
 		8780DB67246564F500745B49 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		8780DB6C246569BA00745B49 /* NewsDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVC.swift; sourceTree = "<group>"; };
 		8780DB6D246569BA00745B49 /* NewsDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsDetailVC.xib; sourceTree = "<group>"; };
 		8780DB70246569D200745B49 /* NewsDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailVM.swift; sourceTree = "<group>"; };
+		8780DB842465B25F00745B49 /* HandbookTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookTVC.swift; sourceTree = "<group>"; };
+		8780DB852465B25F00745B49 /* HandbookTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HandbookTVC.xib; sourceTree = "<group>"; };
+		8780DB882465B35400745B49 /* Disease.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disease.swift; sourceTree = "<group>"; };
+		878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseVC.swift; sourceTree = "<group>"; };
+		878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiseaseVC.xib; sourceTree = "<group>"; };
+		878AD9E32471BBD0003A8206 /* DiseaseVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseVM.swift; sourceTree = "<group>"; };
+		878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedDiseaseTVC.swift; sourceTree = "<group>"; };
+		878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedDiseaseTVC.xib; sourceTree = "<group>"; };
+		87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVM.swift; sourceTree = "<group>"; };
+		87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatsListVC.swift; sourceTree = "<group>"; };
+		87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatsListVC.xib; sourceTree = "<group>"; };
+		87A45C222472AD99009B7A51 /* MyCatTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCatTVC.swift; sourceTree = "<group>"; };
+		87A45C232472AD99009B7A51 /* MyCatTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyCatTVC.xib; sourceTree = "<group>"; };
+		87A45C262472AF31009B7A51 /* CatAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPI.swift; sourceTree = "<group>"; };
+		87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileVM.swift; sourceTree = "<group>"; };
+		87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatProfileVC.swift; sourceTree = "<group>"; };
+		87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatProfileVC.xib; sourceTree = "<group>"; };
+		87A45C33247338B5009B7A51 /* AddCatVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatVM.swift; sourceTree = "<group>"; };
+		87A45C35247338F8009B7A51 /* AddCatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCatVC.swift; sourceTree = "<group>"; };
+		87A45C36247338F8009B7A51 /* AddCatVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCatVC.xib; sourceTree = "<group>"; };
+		87A45C3B24740B96009B7A51 /* PhotoAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPI.swift; sourceTree = "<group>"; };
+		87D838DF246980560052C52A /* HandbookVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVC.swift; sourceTree = "<group>"; };
+		87D838E0246980560052C52A /* HandbookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HandbookVC.xib; sourceTree = "<group>"; };
+		87D838E3246980630052C52A /* HandbookVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandbookVM.swift; sourceTree = "<group>"; };
+		87D838E52469816F0052C52A /* PreferecesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferecesService.swift; sourceTree = "<group>"; };
+		87D838ED2469AF2B0052C52A /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		87D838EE2469AF2B0052C52A /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		87D838F12469C6F50052C52A /* OnboardingFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingFlow.swift; sourceTree = "<group>"; };
+		87D838F32469C84A0052C52A /* LoginVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVM.swift; sourceTree = "<group>"; };
+		87D838F8246ABA470052C52A /* RegistrationVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVM.swift; sourceTree = "<group>"; };
+		87D838FA246ABAD80052C52A /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		87D838FB246ABAD80052C52A /* RegistrationVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationVC.xib; sourceTree = "<group>"; };
+		87D838FE246ACB7F0052C52A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		87D83900246ACDB30052C52A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		87D83903246AE8380052C52A /* AuthAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthAPI.swift; sourceTree = "<group>"; };
+		87D83905246AE94F0052C52A /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		87D83914246D70760052C52A /* MainProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileVC.swift; sourceTree = "<group>"; };
+		87D83915246D70760052C52A /* MainProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainProfileVC.xib; sourceTree = "<group>"; };
+		87D83918246D70850052C52A /* MainProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileVM.swift; sourceTree = "<group>"; };
+		87D8391B246D71D20052C52A /* MainProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainProfileTVC.swift; sourceTree = "<group>"; };
+		87D8391C246D71D20052C52A /* MainProfileTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainProfileTVC.xib; sourceTree = "<group>"; };
+		87D8391F246D77F90052C52A /* ProfileFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileFlow.swift; sourceTree = "<group>"; };
+		87D83921246D8E1C0052C52A /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		87D83926246DC8A20052C52A /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		87D83927246DC8A20052C52A /* MyProfileVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyProfileVC.xib; sourceTree = "<group>"; };
+		87D8392A246DC8B90052C52A /* MyProfileVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVM.swift; sourceTree = "<group>"; };
+		87D8392C246DE0860052C52A /* String+Optional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Optional.swift"; sourceTree = "<group>"; };
+		87E6AE7224711987005BCE75 /* NewsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPI.swift; sourceTree = "<group>"; };
+		87E6AE7624719C20005BCE75 /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		87E6AE7824719D4A005BCE75 /* BreedAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedAPI.swift; sourceTree = "<group>"; };
+		87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiseaseAPI.swift; sourceTree = "<group>"; };
+		87E6AE7F2471B49A005BCE75 /* BreedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedVC.swift; sourceTree = "<group>"; };
+		87E6AE802471B49A005BCE75 /* BreedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedVC.xib; sourceTree = "<group>"; };
+		87E6AE832471B4A5005BCE75 /* BreedVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedVM.swift; sourceTree = "<group>"; };
 		A16A194370EA8B20453B918D /* Pods-HappyCats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyCats.debug.xcconfig"; path = "Target Support Files/Pods-HappyCats/Pods-HappyCats.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,6 +307,7 @@
 				8780DAF024642A5F00745B49 /* LaunchScreen.storyboard */,
 				8780DAF324642A5F00745B49 /* Info.plist */,
 				8780DB1724642A9000745B49 /* Flow */,
+				87D83902246AE7EA0052C52A /* API */,
 				8780DB2024642B0C00745B49 /* Services */,
 				8780DB462464514F00745B49 /* Models */,
 				8780DB4E24645F0E00745B49 /* Helpers */,
@@ -219,6 +324,8 @@
 				8780DB1924642AF200745B49 /* DashboardFlow.swift */,
 				8780DB1A24642AF200745B49 /* NewsFlow.swift */,
 				8780DB5A246563C100745B49 /* HandbookFlow.swift */,
+				87D838F12469C6F50052C52A /* OnboardingFlow.swift */,
+				87D8391F246D77F90052C52A /* ProfileFlow.swift */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -227,6 +334,8 @@
 			isa = PBXGroup;
 			children = (
 				8780DB2224642B4600745B49 /* ServicesContainer.swift */,
+				87D838E52469816F0052C52A /* PreferecesService.swift */,
+				87D838FE246ACB7F0052C52A /* UserService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -234,8 +343,10 @@
 		8780DB2124642B1E00745B49 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				87D838E72469AE170052C52A /* Onboarding */,
 				8780DB2424642B5400745B49 /* News */,
 				8780DB5C2465642800745B49 /* Handbook */,
+				87D83910246D70050052C52A /* Profile */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -279,7 +390,8 @@
 		8780DB30246434F800745B49 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8780DB322464436C00745B49 /* NotoSans.ttf */,
+				878AD9E62471C04E003A8206 /* Montserrat-Medium.ttf */,
+				878AD9E52471C04E003A8206 /* Montserrat-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -288,7 +400,11 @@
 			isa = PBXGroup;
 			children = (
 				8780DB472464516B00745B49 /* News.swift */,
+				87E6AE7624719C20005BCE75 /* Breed.swift */,
+				8780DB882465B35400745B49 /* Disease.swift */,
+				87D83900246ACDB30052C52A /* User.swift */,
 				8780DB67246564F500745B49 /* Cat.swift */,
+				87D83905246AE94F0052C52A /* AuthResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -316,6 +432,7 @@
 			isa = PBXGroup;
 			children = (
 				8780DB522464648500745B49 /* Collection+Extensions.swift */,
+				87D8392C246DE0860052C52A /* String+Optional.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -323,43 +440,11 @@
 		8780DB5C2465642800745B49 /* Handbook */ = {
 			isa = PBXGroup;
 			children = (
-				8780DB5D2465644500745B49 /* Cats */,
+				8780DB72246596D600745B49 /* Main */,
+				87E6AE7C2471B470005BCE75 /* Breed */,
+				878AD9DB2471BB95003A8206 /* Disease */,
 			);
 			path = Handbook;
-			sourceTree = "<group>";
-		};
-		8780DB5D2465644500745B49 /* Cats */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB5E2465645000745B49 /* CatsList */,
-			);
-			path = Cats;
-			sourceTree = "<group>";
-		};
-		8780DB5E2465645000745B49 /* CatsList */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB5F2465645800745B49 /* Model */,
-				8780DB602465645C00745B49 /* View */,
-			);
-			path = CatsList;
-			sourceTree = "<group>";
-		};
-		8780DB5F2465645800745B49 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB65246564A100745B49 /* CatsListVM.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		8780DB602465645C00745B49 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				8780DB612465647B00745B49 /* CatsListVC.swift */,
-				8780DB622465647B00745B49 /* CatsListVC.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		8780DB692465698F00745B49 /* NewsDetail */ = {
@@ -384,6 +469,349 @@
 			isa = PBXGroup;
 			children = (
 				8780DB70246569D200745B49 /* NewsDetailVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8780DB72246596D600745B49 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB74246596E500745B49 /* Model */,
+				8780DB73246596E100745B49 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		8780DB73246596E100745B49 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB7C2465986200745B49 /* Cell */,
+				87D838DF246980560052C52A /* HandbookVC.swift */,
+				87D838E0246980560052C52A /* HandbookVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8780DB74246596E500745B49 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87D838E3246980630052C52A /* HandbookVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8780DB7C2465986200745B49 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8780DB842465B25F00745B49 /* HandbookTVC.swift */,
+				8780DB852465B25F00745B49 /* HandbookTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		878AD9DB2471BB95003A8206 /* Disease */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9DD2471BBA9003A8206 /* Model */,
+				878AD9DC2471BBA5003A8206 /* View */,
+			);
+			path = Disease;
+			sourceTree = "<group>";
+		};
+		878AD9DC2471BBA5003A8206 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9DE2471BBBD003A8206 /* DiseaseVC.swift */,
+				878AD9DF2471BBBD003A8206 /* DiseaseVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		878AD9DD2471BBA9003A8206 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9E32471BBD0003A8206 /* DiseaseVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		878AD9E92471C8D9003A8206 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9EE2471C96A003A8206 /* BreedDiseaseTVC.swift */,
+				878AD9EF2471C96A003A8206 /* BreedDiseaseTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		87A45C162472AC8C009B7A51 /* MyCats */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C192472ACA9009B7A51 /* CatsList */,
+				87A45C302473388A009B7A51 /* AddCat */,
+				87A45C1A2472ACB1009B7A51 /* CatProfile */,
+			);
+			path = MyCats;
+			sourceTree = "<group>";
+		};
+		87A45C172472AC96009B7A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C212472AD80009B7A51 /* Cell */,
+				87A45C1D2472ACEF009B7A51 /* CatsListVC.swift */,
+				87A45C1E2472ACEF009B7A51 /* CatsListVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87A45C182472AC9D009B7A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C1B2472ACDB009B7A51 /* CatsListVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87A45C192472ACA9009B7A51 /* CatsList */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C182472AC9D009B7A51 /* Model */,
+				87A45C172472AC96009B7A51 /* View */,
+			);
+			path = CatsList;
+			sourceTree = "<group>";
+		};
+		87A45C1A2472ACB1009B7A51 /* CatProfile */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C292472C4AA009B7A51 /* Model */,
+				87A45C282472C4A0009B7A51 /* View */,
+			);
+			path = CatProfile;
+			sourceTree = "<group>";
+		};
+		87A45C212472AD80009B7A51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C222472AD99009B7A51 /* MyCatTVC.swift */,
+				87A45C232472AD99009B7A51 /* MyCatTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		87A45C282472C4A0009B7A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C2C2472CF39009B7A51 /* CatProfileVC.swift */,
+				87A45C2D2472CF39009B7A51 /* CatProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87A45C292472C4AA009B7A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C2A2472C4C3009B7A51 /* CatProfileVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87A45C302473388A009B7A51 /* AddCat */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C32247338A3009B7A51 /* Model */,
+				87A45C312473389F009B7A51 /* View */,
+			);
+			path = AddCat;
+			sourceTree = "<group>";
+		};
+		87A45C312473389F009B7A51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C35247338F8009B7A51 /* AddCatVC.swift */,
+				87A45C36247338F8009B7A51 /* AddCatVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87A45C32247338A3009B7A51 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87A45C33247338B5009B7A51 /* AddCatVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87D838E72469AE170052C52A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				87D838F5246ABA250052C52A /* Registration */,
+				87D838E82469AEA80052C52A /* Login */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		87D838E82469AEA80052C52A /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				87D838E92469AEEB0052C52A /* Model */,
+				87D838EA2469AEF00052C52A /* VIew */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		87D838E92469AEEB0052C52A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87D838F32469C84A0052C52A /* LoginVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87D838EA2469AEF00052C52A /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				87D838ED2469AF2B0052C52A /* LoginVC.swift */,
+				87D838EE2469AF2B0052C52A /* LoginVC.xib */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		87D838F5246ABA250052C52A /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				87D838F7246ABA300052C52A /* Model */,
+				87D838F6246ABA2C0052C52A /* View */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		87D838F6246ABA2C0052C52A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87D838FA246ABAD80052C52A /* RegistrationVC.swift */,
+				87D838FB246ABAD80052C52A /* RegistrationVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87D838F7246ABA300052C52A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87D838F8246ABA470052C52A /* RegistrationVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87D83902246AE7EA0052C52A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				87D83903246AE8380052C52A /* AuthAPI.swift */,
+				87D83921246D8E1C0052C52A /* UserAPI.swift */,
+				87E6AE7224711987005BCE75 /* NewsAPI.swift */,
+				87E6AE7824719D4A005BCE75 /* BreedAPI.swift */,
+				87E6AE7A24719E13005BCE75 /* DiseaseAPI.swift */,
+				87A45C262472AF31009B7A51 /* CatAPI.swift */,
+				87A45C3B24740B96009B7A51 /* PhotoAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		87D83910246D70050052C52A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				87D83911246D70430052C52A /* Main */,
+				87D83923246DC86D0052C52A /* MyProfile */,
+				87A45C162472AC8C009B7A51 /* MyCats */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		87D83911246D70430052C52A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				87D83913246D70530052C52A /* Model */,
+				87D83912246D704A0052C52A /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		87D83912246D704A0052C52A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87D8391A246D71BC0052C52A /* Cell */,
+				87D83914246D70760052C52A /* MainProfileVC.swift */,
+				87D83915246D70760052C52A /* MainProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87D83913246D70530052C52A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87D83918246D70850052C52A /* MainProfileVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87D8391A246D71BC0052C52A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				87D8391B246D71D20052C52A /* MainProfileTVC.swift */,
+				87D8391C246D71D20052C52A /* MainProfileTVC.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		87D83923246DC86D0052C52A /* MyProfile */ = {
+			isa = PBXGroup;
+			children = (
+				87D83925246DC88A0052C52A /* Model */,
+				87D83924246DC8850052C52A /* View */,
+			);
+			path = MyProfile;
+			sourceTree = "<group>";
+		};
+		87D83924246DC8850052C52A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87D83926246DC8A20052C52A /* MyProfileVC.swift */,
+				87D83927246DC8A20052C52A /* MyProfileVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87D83925246DC88A0052C52A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87D8392A246DC8B90052C52A /* MyProfileVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87E6AE7C2471B470005BCE75 /* Breed */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AE7E2471B487005BCE75 /* Model */,
+				87E6AE7D2471B482005BCE75 /* View */,
+			);
+			path = Breed;
+			sourceTree = "<group>";
+		};
+		87E6AE7D2471B482005BCE75 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				878AD9E92471C8D9003A8206 /* Cell */,
+				87E6AE7F2471B49A005BCE75 /* BreedVC.swift */,
+				87E6AE802471B49A005BCE75 /* BreedVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87E6AE7E2471B487005BCE75 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87E6AE832471B4A5005BCE75 /* BreedVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -505,13 +933,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				8780DB4D2464539D00745B49 /* NewsTVC.xib in Resources */,
+				87D838F02469AF2B0052C52A /* LoginVC.xib in Resources */,
 				8780DB2E24642B9F00745B49 /* NewsListVC.xib in Resources */,
+				87D8391E246D71D20052C52A /* MainProfileTVC.xib in Resources */,
+				87D83929246DC8A20052C52A /* MyProfileVC.xib in Resources */,
 				8780DB6F246569BA00745B49 /* NewsDetailVC.xib in Resources */,
+				878AD9E82471C088003A8206 /* Montserrat-Regular.ttf in Resources */,
+				878AD9E12471BBBD003A8206 /* DiseaseVC.xib in Resources */,
+				87E6AE822471B49A005BCE75 /* BreedVC.xib in Resources */,
+				87D838E2246980560052C52A /* HandbookVC.xib in Resources */,
+				87D83917246D70760052C52A /* MainProfileVC.xib in Resources */,
 				8780DB3F2464497800745B49 /* Localizable.strings in Resources */,
 				8780DAF224642A5F00745B49 /* LaunchScreen.storyboard in Resources */,
+				87D838FD246ABAD80052C52A /* RegistrationVC.xib in Resources */,
+				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
+				878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */,
+				87A45C2F2472CF39009B7A51 /* CatProfileVC.xib in Resources */,
+				87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */,
+				87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */,
+				87A45C38247338F8009B7A51 /* AddCatVC.xib in Resources */,
 				8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */,
-				8780DB592465598600745B49 /* NotoSans.ttf in Resources */,
-				8780DB642465647B00745B49 /* CatsListVC.xib in Resources */,
+				878AD9E72471C085003A8206 /* Montserrat-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,26 +1039,64 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87D838F42469C84A0052C52A /* LoginVM.swift in Sources */,
 				8780DAE624642A5E00745B49 /* AppDelegate.swift in Sources */,
 				8780DB5B246563C100745B49 /* HandbookFlow.swift in Sources */,
+				87E6AE842471B4A5005BCE75 /* BreedVM.swift in Sources */,
 				8780DB1C24642AF200745B49 /* AppStep.swift in Sources */,
+				87D838E62469816F0052C52A /* PreferecesService.swift in Sources */,
+				87D83906246AE94F0052C52A /* AuthResponse.swift in Sources */,
 				8780DB4524644DD500745B49 /* R.generated.swift in Sources */,
+				87D83922246D8E1D0052C52A /* UserAPI.swift in Sources */,
+				87D8392D246DE0860052C52A /* String+Optional.swift in Sources */,
+				87D83928246DC8A20052C52A /* MyProfileVC.swift in Sources */,
 				8780DB71246569D200745B49 /* NewsDetailVM.swift in Sources */,
 				8780DB1E24642AF200745B49 /* NewsFlow.swift in Sources */,
+				87A45C272472AF31009B7A51 /* CatAPI.swift in Sources */,
+				87D83901246ACDB30052C52A /* User.swift in Sources */,
+				87A45C1F2472ACEF009B7A51 /* CatsListVC.swift in Sources */,
+				8780DB892465B35400745B49 /* Disease.swift in Sources */,
+				87D838F9246ABA470052C52A /* RegistrationVM.swift in Sources */,
+				87D83904246AE8380052C52A /* AuthAPI.swift in Sources */,
+				87A45C3C24740B96009B7A51 /* PhotoAPI.swift in Sources */,
+				87D83920246D77F90052C52A /* ProfileFlow.swift in Sources */,
 				8780DB572465523E00745B49 /* AppearanceManager.swift in Sources */,
 				8780DB2324642B4600745B49 /* ServicesContainer.swift in Sources */,
-				8780DB66246564A100745B49 /* CatsListVM.swift in Sources */,
+				87A45C2E2472CF39009B7A51 /* CatProfileVC.swift in Sources */,
+				87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
 				8780DB68246564F500745B49 /* Cat.swift in Sources */,
+				87D838FF246ACB7F0052C52A /* UserService.swift in Sources */,
+				87A45C37247338F8009B7A51 /* AddCatVC.swift in Sources */,
+				87D8392B246DC8B90052C52A /* MyProfileVM.swift in Sources */,
 				8780DB6E246569BA00745B49 /* NewsDetailVC.swift in Sources */,
+				87A45C242472AD99009B7A51 /* MyCatTVC.swift in Sources */,
+				87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */,
+				878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
 				8780DB1F24642AF200745B49 /* AppFlow.swift in Sources */,
-				8780DB632465647B00745B49 /* CatsListVC.swift in Sources */,
+				87D8391D246D71D20052C52A /* MainProfileTVC.swift in Sources */,
+				87D838E4246980630052C52A /* HandbookVM.swift in Sources */,
+				87A45C34247338B5009B7A51 /* AddCatVM.swift in Sources */,
+				87D83919246D70850052C52A /* MainProfileVM.swift in Sources */,
+				87E6AE7324711987005BCE75 /* NewsAPI.swift in Sources */,
+				8780DB862465B25F00745B49 /* HandbookTVC.swift in Sources */,
 				8780DB482464516B00745B49 /* News.swift in Sources */,
 				8780DB4C2464539D00745B49 /* NewsTVC.swift in Sources */,
+				87E6AE7724719C20005BCE75 /* Breed.swift in Sources */,
+				87A45C1C2472ACDB009B7A51 /* CatsListVM.swift in Sources */,
+				87D838EF2469AF2B0052C52A /* LoginVC.swift in Sources */,
+				87D83916246D70760052C52A /* MainProfileVC.swift in Sources */,
+				878AD9F02471C96A003A8206 /* BreedDiseaseTVC.swift in Sources */,
+				87E6AE7B24719E13005BCE75 /* DiseaseAPI.swift in Sources */,
 				8780DB1D24642AF200745B49 /* DashboardFlow.swift in Sources */,
+				878AD9E42471BBD0003A8206 /* DiseaseVM.swift in Sources */,
+				87A45C2B2472C4C3009B7A51 /* CatProfileVM.swift in Sources */,
+				87E6AE812471B49A005BCE75 /* BreedVC.swift in Sources */,
+				87D838E1246980560052C52A /* HandbookVC.swift in Sources */,
 				8780DB5024645F2F00745B49 /* Constants.swift in Sources */,
+				87E6AE7924719D4A005BCE75 /* BreedAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

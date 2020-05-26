@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class NewsFlow: Flow {
+final class NewsFlow: Flow {
     
     private let rootViewController = UINavigationController()
     private let services: ServicesContainer
@@ -27,7 +27,6 @@ class NewsFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-
         guard let step = step as? AppStep else { return .none }
 
         switch step {
@@ -41,7 +40,7 @@ class NewsFlow: Flow {
     }
     
     private func navigationToNewsScreen() -> FlowContributors {
-        let model = NewsListVM()
+        let model = NewsListVM(userService: services.userService)
         let vc = NewsListVC()
         vc.title = R.string.localizable.newsTitle()
         vc.setModel(model: model)
@@ -50,10 +49,10 @@ class NewsFlow: Flow {
     }
     
     private func navigationToNewsDetailScreen(withId id: Int) -> FlowContributors {
-        let model = NewsDetailVM(withId: id)
+        let model = NewsDetailVM(withId: id, userService: services.userService)
         let vc = NewsDetailVC()
         vc.setModel(model: model)
         self.rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: vc, withNextStepper: model))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
 }

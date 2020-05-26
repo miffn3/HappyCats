@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class HandbookFlow: Flow {
+final class HandbookFlow: Flow {
     
     private let rootViewController = UINavigationController()
     private let services: ServicesContainer
@@ -27,23 +27,42 @@ class HandbookFlow: Flow {
     }
 
     func navigate(to step: Step) -> FlowContributors {
-
         guard let step = step as? AppStep else { return .none }
 
         switch step {
-        case .cats:
-            return navigationToCatsScreen()
+        case .handbook:
+            return navigationToHandbookScreen()
+        case .breed(let id):
+            return navigationToBreedScreen(withId: id)
+        case .disease(let id):
+            return navigationToDiseaseScreen(withId: id)
         default:
             return .none
         }
     }
     
-    private func navigationToCatsScreen() -> FlowContributors {
-        let model = CatsListVM()
-        let vc = CatsListVC()
+    private func navigationToHandbookScreen() -> FlowContributors {
+        let model = HandbookVM(userService: services.userService)
+        let vc = HandbookVC()
         vc.title = R.string.localizable.handbookTitle()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
-        return .one(flowContributor: FlowContributor.contribute(withNextPresentable: vc, withNextStepper: model))
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToBreedScreen(withId id: Int) -> FlowContributors {
+        let model = BreedVM(withId: id, userService: services.userService)
+        let vc = BreedVC()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToDiseaseScreen(withId id: Int) -> FlowContributors {
+        let model = DiseaseVM(withId: id, userService: services.userService)
+        let vc = DiseaseVC()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
 }

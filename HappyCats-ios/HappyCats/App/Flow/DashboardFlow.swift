@@ -9,7 +9,7 @@
 import Foundation
 import RxFlow
 
-class DashboardFlow: Flow {
+final class DashboardFlow: Flow {
     
     private let services: ServicesContainer
     
@@ -33,6 +33,8 @@ class DashboardFlow: Flow {
         switch step {
         case .dashboard:
             return navigateToDashboard()
+        case .loggedOut:
+            return popToSignInScreen()
         default:
             return .none
         }
@@ -41,22 +43,34 @@ class DashboardFlow: Flow {
     private func navigateToDashboard() -> FlowContributors {
         let newsFlow = NewsFlow(withServices: self.services)
         let handbookFlow = HandbookFlow(withServices: self.services)
+        let profileFlow = ProfileFlow(withServices: self.services)
         
-        Flows.whenReady(flow1: newsFlow, flow2: handbookFlow) { [unowned self] (root1: UINavigationController, root2: UINavigationController) in
+        Flows.whenReady(flow1: newsFlow, flow2: handbookFlow, flow3: profileFlow) { [unowned self] (root1: UINavigationController, root2: UINavigationController, root3: UINavigationController) in
             let tabBarItem1 = UITabBarItem(title: R.string.localizable.newsTitle(), image: R.image.newsIcon(), selectedImage: nil)
             let tabBarItem2 = UITabBarItem(title: R.string.localizable.handbookTitle(), image: R.image.catIcon(), selectedImage: nil)
+            let tabBarItem3 = UITabBarItem(title: R.string.localizable.profileMainProfileTitle(), image: R.image.userIcon(), selectedImage: nil)
             
             root1.tabBarItem = tabBarItem1
             root1.title = R.string.localizable.newsTitle()
             root2.tabBarItem = tabBarItem2
             root2.title = R.string.localizable.handbookTitle()
+            root3.tabBarItem = tabBarItem3
+            root3.title = R.string.localizable.profileMainProfileTitle()
             
-            self.rootViewController.setViewControllers([root1, root2], animated: false)
+            self.rootViewController.setViewControllers([root1, root2, root3], animated: false)
         }
         
         return .multiple(flowContributors: [.contribute(withNextPresentable: newsFlow,
                                                         withNextStepper: OneStepper(withSingleStep: AppStep.newsList)),
                                             .contribute(withNextPresentable: handbookFlow,
-                                                        withNextStepper: OneStepper(withSingleStep: AppStep.cats))])
+                                                        withNextStepper: OneStepper(withSingleStep: AppStep.handbook)),
+                                            .contribute(withNextPresentable: profileFlow,
+                                                        withNextStepper: OneStepper(withSingleStep: AppStep.mainProfile))])
+    }
+    
+    private func popToSignInScreen() -> FlowContributors {
+        services.preferencesService.setNotOnboarded()
+        services.userService.deleteToken()
+        return .end(forwardToParentFlowWithStep: AppStep.onboarding)
     }
 }

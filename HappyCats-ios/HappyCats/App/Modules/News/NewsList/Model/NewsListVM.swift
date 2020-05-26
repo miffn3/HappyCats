@@ -7,23 +7,44 @@
 //
 
 import RxFlow
+import RxSwift
 import RxCocoa
 
-class NewsListVM: Stepper {
+final class NewsListVM: Stepper {
     let steps = PublishRelay<Step>()
-    var news = [News]()
     
-    init() {
-        updateNews()
+    private let disposeBag = DisposeBag()
+    private let userService: UserService
+    
+    struct Input {
+        let selectedNews: Observable<Int>
     }
     
-    func updateNews() {
-        news.removeAll()
-        news.append(News(id: 1, title: "News 1"))
-        news.append(News(id: 2, title: "News 2"))
+    struct Output {
+        let news: Driver<[News]>
     }
     
-    public func pick(newsId: Int) {
-        self.steps.accept(AppStep.newsDetail(withId: newsId))
+    init(userService: UserService) {
+        self.userService = userService
+    }
+    
+    func transform(input: Input) -> Output {
+        let news = BehaviorRelay<[News]>(value: [])
+        
+        input.selectedNews
+            .subscribe(onNext: { index in
+                guard let id = news.value[safe: index]?.id else { return }
+                self.steps.accept(AppStep.newsDetail(withId: id))
+            }).disposed(by: disposeBag)
+        
+        NewsAPI.getAllNews(token: userService.getToken().orEmpty)
+            .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
+            .subscribe(onNext: { data in
+                news.accept(data)
+            })
+            .disposed(by: disposeBag)
+        
+        let output = Output(news: news.asDriver(onErrorJustReturn: []))
+        return output
     }
 }

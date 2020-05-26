@@ -9,14 +9,32 @@
 import RxFlow
 
 enum AppStep: Step {
-    
     // Main
     case dashboard
+    case onboarding
     
     // News
     case newsList
     case newsDetail(withId: Int)
     
     // Handbook
-    case cats
+    case handbook
+    case breed(withId: Int)
+    case disease(withId: Int)
+    
+    // Sign In
+    case login
+    case loginIsComplete
+    
+    // Sign Up
+    case registration
+    case registrationIsComplete
+    
+    // Profile
+    case mainProfile
+    case myProfile
+    case myCats
+    case cat(withId: Int)
+    case addCat
+    case loggedOut
 }

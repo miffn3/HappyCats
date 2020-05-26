@@ -8,8 +8,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="NotoSans.ttf">
-            <string>NotoSans</string>
+        <array key="Montserrat-Medium.ttf">
+            <string>Montserrat-Medium</string>
         </array>
     </customFonts>
     <scenes>
@@ -21,13 +21,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-uE-g4V">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreen" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-uE-g4V">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Happy Cats" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZOA-bN-pFJ">
-                                <rect key="frame" x="20" y="356.5" width="374" height="193.5"/>
-                                <fontDescription key="fontDescription" name="NotoSans" family="Noto Sans" pointSize="71"/>
-                                <color key="textColor" red="0.34799628449125386" green="0.56583996050759378" blue="0.63675840736040601" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <rect key="frame" x="20" y="355.5" width="374" height="195.5"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -36,9 +36,9 @@
                             <constraint firstAttribute="bottom" secondItem="eK0-uE-g4V" secondAttribute="bottom" id="Cst-n5-OR8"/>
                             <constraint firstItem="ZOA-bN-pFJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="OiS-ji-kyC"/>
                             <constraint firstItem="ZOA-bN-pFJ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="V6R-Jb-kCS"/>
-                            <constraint firstItem="ZOA-bN-pFJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="bCN-BL-5gw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eK0-uE-g4V" secondAttribute="trailing" id="bmG-15-hAC"/>
                             <constraint firstItem="eK0-uE-g4V" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dS7-HI-KLT"/>
+                            <constraint firstItem="ZOA-bN-pFJ" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eLz-Hb-bbz"/>
                             <constraint firstItem="eK0-uE-g4V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ql0-n3-DOf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZOA-bN-pFJ" secondAttribute="trailing" constant="20" id="zOB-Eg-b6K"/>
                         </constraints>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchScreen" width="187.5" height="234.5"/>
+        <image name="launchScreen" width="188" height="271.5"/>
     </resources>
 </document>
