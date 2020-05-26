@@ -34,7 +34,7 @@ class ResultExpertVC: UIViewController {
     }
     
     private func buildDescription() {
-        descriptionLabel.font = Constants.UI.Main.mainFont
+        descriptionLabel.font = Constants.UI.Main.titleFont
     }
     
     private func buildAgainButton() {

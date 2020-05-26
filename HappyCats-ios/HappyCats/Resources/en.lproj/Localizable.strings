@@ -44,7 +44,7 @@ profile.addCat.title = "New pet";
 handbook.breeds.disease = "Diseases to which this breed is exposed";
 
 expertsystem.welcome = "Welcome to the Expert System \"Cat's Disease\"";
-expertsystem.description = "Description long long";
+expertsystem.description = "This expert system will allow you to find out the most likely disease of your cat according to the symptoms";
 expertsystem.result = "Result";
 expertsystem.navigation.title = "Expert system";
 expertsystem.question.title = "Question";

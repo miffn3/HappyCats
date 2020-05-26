@@ -72,11 +72,11 @@ enum Constants {
             }
             
             enum YesButton {
-                static let backgroundColor = UIColor.green
+                static let backgroundColor = UIColor(red: 0.00, green: 0.90, blue: 0.46, alpha: 1.00)
             }
             
             enum NoButton {
-                static let backgroundColor = UIColor.red
+                static let backgroundColor = UIColor(red: 1.00, green: 0.09, blue: 0.27, alpha: 1.00)
             }
         }
         

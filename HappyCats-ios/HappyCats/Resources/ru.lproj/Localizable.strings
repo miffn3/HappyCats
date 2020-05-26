@@ -44,7 +44,7 @@ profile.addCat.title = "Новый питомец";
 handbook.breeds.disease = "Заболевания, которым подвержена данная порода";
 
 expertsystem.welcome = "Добро пожаловать в экспертную систему \"Болезни кошек\"";
-expertsystem.description = "Длинное-длинное описание";
+expertsystem.description = "Данная экспертная система позволит вам узнать наиболее вероятное заболевание вашей кошки по проявившимся симптомам";
 expertsystem.result = "Результат";
 expertsystem.navigation.title = "Экспертная система";
 expertsystem.question.title = "Вопрос";
