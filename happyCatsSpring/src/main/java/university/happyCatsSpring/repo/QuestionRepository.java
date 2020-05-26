@@ -7,5 +7,4 @@ import java.util.Optional;
 
 public interface QuestionRepository extends JpaRepository<Question, String> {
     Optional<Question> findById(String id);
-//    boolean existQuestionById(String id);
 }

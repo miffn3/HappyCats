@@ -36,7 +36,7 @@ public class ImplConfig {
 	}
 
 	@Bean
-	public ExpertSystemService expertSystemService(AnswerRepository answerRepository,  QuestionRepository questionRepository) {
-		return new ExpertSystemServiceImpl(answerRepository, questionRepository);
+	public ExpertSystemService expertSystemService(AnswerRepository answerRepository,  DiseaseRepository diseaseRepository, QuestionRepository questionRepository) {
+		return new ExpertSystemServiceImpl(answerRepository, diseaseRepository, questionRepository);
 	}
 }

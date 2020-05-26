@@ -46,7 +46,7 @@ public class DemoData implements CommandLineRunner {
 
         Disease disease2 = new Disease("Лишай", "https://avatars.mds.yandex.net/get-zen_doc/1545908/pub_5cf776b023e30800b09e572d_5cf776b85bac9100b0d40d01/scale_1200",
                 "Лишай у кошек представляет собой грибковую инфекцию, которую вызывают грибы дерматофиты.");
-        diseaseRepository.save(disease2);
+        Disease diseaseLishay = diseaseRepository.save(disease2);
 
         log.debug("printing all diseases...");
         this.diseaseRepository.findAll().forEach(v -> log.debug(" Disease :{}", v));
@@ -100,11 +100,11 @@ public class DemoData implements CommandLineRunner {
         this.newsRepository.findAll().forEach(v -> log.debug(" News :{}", v));
         Question question1 = new Question("start", "c", "Это кошка?");
         questionRepository.save(question1);
-        Answer answer1 = new Answer("cn", "Это не кошка. Система даёт ответы только про болезни кошек.");
+        Answer answer1 = new Answer("cn", "Это не кошка. Система даёт ответы только про болезни кошек.", null);
         answerRepository.save(answer1);
         Question question2 = new Question("cy", "cyds", "У неё длинная шерсть?");
         questionRepository.save(question2);
-        Answer answer2 = new Answer("cydsy", "Это лишай. Опасно для человека.");
+        Answer answer2 = new Answer("cydsy", "Это лишай. Опасно для человека.", diseaseLishay.getId());
         answerRepository.save(answer2);
     }
 }
