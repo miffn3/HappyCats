@@ -37,4 +37,9 @@ enum AppStep: Step {
     case cat(withId: Int)
     case addCat
     case loggedOut
+    
+    //ExpertSystem
+    case start
+    case question(withId: String, question: String)
+    case result
 }

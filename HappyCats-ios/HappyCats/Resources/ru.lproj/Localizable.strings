@@ -3,6 +3,7 @@ empty.title = "No data";
 handbook.title = "Справочник";
 cats.title = "Породы";
 disease.title = "Заболевания";
+expertsystem.title = "Тест";
 
 button.save = "Сохранить";
 button.changePhoto = "Изменить фотографию";
@@ -41,3 +42,11 @@ profile.myCats.note = "О питомце";
 profile.addCat.title = "Новый питомец";
 
 handbook.breeds.disease = "Заболевания, которым подвержена данная порода";
+
+expertsystem.welcome = "Добро пожаловать в экспертную систему \"Болезни кошек\"";
+expertsystem.description = "Длинное-длинное описание";
+expertsystem.navigation.title = "Экспертная система";
+expertsystem.question.title = "Вопрос";
+expertsystem.start = "Старт";
+expertsystem.button.yes = "Да";
+expertsystem.button.no = "Нет";

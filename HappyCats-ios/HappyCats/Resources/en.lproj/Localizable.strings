@@ -3,6 +3,7 @@ empty.title = "No data";
 handbook.title = "Handbook";
 cats.title = "Breeds";
 disease.title = "Disease";
+expertsystem.title = "Test";
 
 button.save = "Save";
 button.changePhoto = "Change photo";
@@ -41,3 +42,11 @@ profile.myCats.note = "About pet";
 profile.addCat.title = "New pet";
 
 handbook.breeds.disease = "Diseases to which this breed is exposed";
+
+expertsystem.welcome = "Welcome to the Expert System \"Cat's Disease\"";
+expertsystem.description = "Description long long";
+expertsystem.navigation.title = "Expert system";
+expertsystem.question.title = "Question";
+expertsystem.start = "Start";
+expertsystem.button.yes = "Yes";
+expertsystem.button.no = "No";

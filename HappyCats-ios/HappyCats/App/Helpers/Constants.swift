@@ -26,6 +26,7 @@ enum Constants {
             static let catById = "/cats/id"
             static let updateCat = "/cats/catid"
             static let addCat = "/cats/"
+            static let expertSystem = "/expert/ask"
         }
         
         enum Headers {
@@ -36,6 +37,12 @@ enum Constants {
             static let cloudName = "dj7n6iicp"
             static let folder = "happycats_test/"
             static let preset = "HappyCatsPreset"
+        }
+        
+        enum ExpertSystem {
+            static let startID = "start"
+            static let yesID = "y"
+            static let noID = "n"
         }
     }
     
@@ -62,6 +69,14 @@ enum Constants {
             
             enum AddCat {
                 static let cornerRadius: CGFloat = 25
+            }
+            
+            enum YesButton {
+                static let backgroundColor = UIColor.green
+            }
+            
+            enum NoButton {
+                static let backgroundColor = UIColor.red
             }
         }
         
