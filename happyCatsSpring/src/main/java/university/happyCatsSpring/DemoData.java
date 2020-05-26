@@ -32,6 +32,12 @@ public class DemoData implements CommandLineRunner {
     @Autowired
     NewsRepository newsRepository;
 
+    @Autowired
+    AnswerRepository answerRepository;
+
+    @Autowired
+    QuestionRepository questionRepository;
+
     @Override
     public void run(String... args) throws Exception {
         Disease disease1 = new Disease("Отит","https://avatars.mds.yandex.net/get-zen_doc/195447/pub_5d2090c482066500ad8d1ec1_5d2090d36a438100ae585d4a/scale_1200",
@@ -92,5 +98,13 @@ public class DemoData implements CommandLineRunner {
 
         log.debug("printing all news...");
         this.newsRepository.findAll().forEach(v -> log.debug(" News :{}", v));
+        Question question1 = new Question("start", "c", "Это кошка?");
+        questionRepository.save(question1);
+        Answer answer1 = new Answer("cn", "Это не кошка. Система даёт ответы только про болезни кошек.");
+        answerRepository.save(answer1);
+        Question question2 = new Question("cy", "cyds", "У неё длинная шерсть?");
+        questionRepository.save(question2);
+        Answer answer2 = new Answer("cydsy", "Это лишай. Опасно для человека.");
+        answerRepository.save(answer2);
     }
 }

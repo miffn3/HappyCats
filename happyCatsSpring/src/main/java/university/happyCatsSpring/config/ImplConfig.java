@@ -34,4 +34,9 @@ public class ImplConfig {
 	public DiseaseService diseaseService(DiseaseRepository diseaseRepository) {
 		return new DiseaseServiceImpl(diseaseRepository);
 	}
+
+	@Bean
+	public ExpertSystemService expertSystemService(AnswerRepository answerRepository,  QuestionRepository questionRepository) {
+		return new ExpertSystemServiceImpl(answerRepository, questionRepository);
+	}
 }
