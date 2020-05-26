@@ -46,7 +46,7 @@ class StartExpertVC: UIViewController {
     }
     
     private func buildStartButton() {
-        startButton.setTitle(R.string.localizable.expertsystemStart(), for: .normal)
+        startButton.setTitle(R.string.localizable.expertsystemButtonStart(), for: .normal)
         startButton.titleLabel?.font = Constants.UI.Main.mainFont
         startButton.layer.cornerRadius = Constants.UI.Button.cornerRadius
         startButton.backgroundColor = Constants.UI.Main.mainColor

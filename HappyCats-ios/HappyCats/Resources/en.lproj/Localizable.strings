@@ -45,8 +45,10 @@ handbook.breeds.disease = "Diseases to which this breed is exposed";
 
 expertsystem.welcome = "Welcome to the Expert System \"Cat's Disease\"";
 expertsystem.description = "Description long long";
+expertsystem.result = "Result";
 expertsystem.navigation.title = "Expert system";
 expertsystem.question.title = "Question";
-expertsystem.start = "Start";
+expertsystem.button.start = "Start";
 expertsystem.button.yes = "Yes";
 expertsystem.button.no = "No";
+expertsystem.button.again = "Start again";

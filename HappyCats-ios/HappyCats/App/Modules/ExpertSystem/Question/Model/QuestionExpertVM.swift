@@ -42,8 +42,12 @@ final class QuestionExpertVM: Stepper {
                                            token: self.userService.getToken().orEmpty)
             }
             .subscribe(onNext: { result in
-                self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
-                                                   question: (result.second?.value).orEmpty))
+                if result.first?.id == nil {
+                    self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
+                                                       question: (result.second?.value).orEmpty))
+                } else {
+                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty))
+                }
             }).disposed(by: disposeBag)
         
         input.noButtonClick
@@ -54,8 +58,12 @@ final class QuestionExpertVM: Stepper {
                                            token: self.userService.getToken().orEmpty)
             }
             .subscribe(onNext: { result in
-                self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
-                                                   question: (result.second?.value).orEmpty))
+                if result.first?.id == nil {
+                    self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
+                                                       question: (result.second?.value).orEmpty))
+                } else {
+                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty))
+                }
             }).disposed(by: disposeBag)
         
         let output = Output(question: BehaviorRelay<String>(value: question).asDriver(onErrorDriveWith: .never()))

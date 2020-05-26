@@ -18,6 +18,9 @@
 		874D8783247D9058005E5A69 /* QuestionExpertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D8782247D9058005E5A69 /* QuestionExpertVM.swift */; };
 		874D8786247D908D005E5A69 /* QuestionExpertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D8784247D908D005E5A69 /* QuestionExpertVC.swift */; };
 		874D8787247D908D005E5A69 /* QuestionExpertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874D8785247D908D005E5A69 /* QuestionExpertVC.xib */; };
+		874D878C247D9C46005E5A69 /* ResultExpertVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D878B247D9C46005E5A69 /* ResultExpertVM.swift */; };
+		874D878F247D9CDE005E5A69 /* ResultExpertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D878D247D9CDE005E5A69 /* ResultExpertVC.swift */; };
+		874D8790247D9CDE005E5A69 /* ResultExpertVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 874D878E247D9CDE005E5A69 /* ResultExpertVC.xib */; };
 		8780DAE624642A5E00745B49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8780DAE524642A5E00745B49 /* AppDelegate.swift */; };
 		8780DAEF24642A5F00745B49 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8780DAEE24642A5F00745B49 /* Assets.xcassets */; };
 		8780DAF224642A5F00745B49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8780DAF024642A5F00745B49 /* LaunchScreen.storyboard */; };
@@ -132,6 +135,9 @@
 		874D8782247D9058005E5A69 /* QuestionExpertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionExpertVM.swift; sourceTree = "<group>"; };
 		874D8784247D908D005E5A69 /* QuestionExpertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionExpertVC.swift; sourceTree = "<group>"; };
 		874D8785247D908D005E5A69 /* QuestionExpertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionExpertVC.xib; sourceTree = "<group>"; };
+		874D878B247D9C46005E5A69 /* ResultExpertVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExpertVM.swift; sourceTree = "<group>"; };
+		874D878D247D9CDE005E5A69 /* ResultExpertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExpertVC.swift; sourceTree = "<group>"; };
+		874D878E247D9CDE005E5A69 /* ResultExpertVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultExpertVC.xib; sourceTree = "<group>"; };
 		8780DAE224642A5E00745B49 /* HappyCats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyCats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8780DAE524642A5E00745B49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8780DAEE24642A5F00745B49 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -263,6 +269,7 @@
 			children = (
 				874D8770247D7E46005E5A69 /* Start */,
 				874D8779247D8AAA005E5A69 /* Question */,
+				874D8788247D9C0B005E5A69 /* Result */,
 			);
 			path = ExpertSystem;
 			sourceTree = "<group>";
@@ -315,6 +322,32 @@
 			isa = PBXGroup;
 			children = (
 				874D8782247D9058005E5A69 /* QuestionExpertVM.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		874D8788247D9C0B005E5A69 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				874D878A247D9C20005E5A69 /* Model */,
+				874D8789247D9C1C005E5A69 /* View */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		874D8789247D9C1C005E5A69 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				874D878D247D9CDE005E5A69 /* ResultExpertVC.swift */,
+				874D878E247D9CDE005E5A69 /* ResultExpertVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		874D878A247D9C20005E5A69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				874D878B247D9C46005E5A69 /* ResultExpertVM.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1034,6 +1067,7 @@
 				8780DB872465B25F00745B49 /* HandbookTVC.xib in Resources */,
 				878AD9F12471C96A003A8206 /* BreedDiseaseTVC.xib in Resources */,
 				87A45C2F2472CF39009B7A51 /* CatProfileVC.xib in Resources */,
+				874D8790247D9CDE005E5A69 /* ResultExpertVC.xib in Resources */,
 				87A45C252472AD99009B7A51 /* MyCatTVC.xib in Resources */,
 				87A45C202472ACEF009B7A51 /* CatsListVC.xib in Resources */,
 				87A45C38247338F8009B7A51 /* AddCatVC.xib in Resources */,
@@ -1153,6 +1187,7 @@
 				87A45C2E2472CF39009B7A51 /* CatProfileVC.swift in Sources */,
 				87D838FC246ABAD80052C52A /* RegistrationVC.swift in Sources */,
 				8780DB2A24642B8500745B49 /* NewsListVM.swift in Sources */,
+				874D878C247D9C46005E5A69 /* ResultExpertVM.swift in Sources */,
 				8780DB2D24642B9F00745B49 /* NewsListVC.swift in Sources */,
 				8780DB68246564F500745B49 /* Cat.swift in Sources */,
 				87D838FF246ACB7F0052C52A /* UserService.swift in Sources */,
@@ -1164,6 +1199,7 @@
 				874D876E247D7BAD005E5A69 /* NewsTVC.swift in Sources */,
 				87D838F22469C6F50052C52A /* OnboardingFlow.swift in Sources */,
 				878AD9E02471BBBD003A8206 /* DiseaseVC.swift in Sources */,
+				874D878F247D9CDE005E5A69 /* ResultExpertVC.swift in Sources */,
 				8780DB532464648500745B49 /* Collection+Extensions.swift in Sources */,
 				874D877F247D8BEE005E5A69 /* ExpertSystemAPI.swift in Sources */,
 				874D8781247D8C21005E5A69 /* ExpertSystem.swift in Sources */,

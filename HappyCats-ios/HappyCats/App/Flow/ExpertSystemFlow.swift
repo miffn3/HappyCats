@@ -34,6 +34,10 @@ final class ExpertSystemFlow: Flow {
             return navigationToStartExpertScreen()
         case .question(let id, let question):
             return navigationToQuestionScreen(withId: id, question: question)
+        case .result(let result):
+            return navigationToResultScreen(withResult: result)
+        case .again:
+            return returnToStartScreen()
         default:
             return .none
         }
@@ -55,5 +59,20 @@ final class ExpertSystemFlow: Flow {
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToResultScreen(withResult result: String) -> FlowContributors {
+        let model = ResultExpertVM(userService: services.userService, result: result)
+        let vc = ResultExpertVC()
+        vc.title = R.string.localizable.expertsystemResult()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func returnToStartScreen() -> FlowContributors {
+        rootViewController.popToRootViewController(animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: rootViewController,
+                                                 withNextStepper: OneStepper(withSingleStep: AppStep.start)))
     }
 }

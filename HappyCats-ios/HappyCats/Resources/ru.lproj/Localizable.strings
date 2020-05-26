@@ -45,8 +45,10 @@ handbook.breeds.disease = "Заболевания, которым подверж
 
 expertsystem.welcome = "Добро пожаловать в экспертную систему \"Болезни кошек\"";
 expertsystem.description = "Длинное-длинное описание";
+expertsystem.result = "Результат";
 expertsystem.navigation.title = "Экспертная система";
 expertsystem.question.title = "Вопрос";
-expertsystem.start = "Старт";
+expertsystem.button.start = "Старт";
 expertsystem.button.yes = "Да";
 expertsystem.button.no = "Нет";
+expertsystem.button.again = "Начать заново";
