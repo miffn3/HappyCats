@@ -34,8 +34,10 @@ final class ExpertSystemFlow: Flow {
             return navigationToStartExpertScreen()
         case .question(let id, let question):
             return navigationToQuestionScreen(withId: id, question: question)
-        case .result(let result):
-            return navigationToResultScreen(withResult: result)
+        case .result(let result, let id):
+            return navigationToResultScreen(withResult: result, id: id)
+        case .disease(let id):
+            return navigationToDiseaseScreen(withId: id)
         case .again:
             return returnToStartScreen()
         default:
@@ -61,10 +63,18 @@ final class ExpertSystemFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
     
-    private func navigationToResultScreen(withResult result: String) -> FlowContributors {
-        let model = ResultExpertVM(userService: services.userService, result: result)
+    private func navigationToResultScreen(withResult result: String, id: Int) -> FlowContributors {
+        let model = ResultExpertVM(userService: services.userService, result: result, id: id)
         let vc = ResultExpertVC()
         vc.title = R.string.localizable.expertsystemResult()
+        vc.setModel(model: model)
+        rootViewController.pushViewController(vc, animated: true)
+        return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
+    }
+    
+    private func navigationToDiseaseScreen(withId id: Int) -> FlowContributors {
+        let model = DiseaseVM(withId: id, userService: services.userService)
+        let vc = DiseaseVC()
         vc.setModel(model: model)
         rootViewController.pushViewController(vc, animated: true)
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))

@@ -46,6 +46,7 @@ handbook.breeds.disease = "Заболевания, которым подверж
 expertsystem.welcome = "Добро пожаловать в экспертную систему \"Болезни кошек\"";
 expertsystem.description = "Данная экспертная система позволит вам узнать наиболее вероятное заболевание вашей кошки по проявившимся симптомам";
 expertsystem.result = "Результат";
+expertsystem.more = "Узнать больше:";
 expertsystem.navigation.title = "Экспертная система";
 expertsystem.question.title = "Вопрос";
 expertsystem.button.start = "Старт";

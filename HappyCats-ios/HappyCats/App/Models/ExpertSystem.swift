@@ -16,6 +16,7 @@ struct ExpertSystem: Codable {
 struct ExpertSystemFirst: Codable {
     let id: String?
     let value: String?
+    let diseaseId: Int?
 }
 
 struct ExpertSystemSecond: Codable {
