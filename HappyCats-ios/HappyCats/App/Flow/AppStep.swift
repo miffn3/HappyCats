@@ -41,6 +41,6 @@ enum AppStep: Step {
     //ExpertSystem
     case start
     case question(withId: String, question: String)
-    case result(withResult: String, id: Int)
+    case result(withResult: String, id: Int?)
     case again
 }

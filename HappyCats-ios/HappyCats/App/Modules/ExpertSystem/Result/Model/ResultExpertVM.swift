@@ -17,7 +17,7 @@ final class ResultExpertVM: Stepper {
     private let disposeBag = DisposeBag()
     private let userService: UserService
     private let result: String
-    private let id: Int
+    private let id: Int?
     
     struct Input {
         let againButtonClick: Observable<Void>
@@ -26,23 +26,26 @@ final class ResultExpertVM: Stepper {
     
     struct Output {
         let result: Driver<String>
+        let diseaseId: Driver<Int?>
         let diseaseImage: Driver<UIImage>
         let diseaseTitle: Driver<String>
     }
     
-    init(userService: UserService, result: String, id: Int) {
+    init(userService: UserService, result: String, id: Int?) {
         self.userService = userService
         self.result = result
         self.id = id
     }
     
     func transform(input: Input) -> Output {
+        let diseaseId = BehaviorRelay<Int?>(value: nil)
         let diseaseTitle = BehaviorRelay<String>(value: "")
         let diseaseImage = BehaviorRelay<UIImage>(value: R.image.emptyPhoto() ?? UIImage())
         
-        DiseaseAPI.getDisease(withId: id, token: userService.getToken().orEmpty)
+        DiseaseAPI.getDisease(withId: id ?? 0, token: userService.getToken().orEmpty)
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
             .subscribe(onNext: { disease in
+                diseaseId.accept(disease.id)
                 diseaseTitle.accept(disease.name.orEmpty)
                 if let img = disease.photo, let imgUrl = URL(string: img) {
                     KingfisherManager.shared
@@ -67,10 +70,11 @@ final class ResultExpertVM: Stepper {
         input.moreViewClick
             .throttle(.seconds(1), scheduler: MainScheduler.instance)
             .subscribe(onNext: {_ in
-                self.steps.accept(AppStep.disease(withId: self.id))
+                self.steps.accept(AppStep.disease(withId: self.id ?? 0))
             }).disposed(by: disposeBag)
         
         let output = Output(result: BehaviorRelay<String>(value: result).asDriver(onErrorDriveWith: .never()),
+                            diseaseId: diseaseId.asDriver(onErrorDriveWith: .never()),
                             diseaseImage: diseaseImage.asDriver(onErrorDriveWith: .never()),
                             diseaseTitle: diseaseTitle.asDriver(onErrorDriveWith: .never()))
         return output

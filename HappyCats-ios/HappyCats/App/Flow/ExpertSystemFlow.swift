@@ -63,7 +63,7 @@ final class ExpertSystemFlow: Flow {
         return .one(flowContributor: .contribute(withNextPresentable: vc, withNextStepper: model))
     }
     
-    private func navigationToResultScreen(withResult result: String, id: Int) -> FlowContributors {
+    private func navigationToResultScreen(withResult result: String, id: Int?) -> FlowContributors {
         let model = ResultExpertVM(userService: services.userService, result: result, id: id)
         let vc = ResultExpertVC()
         vc.title = R.string.localizable.expertsystemResult()

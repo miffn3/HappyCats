@@ -46,7 +46,7 @@ final class QuestionExpertVM: Stepper {
                     self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
                                                        question: (result.second?.value).orEmpty))
                 } else {
-                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty, id: result.first?.diseaseId ?? 0))
+                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty, id: result.first?.diseaseId))
                 }
             }).disposed(by: disposeBag)
         
@@ -62,7 +62,7 @@ final class QuestionExpertVM: Stepper {
                     self.steps.accept(AppStep.question(withId: (result.second?.newId).orEmpty,
                                                        question: (result.second?.value).orEmpty))
                 } else {
-                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty, id: result.first?.diseaseId ?? 0))
+                    self.steps.accept(AppStep.result(withResult: (result.first?.value).orEmpty, id: result.first?.diseaseId))
                 }
             }).disposed(by: disposeBag)
         

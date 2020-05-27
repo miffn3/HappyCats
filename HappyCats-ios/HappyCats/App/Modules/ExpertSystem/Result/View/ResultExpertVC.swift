@@ -69,13 +69,31 @@ class ResultExpertVC: UIViewController {
         againButton.tintColor = Constants.UI.Main.alternativeFontColor
     }
     
+    private func diseaseShow(_ show: Bool) {
+        diseaseView.isHidden = show
+        learnMoreLabel.isHidden = show
+        leftDiseaseView.isHidden = show
+    }
+    
     private func bindUI() {
         let againButtonClick = Observable<Void>.merge(againButton.rx.tap.asObservable())
         let moreViewClick = Observable<UITapGestureRecognizer>.merge(diseaseView.rx.tapGesture().asObservable())
+        
         let input = ResultExpertVM.Input(againButtonClick: againButtonClick, moreViewClick: moreViewClick)
+        
         let output = model.transform(input: input)
+        
         output.result.drive(descriptionLabel.rx.text).disposed(by: disposeBag)
         output.diseaseImage.drive(diseaseImage.rx.image).disposed(by: disposeBag)
         output.diseaseTitle.drive(diseaseLabel.rx.text).disposed(by: disposeBag)
+        
+        output.diseaseId.drive(onNext: { id in
+            print("=== \(id)")
+            if let _ = id {
+                self.diseaseShow(false)
+            } else {
+                self.diseaseShow(true)
+            }
+            }).disposed(by: disposeBag)
     }
 }
