@@ -112,5 +112,26 @@ struct CatAPI {
             return Disposables.create()
         }
     }
+    
+    static func deleteCat(token: String, id: Int) -> Observable<Void> {
+        return Observable.create { observer -> Disposable in
+            let headers = [Constants.API.Headers.auth: token]
+            Alamofire.request("\(Constants.API.URL.mainURL)\(Constants.API.URL.deleteCat)/\(id)",
+                              method: .delete,
+                              encoding: JSONEncoding.default,
+                              headers: headers)
+                .responseJSON { response in
+                    switch response.result {
+                    case .success:
+                        if response.response?.statusCode == 200 {
+                            observer.onNext(Void())
+                        }
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+            }
+            return Disposables.create()
+        }
+    }
 }
 

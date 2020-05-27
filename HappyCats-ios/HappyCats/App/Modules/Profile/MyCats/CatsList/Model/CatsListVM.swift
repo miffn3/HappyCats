@@ -19,6 +19,7 @@ final class CatsListVM: Stepper {
     
     struct Input {
         let selectedCat: Observable<Int>
+        let deletedCat: Observable<Int>
         let addCatButton: Observable<Void>
     }
     
@@ -33,10 +34,21 @@ final class CatsListVM: Stepper {
     func transform(input: Input) -> Output {
         let cats = BehaviorRelay<[Cat]>(value: [])
         
+        fetchCats(cats: cats)
+        
         input.selectedCat
             .subscribe(onNext: { index in
                 guard let id = cats.value[safe: index]?.id else { return }
                 self.steps.accept(AppStep.cat(withId: id))
+            }).disposed(by: disposeBag)
+        
+        input.deletedCat
+            .subscribe(onNext: { index in
+                guard let id = cats.value[safe: index]?.id else { return }
+                CatAPI.deleteCat(token: self.userService.getToken().orEmpty, id: id)
+                    .subscribe(onNext: { data in
+                        self.fetchCats(cats: cats)
+                    }).disposed(by: self.disposeBag)
             }).disposed(by: disposeBag)
         
         input.addCatButton
@@ -44,14 +56,16 @@ final class CatsListVM: Stepper {
                 self.steps.accept(AppStep.addCat)
             }).disposed(by: disposeBag)
         
-        CatAPI.getAllCats(token: userService.getToken().orEmpty)
+        return Output(cats: cats.asDriver(onErrorJustReturn: []))
+    }
+    
+    private func fetchCats(cats: BehaviorRelay<[Cat]>) {
+        UserAPI.getUser(token: userService.getToken().orEmpty)
             .subscribeOn(ConcurrentDispatchQueueScheduler.init(qos: .background))
             .subscribe(onNext: { data in
-                cats.accept(data)
+                cats.accept(data.cats ?? [])
             })
             .disposed(by: self.disposeBag)
-        
-        return Output(cats: cats.asDriver(onErrorJustReturn: []))
     }
 }
 

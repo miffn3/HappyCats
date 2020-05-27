@@ -26,6 +26,7 @@ enum Constants {
             static let catById = "/cats/id"
             static let updateCat = "/cats/catid"
             static let addCat = "/cats/"
+            static let deleteCat = "/cats/catid"
             static let expertSystem = "/expert/ask"
         }
         

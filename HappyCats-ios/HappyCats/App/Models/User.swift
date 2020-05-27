@@ -17,6 +17,7 @@ struct User: Codable {
     var birthday: String?
     var photo: String?
     var note: String?
+    let cats: [Cat]?
     
     enum CodingKeys : String, CodingKey {
         case id
@@ -27,6 +28,7 @@ struct User: Codable {
         case birthday
         case photo
         case note
+        case cats
     }
 }
 

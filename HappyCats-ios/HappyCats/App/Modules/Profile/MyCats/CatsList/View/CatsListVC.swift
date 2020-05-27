@@ -15,6 +15,7 @@ class CatsListVC: UIViewController {
     private var model: CatsListVM!
     private let disposeBag = DisposeBag()
     private let selectedCat = PublishRelay<Int>()
+    private let deletedCat = PublishRelay<Int>()
 
     @IBOutlet weak var catsTable: UITableView!
     @IBOutlet weak var addCatButton: UIButton!
@@ -51,6 +52,7 @@ class CatsListVC: UIViewController {
     private func bindUI() {
         let addCatButtonTap = Observable<Void>.merge(addCatButton.rx.tap.asObservable())
         let input = CatsListVM.Input(selectedCat: selectedCat.asObservable(),
+                                     deletedCat: deletedCat.asObservable(),
                                      addCatButton: addCatButtonTap)
             
         let output = model.transform(input: input)
@@ -66,6 +68,12 @@ class CatsListVC: UIViewController {
             .itemSelected
             .subscribe(onNext: { indexPath in
                 self.selectedCat.accept(indexPath.row)
+            }).disposed(by: disposeBag)
+        
+        catsTable.rx
+            .itemDeleted
+            .subscribe(onNext: { indexPath in
+                self.deletedCat.accept(indexPath.row)
             }).disposed(by: disposeBag)
     }
 }
