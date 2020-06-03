@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 import university.happyCatsSpring.dto.CreateCatDto;
 import university.happyCatsSpring.entity.Cat;
+import university.happyCatsSpring.entity.User;
 import university.happyCatsSpring.service.iface.CatService;
 
 import java.util.List;
@@ -88,6 +89,32 @@ public class CatController {
             try {
                 Cat updated = catService.updateCat(cat, body);
                 return ResponseEntity.ok(updated);
+            } catch (Exception ex) {
+                return ResponseEntity.badRequest().body(ex.getMessage());
+            }
+
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping(value = "/catid/{id}")
+    public ResponseEntity deleteCat(@PathVariable("id") String catId)
+    {
+        Long id = Long.parseLong(catId);
+        UserDetails userDetails = (UserDetails) SecurityContextHolder
+                .getContext()
+                .getAuthentication()
+                .getPrincipal();
+
+        String username = userDetails.getUsername();
+        Optional<Cat> catOptional = catService.findById(id);
+
+        if (catOptional.isPresent()) {
+            Cat cat = catOptional.get();
+            try {
+                User user = catService.deleteCat(cat, username);
+                return ResponseEntity.ok(user);
             } catch (Exception ex) {
                 return ResponseEntity.badRequest().body(ex.getMessage());
             }

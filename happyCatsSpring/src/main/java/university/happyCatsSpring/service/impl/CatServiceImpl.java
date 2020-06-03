@@ -105,4 +105,15 @@ public class CatServiceImpl implements CatService {
 
         return catRepository.save(cat);
     }
+
+    @Override
+    public User deleteCat(Cat cat, String username) throws  Exception {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        User user = userOptional.orElseThrow(() -> new UsernameNotFoundException("User " + username +" not found"));
+        Set<Cat> cats = user.getCats();
+        cats.remove(cat);
+        return userRepository.save(user);
+    }
+
+
 }
